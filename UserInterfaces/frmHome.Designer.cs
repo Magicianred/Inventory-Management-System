@@ -31,20 +31,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pbOrders = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pbCategories = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pbCustomers = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pbUsers = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbProducts = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblProductsNumber = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblProductInfo = new System.Windows.Forms.LinkLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblProductInfo = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblProductsNumber = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblOrdersInfo = new System.Windows.Forms.LinkLabel();
@@ -65,12 +60,11 @@
             this.lblStoresInfo = new System.Windows.Forms.LinkLabel();
             this.label11 = new System.Windows.Forms.Label();
             this.lblStoresNumber = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCategories)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCustomers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProducts)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -81,6 +75,7 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,9 +83,9 @@
             this.panel1.BackgroundImage = global::InventoryManagementApp.Properties.Resources.bck;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1147, 115);
+            this.panel1.Size = new System.Drawing.Size(1147, 123);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -111,22 +106,11 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(967, 423);
+            this.label6.Location = new System.Drawing.Point(12, 246);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 30);
+            this.label6.Size = new System.Drawing.Size(92, 30);
             this.label6.TabIndex = 20;
-            this.label6.Text = " Orders";
-            // 
-            // pbOrders
-            // 
-            this.pbOrders.BackColor = System.Drawing.SystemColors.Window;
-            this.pbOrders.Image = global::InventoryManagementApp.Properties.Resources.orders;
-            this.pbOrders.Location = new System.Drawing.Point(972, 465);
-            this.pbOrders.Name = "pbOrders";
-            this.pbOrders.Size = new System.Drawing.Size(103, 92);
-            this.pbOrders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbOrders.TabIndex = 19;
-            this.pbOrders.TabStop = false;
+            this.label6.Text = "Orders";
             // 
             // label5
             // 
@@ -134,22 +118,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(730, 423);
+            this.label5.Location = new System.Drawing.Point(12, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 30);
             this.label5.TabIndex = 18;
             this.label5.Text = "Categories";
-            // 
-            // pbCategories
-            // 
-            this.pbCategories.BackColor = System.Drawing.SystemColors.Window;
-            this.pbCategories.Image = global::InventoryManagementApp.Properties.Resources.categories;
-            this.pbCategories.Location = new System.Drawing.Point(744, 465);
-            this.pbCategories.Name = "pbCategories";
-            this.pbCategories.Size = new System.Drawing.Size(103, 92);
-            this.pbCategories.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCategories.TabIndex = 17;
-            this.pbCategories.TabStop = false;
             // 
             // label4
             // 
@@ -157,22 +130,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(246, 423);
+            this.label4.Location = new System.Drawing.Point(12, 293);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 30);
             this.label4.TabIndex = 16;
             this.label4.Text = "Customers";
-            // 
-            // pbCustomers
-            // 
-            this.pbCustomers.BackColor = System.Drawing.Color.Transparent;
-            this.pbCustomers.Image = global::InventoryManagementApp.Properties.Resources.customers;
-            this.pbCustomers.Location = new System.Drawing.Point(262, 465);
-            this.pbCustomers.Name = "pbCustomers";
-            this.pbCustomers.Size = new System.Drawing.Size(103, 92);
-            this.pbCustomers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCustomers.TabIndex = 15;
-            this.pbCustomers.TabStop = false;
             // 
             // label3
             // 
@@ -180,22 +142,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(72, 423);
+            this.label3.Location = new System.Drawing.Point(12, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "Users";
-            // 
-            // pbUsers
-            // 
-            this.pbUsers.BackColor = System.Drawing.Color.Transparent;
-            this.pbUsers.Image = global::InventoryManagementApp.Properties.Resources.users;
-            this.pbUsers.Location = new System.Drawing.Point(60, 465);
-            this.pbUsers.Name = "pbUsers";
-            this.pbUsers.Size = new System.Drawing.Size(103, 92);
-            this.pbUsers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbUsers.TabIndex = 13;
-            this.pbUsers.TabStop = false;
             // 
             // label2
             // 
@@ -203,22 +154,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(500, 423);
+            this.label2.Location = new System.Drawing.Point(12, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 30);
             this.label2.TabIndex = 12;
             this.label2.Text = "Products";
-            // 
-            // pbProducts
-            // 
-            this.pbProducts.BackColor = System.Drawing.Color.Transparent;
-            this.pbProducts.Image = global::InventoryManagementApp.Properties.Resources.products;
-            this.pbProducts.Location = new System.Drawing.Point(505, 465);
-            this.pbProducts.Name = "pbProducts";
-            this.pbProducts.Size = new System.Drawing.Size(103, 92);
-            this.pbProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProducts.TabIndex = 11;
-            this.pbProducts.TabStop = false;
             // 
             // panel2
             // 
@@ -226,10 +166,45 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.lblProductsNumber);
-            this.panel2.Location = new System.Drawing.Point(18, 148);
+            this.panel2.Location = new System.Drawing.Point(459, 139);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 100);
             this.panel2.TabIndex = 21;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.lblProductInfo);
+            this.panel3.Location = new System.Drawing.Point(-9, 79);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(221, 36);
+            this.panel3.TabIndex = 3;
+            // 
+            // lblProductInfo
+            // 
+            this.lblProductInfo.ActiveLinkColor = System.Drawing.Color.LightSkyBlue;
+            this.lblProductInfo.AutoSize = true;
+            this.lblProductInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductInfo.LinkColor = System.Drawing.SystemColors.Window;
+            this.lblProductInfo.Location = new System.Drawing.Point(130, 5);
+            this.lblProductInfo.Name = "lblProductInfo";
+            this.lblProductInfo.Size = new System.Drawing.Size(66, 13);
+            this.lblProductInfo.TabIndex = 2;
+            this.lblProductInfo.TabStop = true;
+            this.lblProductInfo.Text = "More Info ➔";
+            this.lblProductInfo.VisitedLinkColor = System.Drawing.Color.Navy;
+            this.lblProductInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMoreProductInfo_LinkClicked);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
+            this.label7.Location = new System.Drawing.Point(3, 54);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 22);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Total Products";
             // 
             // lblProductsNumber
             // 
@@ -243,48 +218,13 @@
             this.lblProductsNumber.TabIndex = 0;
             this.lblProductsNumber.Text = "0";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(3, 54);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 22);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Total Products";
-            // 
-            // lblProductInfo
-            // 
-            this.lblProductInfo.ActiveLinkColor = System.Drawing.Color.LightSkyBlue;
-            this.lblProductInfo.AutoSize = true;
-            this.lblProductInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductInfo.LinkColor = System.Drawing.SystemColors.Window;
-            this.lblProductInfo.Location = new System.Drawing.Point(131, 8);
-            this.lblProductInfo.Name = "lblProductInfo";
-            this.lblProductInfo.Size = new System.Drawing.Size(66, 13);
-            this.lblProductInfo.TabIndex = 2;
-            this.lblProductInfo.TabStop = true;
-            this.lblProductInfo.Text = "More Info ➔";
-            this.lblProductInfo.VisitedLinkColor = System.Drawing.Color.Navy;
-            this.lblProductInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMoreProductInfo_LinkClicked);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel3.Controls.Add(this.lblProductInfo);
-            this.panel3.Location = new System.Drawing.Point(-9, 79);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(221, 36);
-            this.panel3.TabIndex = 3;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.lblOrdersNumber);
-            this.panel4.Location = new System.Drawing.Point(242, 148);
+            this.panel4.Location = new System.Drawing.Point(692, 139);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 100);
             this.panel4.TabIndex = 22;
@@ -304,7 +244,7 @@
             this.lblOrdersInfo.AutoSize = true;
             this.lblOrdersInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdersInfo.LinkColor = System.Drawing.SystemColors.Window;
-            this.lblOrdersInfo.Location = new System.Drawing.Point(131, 8);
+            this.lblOrdersInfo.Location = new System.Drawing.Point(138, 5);
             this.lblOrdersInfo.Name = "lblOrdersInfo";
             this.lblOrdersInfo.Size = new System.Drawing.Size(66, 13);
             this.lblOrdersInfo.TabIndex = 2;
@@ -342,7 +282,7 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.lblUsersNumber);
-            this.panel6.Location = new System.Drawing.Point(470, 148);
+            this.panel6.Location = new System.Drawing.Point(692, 271);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 100);
             this.panel6.TabIndex = 23;
@@ -362,7 +302,7 @@
             this.lblUsersInfo.AutoSize = true;
             this.lblUsersInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsersInfo.LinkColor = System.Drawing.SystemColors.Window;
-            this.lblUsersInfo.Location = new System.Drawing.Point(131, 8);
+            this.lblUsersInfo.Location = new System.Drawing.Point(131, 5);
             this.lblUsersInfo.Name = "lblUsersInfo";
             this.lblUsersInfo.Size = new System.Drawing.Size(66, 13);
             this.lblUsersInfo.TabIndex = 2;
@@ -400,7 +340,7 @@
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.lblCustomersNumber);
-            this.panel8.Location = new System.Drawing.Point(698, 148);
+            this.panel8.Location = new System.Drawing.Point(924, 271);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 100);
             this.panel8.TabIndex = 24;
@@ -420,7 +360,7 @@
             this.lblCustomersInfo.AutoSize = true;
             this.lblCustomersInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomersInfo.LinkColor = System.Drawing.SystemColors.Window;
-            this.lblCustomersInfo.Location = new System.Drawing.Point(131, 8);
+            this.lblCustomersInfo.Location = new System.Drawing.Point(131, 5);
             this.lblCustomersInfo.Name = "lblCustomersInfo";
             this.lblCustomersInfo.Size = new System.Drawing.Size(66, 13);
             this.lblCustomersInfo.TabIndex = 2;
@@ -458,7 +398,7 @@
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.lblStoresNumber);
-            this.panel10.Location = new System.Drawing.Point(930, 148);
+            this.panel10.Location = new System.Drawing.Point(924, 139);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(200, 100);
             this.panel10.TabIndex = 25;
@@ -478,7 +418,7 @@
             this.lblStoresInfo.AutoSize = true;
             this.lblStoresInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStoresInfo.LinkColor = System.Drawing.SystemColors.Window;
-            this.lblStoresInfo.Location = new System.Drawing.Point(131, 8);
+            this.lblStoresInfo.Location = new System.Drawing.Point(131, 5);
             this.lblStoresInfo.Name = "lblStoresInfo";
             this.lblStoresInfo.Size = new System.Drawing.Size(66, 13);
             this.lblStoresInfo.TabIndex = 2;
@@ -510,28 +450,72 @@
             this.lblStoresNumber.Text = "0";
             this.lblStoresNumber.Click += new System.EventHandler(this.lblStoresNumber_Click);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Window;
+            this.label12.Location = new System.Drawing.Point(12, 199);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 30);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Stores";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Window;
+            this.label13.Location = new System.Drawing.Point(12, 109);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 30);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Brands";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.Window;
+            this.label14.Location = new System.Drawing.Point(135, 522);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 22);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Log Out ➔";
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.label3);
+            this.panel12.Controls.Add(this.label14);
+            this.panel12.Controls.Add(this.label2);
+            this.panel12.Controls.Add(this.label13);
+            this.panel12.Controls.Add(this.label4);
+            this.panel12.Controls.Add(this.label12);
+            this.panel12.Controls.Add(this.label5);
+            this.panel12.Controls.Add(this.label6);
+            this.panel12.Location = new System.Drawing.Point(0, 120);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(232, 557);
+            this.panel12.TabIndex = 29;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::InventoryManagementApp.Properties.Resources.homeBck1;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1146, 673);
+            this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pbOrders);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pbCategories);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.pbCustomers);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pbUsers);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pbProducts);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmHome";
@@ -540,11 +524,6 @@
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCategories)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCustomers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProducts)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -565,8 +544,9 @@
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -575,15 +555,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pbOrders;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pbCategories;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pbCustomers;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pbUsers;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pbProducts;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblProductsNumber;
         private System.Windows.Forms.Panel panel3;
@@ -609,5 +584,9 @@
         private System.Windows.Forms.LinkLabel lblStoresInfo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblStoresNumber;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel12;
     }
 }
