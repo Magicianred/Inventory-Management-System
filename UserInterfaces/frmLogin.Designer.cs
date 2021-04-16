@@ -34,12 +34,12 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.lblSignUp = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblSignUp = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.panel2.SuspendLayout();
@@ -81,7 +81,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(70, 30);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Sign In";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -105,33 +105,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(231, 21);
             this.txtUsername.TabIndex = 0;
-            // 
-            // lblSignUp
-            // 
-            this.lblSignUp.ActiveLinkColor = System.Drawing.Color.White;
-            this.lblSignUp.AutoSize = true;
-            this.lblSignUp.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignUp.ForeColor = System.Drawing.Color.White;
-            this.lblSignUp.LinkColor = System.Drawing.Color.White;
-            this.lblSignUp.Location = new System.Drawing.Point(19, 207);
-            this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(58, 17);
-            this.lblSignUp.TabIndex = 4;
-            this.lblSignUp.TabStop = true;
-            this.lblSignUp.Text = "Sign Up";
-            this.lblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSignUp_LinkClicked);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(19, 194);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Don\'t have an account?";
             // 
             // err
             // 
@@ -179,6 +152,33 @@
             this.panel2.Size = new System.Drawing.Size(389, 233);
             this.panel2.TabIndex = 10;
             // 
+            // lblSignUp
+            // 
+            this.lblSignUp.ActiveLinkColor = System.Drawing.Color.White;
+            this.lblSignUp.AutoSize = true;
+            this.lblSignUp.BackColor = System.Drawing.Color.Transparent;
+            this.lblSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignUp.ForeColor = System.Drawing.Color.White;
+            this.lblSignUp.LinkColor = System.Drawing.Color.White;
+            this.lblSignUp.Location = new System.Drawing.Point(19, 207);
+            this.lblSignUp.Name = "lblSignUp";
+            this.lblSignUp.Size = new System.Drawing.Size(58, 17);
+            this.lblSignUp.TabIndex = 4;
+            this.lblSignUp.TabStop = true;
+            this.lblSignUp.Text = "Sign Up";
+            this.lblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSignUp_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
+            this.label3.Location = new System.Drawing.Point(19, 194);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Don\'t have an account?";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -219,13 +219,13 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.LinkLabel lblSignUp;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel lblSignUp;
+        private System.Windows.Forms.Label label3;
     }
 }
 
