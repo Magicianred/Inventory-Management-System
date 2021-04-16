@@ -67,5 +67,10 @@ namespace InventoryManagementApp
                 Messages.HandleException(ex);
             }
         }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
