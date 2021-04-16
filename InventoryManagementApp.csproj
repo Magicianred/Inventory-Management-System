@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataClasses\Administrator.cs" />
     <Compile Include="DataClasses\Category.cs" />
     <Compile Include="DataClasses\Customer.cs" />
     <Compile Include="DataClasses\Product.cs" />

@@ -1,4 +1,5 @@
 ﻿using InventoryManagementApp.Data;
+using InventoryManagementApp.DataClasses;
 using InventoryManagementApp.Helpers;
 using InventoryManagementApp.Users;
 using System;
@@ -24,17 +25,17 @@ namespace InventoryManagementApp.UserInterfaces
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             if (ValidateUserInput()) {
-                var user = new User
+                var admin = new Administrator
                 {
                     Username = txtUsername.Text,
                     FullName = txtFullName.Text,
                     Password = txtPassword.Text,
-                    Telephone = int.Parse(txtTelephone.Text)
+                    
                 }; 
-                InventoryManagementDb.DB.Users.Add(user);
+                InventoryManagementDb.DB.Administrators.Add(admin);
                 InventoryManagementDb.DB.SaveChanges();
                                 
-                frmHome frmHome = new frmHome(user);
+                frmHome frmHome = new frmHome(admin);
                 frmHome.Show();
             }
         }
@@ -76,6 +77,11 @@ namespace InventoryManagementApp.UserInterfaces
                 passwordConfirmed = false;
                 return;
             }
+        }
+
+        private void frmSignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,15 +30,17 @@ namespace InventoryManagementApp
         {
             try
             {
-                if (ValidateUserInput()) {
-                    foreach (var user in InventoryManagementDb.DB.Users)//should be admin, not user
+                if (ValidateAdminInput()) {
+                    foreach (var admin in InventoryManagementDb.DB.Administrators)//should be admin, not user
                     {
-                        if (txtUsername.Text == user.Username && txtPassword.Text == user.Password)
+                        if (txtUsername.Text == admin.Username && txtPassword.Text == admin.Password)
                         {
-                            frmHome frmHome = new frmHome(user);
+                            frmHome frmHome = new frmHome(admin);
                             frmHome.ShowDialog();
+                            return;
                         }
-                    } 
+                    }
+                    MessageBox.Show(Messages.DataNotMatching);
                 }
             }
             catch (Exception ex)
@@ -47,7 +49,7 @@ namespace InventoryManagementApp
             }
         }
 
-        private bool ValidateUserInput()
+        private bool ValidateAdminInput()
         {
                 return Validator.ValidateControl(txtUsername, err, Messages.RequiredField)
                     && Validator.ValidateControl(txtPassword, err, Messages.RequiredField);
