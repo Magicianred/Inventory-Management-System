@@ -2,6 +2,7 @@
 using InventoryManagementApp.Helpers;
 using InventoryManagementApp.UserInterfaces;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace InventoryManagementApp
@@ -26,29 +27,6 @@ namespace InventoryManagementApp
            
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (ValidateAdminInput()) {
-                    foreach (var admin in InventoryManagementDb.DB.Administrators)//should be admin, not user
-                    {
-                        if (txtUsername.Text == admin.Username && txtPassword.Text == admin.Password)
-                        {
-                            frmHome frmHome = new frmHome(admin);
-                            frmHome.ShowDialog();
-                            return;
-                        }
-                    }
-                    MessageBox.Show(Messages.DataNotMatching);
-                }
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
-        }
-
         private bool ValidateAdminInput()
         {
                 return Validator.ValidateControl(txtUsername, err, Messages.RequiredField)
@@ -71,6 +49,48 @@ namespace InventoryManagementApp
         private void lblExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ValidateAdminInput())
+                {
+                    foreach (var admin in InventoryManagementDb.DB.Administrators)//should be admin, not user
+                    {
+                        if (txtUsername.Text == admin.Username && txtPassword.Text == admin.Password)
+                        {
+                            frmHome frmHome = new frmHome(admin);
+                            frmHome.ShowDialog();
+                            return;
+                        }
+                    }
+                    MessageBox.Show(Messages.DataNotMatching);
+                }
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+        }
+
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            txtUsername.BackColor = Color.White;
+            pnlUsername.BackColor = Color.White;
+
+            txtPassword.BackColor = SystemColors.Control;
+            pnlPassword.BackColor = SystemColors.Control;
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.BackColor = Color.White;
+            pnlPassword.BackColor = Color.White;
+
+            txtUsername.BackColor = SystemColors.Control;
+            pnlUsername.BackColor = SystemColors.Control;
         }
     }
 }

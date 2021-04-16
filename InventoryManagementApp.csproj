@@ -127,6 +127,7 @@
     <Compile Include="UserInterfaces\frmSignUp.Designer.cs">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\user.png" />
     <None Include="Resources\user.jpg" />
     <None Include="Resources\passwordIcon.png" />
     <None Include="Resources\userIcon.png" />
