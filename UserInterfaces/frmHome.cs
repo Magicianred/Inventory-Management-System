@@ -13,7 +13,13 @@ namespace InventoryManagementApp.UserInterfaces
         public frmHome(Administrator admin)
         {
             InitializeComponent();
+            CustomizeDesign();
             this.admin = admin;
+        }
+
+        private void CustomizeDesign()
+        {
+            pnlUsers.Visible = false;
         }
 
         private void frmHome_Load(object sender, System.EventArgs e)
@@ -57,6 +63,44 @@ namespace InventoryManagementApp.UserInterfaces
         private void lblStoresNumber_Click(object sender, EventArgs e)
         {
             //StoresForm
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlUsers);
+        }
+
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if(!subMenu.Visible)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+
+        private void hideSubMenu()
+        {
+            if (pnlUsers.Visible)
+            {
+                pnlUsers.Visible = false;
+            }
+        }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            frmManageUsers frmManageUsers = new frmManageUsers();
+            frmManageUsers.Show();
+            hideSubMenu();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -64,6 +64,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.pnlUsers = new System.Windows.Forms.Panel();
+            this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnManageUsers = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
+            this.lblExit = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,12 +81,14 @@
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.pnlUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::InventoryManagementApp.Properties.Resources.bck;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.lblExit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, -3);
             this.panel1.Name = "panel1";
@@ -106,7 +113,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(12, 246);
+            this.label6.Location = new System.Drawing.Point(559, 514);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 30);
             this.label6.TabIndex = 20;
@@ -118,7 +125,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(12, 153);
+            this.label5.Location = new System.Drawing.Point(559, 421);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 30);
             this.label5.TabIndex = 18;
@@ -130,7 +137,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(12, 293);
+            this.label4.Location = new System.Drawing.Point(559, 561);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 30);
             this.label4.TabIndex = 16;
@@ -142,7 +149,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(12, 19);
+            this.label3.Location = new System.Drawing.Point(559, 287);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 30);
             this.label3.TabIndex = 14;
@@ -154,7 +161,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(12, 63);
+            this.label2.Location = new System.Drawing.Point(559, 331);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 30);
             this.label2.TabIndex = 12;
@@ -456,7 +463,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(12, 199);
+            this.label12.Location = new System.Drawing.Point(559, 467);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 30);
             this.label12.TabIndex = 26;
@@ -468,7 +475,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(12, 109);
+            this.label13.Location = new System.Drawing.Point(559, 377);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 30);
             this.label13.TabIndex = 27;
@@ -490,34 +497,99 @@
             // 
             this.panel12.BackColor = System.Drawing.Color.SteelBlue;
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.label3);
+            this.panel12.Controls.Add(this.pnlUsers);
+            this.panel12.Controls.Add(this.btnUsers);
             this.panel12.Controls.Add(this.label14);
-            this.panel12.Controls.Add(this.label2);
-            this.panel12.Controls.Add(this.label13);
-            this.panel12.Controls.Add(this.label4);
-            this.panel12.Controls.Add(this.label12);
-            this.panel12.Controls.Add(this.label5);
-            this.panel12.Controls.Add(this.label6);
             this.panel12.Location = new System.Drawing.Point(0, 120);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(232, 557);
             this.panel12.TabIndex = 29;
             // 
+            // pnlUsers
+            // 
+            this.pnlUsers.BackColor = System.Drawing.Color.DimGray;
+            this.pnlUsers.Controls.Add(this.btnAddUser);
+            this.pnlUsers.Controls.Add(this.btnManageUsers);
+            this.pnlUsers.Location = new System.Drawing.Point(-1, 57);
+            this.pnlUsers.Name = "pnlUsers";
+            this.pnlUsers.Size = new System.Drawing.Size(232, 76);
+            this.pnlUsers.TabIndex = 31;
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddUser.FlatAppearance.BorderSize = 0;
+            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUser.Location = new System.Drawing.Point(0, 37);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(232, 37);
+            this.btnAddUser.TabIndex = 1;
+            this.btnAddUser.Text = "Add User";
+            this.btnAddUser.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            // 
+            // btnManageUsers
+            // 
+            this.btnManageUsers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageUsers.FlatAppearance.BorderSize = 0;
+            this.btnManageUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageUsers.Location = new System.Drawing.Point(0, 0);
+            this.btnManageUsers.Name = "btnManageUsers";
+            this.btnManageUsers.Size = new System.Drawing.Size(232, 37);
+            this.btnManageUsers.TabIndex = 0;
+            this.btnManageUsers.Text = "Manage Users";
+            this.btnManageUsers.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnManageUsers.UseVisualStyleBackColor = true;
+            this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.Location = new System.Drawing.Point(-1, 18);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(232, 42);
+            this.btnUsers.TabIndex = 30;
+            this.btnUsers.Text = "Users";
+            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.Color.White;
+            this.lblExit.Location = new System.Drawing.Point(1119, 0);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(28, 31);
+            this.lblExit.TabIndex = 11;
+            this.lblExit.Text = "x";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1146, 673);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel10);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel8);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.panel6);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management";
@@ -546,7 +618,9 @@
             this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.pnlUsers.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -588,5 +662,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel pnlUsers;
+        private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.Button btnManageUsers;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Label lblExit;
     }
 }
