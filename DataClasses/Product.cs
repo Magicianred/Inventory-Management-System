@@ -16,5 +16,7 @@ namespace InventoryManagementApp.DataClasses
         public int ProductPrice { get; set; }
         public string Description { get; set; }
         public virtual Category Category { get; set; }
+        public virtual Brand Brand { get; set; }
+        public virtual Store Store { get; set; }
     }
 }

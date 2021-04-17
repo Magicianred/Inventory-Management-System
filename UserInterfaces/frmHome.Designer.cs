@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblProductInfo = new System.Windows.Forms.LinkLabel();
@@ -61,23 +58,19 @@
             this.lblStoresInfo = new System.Windows.Forms.LinkLabel();
             this.label11 = new System.Windows.Forms.Label();
             this.lblStoresNumber = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlUsers = new System.Windows.Forms.Panel();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnManageUsers = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.pnlChildForm = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -88,22 +81,47 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.pnlUsers.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
+            this.pnlUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.lblExit);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, -3);
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1147, 123);
+            this.panel1.Size = new System.Drawing.Size(1146, 104);
             this.panel1.TabIndex = 0;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.button4);
+            this.panel14.Controls.Add(this.label14);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(240, 104);
+            this.panel14.TabIndex = 12;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(0, 62);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(240, 42);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Dashboard";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // lblExit
             // 
@@ -130,73 +148,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Inventory Management System";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(559, 514);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 30);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Orders";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(559, 421);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 30);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Categories";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(559, 561);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 30);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Customers";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(559, 287);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 30);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Users";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(559, 331);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 30);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Products";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.lblProductsNumber);
-            this.panel2.Location = new System.Drawing.Point(459, 139);
+            this.panel2.Location = new System.Drawing.Point(21, 260);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 100);
             this.panel2.TabIndex = 21;
@@ -254,7 +212,7 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.lblOrdersNumber);
-            this.panel4.Location = new System.Drawing.Point(692, 139);
+            this.panel4.Location = new System.Drawing.Point(12, 360);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 100);
             this.panel4.TabIndex = 22;
@@ -281,7 +239,7 @@
             this.lblOrdersInfo.TabStop = true;
             this.lblOrdersInfo.Text = "More Info ➔";
             this.lblOrdersInfo.VisitedLinkColor = System.Drawing.Color.Navy;
-            this.lblOrdersInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lblOrdersInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblOrdersInfo_LinkClicked);
             // 
             // label8
             // 
@@ -312,7 +270,7 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.lblUsersNumber);
-            this.panel6.Location = new System.Drawing.Point(692, 271);
+            this.panel6.Location = new System.Drawing.Point(264, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 100);
             this.panel6.TabIndex = 23;
@@ -370,7 +328,7 @@
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.lblCustomersNumber);
-            this.panel8.Location = new System.Drawing.Point(924, 271);
+            this.panel8.Location = new System.Drawing.Point(497, 4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 100);
             this.panel8.TabIndex = 24;
@@ -428,7 +386,7 @@
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.lblStoresNumber);
-            this.panel10.Location = new System.Drawing.Point(924, 139);
+            this.panel10.Location = new System.Drawing.Point(24, 481);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(200, 100);
             this.panel10.TabIndex = 25;
@@ -455,6 +413,7 @@
             this.lblStoresInfo.TabStop = true;
             this.lblStoresInfo.Text = "More Info ➔";
             this.lblStoresInfo.VisitedLinkColor = System.Drawing.Color.Navy;
+            this.lblStoresInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblStoresInfo_LinkClicked);
             // 
             // label11
             // 
@@ -478,31 +437,6 @@
             this.lblStoresNumber.Size = new System.Drawing.Size(36, 42);
             this.lblStoresNumber.TabIndex = 0;
             this.lblStoresNumber.Text = "0";
-            this.lblStoresNumber.Click += new System.EventHandler(this.lblStoresNumber_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Window;
-            this.label12.Location = new System.Drawing.Point(559, 467);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 30);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "Stores";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(559, 377);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 30);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Brands";
             // 
             // label14
             // 
@@ -510,50 +444,108 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.Window;
-            this.label14.Location = new System.Drawing.Point(135, 522);
+            this.label14.Location = new System.Drawing.Point(12, 17);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(94, 22);
             this.label14.TabIndex = 28;
             this.label14.Text = "Log Out ➔";
             // 
-            // panel12
+            // pnlMenu
             // 
-            this.panel12.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.panel14);
-            this.panel12.Controls.Add(this.panel13);
-            this.panel12.Controls.Add(this.button3);
-            this.panel12.Controls.Add(this.button6);
-            this.panel12.Controls.Add(this.pnlUsers);
-            this.panel12.Controls.Add(this.btnUsers);
-            this.panel12.Controls.Add(this.label14);
-            this.panel12.Location = new System.Drawing.Point(0, 120);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(232, 557);
-            this.panel12.TabIndex = 29;
+            this.pnlMenu.AutoScroll = true;
+            this.pnlMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMenu.Controls.Add(this.panel13);
+            this.pnlMenu.Controls.Add(this.button1);
+            this.pnlMenu.Controls.Add(this.panel10);
+            this.pnlMenu.Controls.Add(this.pnlUsers);
+            this.pnlMenu.Controls.Add(this.btnUsers);
+            this.pnlMenu.Controls.Add(this.panel2);
+            this.pnlMenu.Controls.Add(this.panel4);
+            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenu.Location = new System.Drawing.Point(0, 104);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(241, 597);
+            this.pnlMenu.TabIndex = 29;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.LightBlue;
+            this.panel13.Controls.Add(this.button2);
+            this.panel13.Controls.Add(this.button3);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 169);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(239, 85);
+            this.panel13.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(0, 42);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(239, 42);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Add User";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(239, 42);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Manage Users";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 127);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(239, 42);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Users";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // pnlUsers
             // 
-            this.pnlUsers.BackColor = System.Drawing.Color.DimGray;
+            this.pnlUsers.BackColor = System.Drawing.Color.LightBlue;
             this.pnlUsers.Controls.Add(this.btnAddUser);
             this.pnlUsers.Controls.Add(this.btnManageUsers);
-            this.pnlUsers.Location = new System.Drawing.Point(-1, 57);
+            this.pnlUsers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUsers.Location = new System.Drawing.Point(0, 42);
             this.pnlUsers.Name = "pnlUsers";
-            this.pnlUsers.Size = new System.Drawing.Size(232, 76);
-            this.pnlUsers.TabIndex = 31;
+            this.pnlUsers.Size = new System.Drawing.Size(239, 85);
+            this.pnlUsers.TabIndex = 2;
             // 
             // btnAddUser
             // 
             this.btnAddUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddUser.FlatAppearance.BorderSize = 0;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.Location = new System.Drawing.Point(0, 37);
+            this.btnAddUser.Location = new System.Drawing.Point(0, 42);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(232, 37);
+            this.btnAddUser.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAddUser.Size = new System.Drawing.Size(239, 42);
             this.btnAddUser.TabIndex = 1;
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // btnManageUsers
             // 
@@ -562,7 +554,8 @@
             this.btnManageUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageUsers.Location = new System.Drawing.Point(0, 0);
             this.btnManageUsers.Name = "btnManageUsers";
-            this.btnManageUsers.Size = new System.Drawing.Size(232, 37);
+            this.btnManageUsers.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnManageUsers.Size = new System.Drawing.Size(239, 42);
             this.btnManageUsers.TabIndex = 0;
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -571,112 +564,26 @@
             // 
             // btnUsers
             // 
+            this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsers.FlatAppearance.BorderSize = 0;
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.Location = new System.Drawing.Point(-1, 18);
+            this.btnUsers.Location = new System.Drawing.Point(0, 0);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(232, 42);
-            this.btnUsers.TabIndex = 30;
+            this.btnUsers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUsers.Size = new System.Drawing.Size(239, 42);
+            this.btnUsers.TabIndex = 1;
             this.btnUsers.Text = "Users";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
-            // panel13
+            // pnlChildForm
             // 
-            this.panel13.BackColor = System.Drawing.Color.DimGray;
-            this.panel13.Controls.Add(this.button1);
-            this.panel13.Controls.Add(this.button2);
-            this.panel13.Location = new System.Drawing.Point(-1, 167);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(232, 76);
-            this.panel13.TabIndex = 33;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add User";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 37);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Manage Users";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(-1, 128);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(232, 42);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "Users";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.DimGray;
-            this.panel14.Controls.Add(this.button4);
-            this.panel14.Controls.Add(this.button5);
-            this.panel14.Location = new System.Drawing.Point(-1, 280);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(232, 76);
-            this.panel14.TabIndex = 35;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(0, 37);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(232, 37);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Add User";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(232, 37);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Manage Users";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(-1, 241);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(232, 42);
-            this.button6.TabIndex = 34;
-            this.button6.Text = "Users";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChildForm.Location = new System.Drawing.Point(241, 104);
+            this.pnlChildForm.Name = "pnlChildForm";
+            this.pnlChildForm.Size = new System.Drawing.Size(905, 597);
+            this.pnlChildForm.TabIndex = 30;
             // 
             // frmHome
             // 
@@ -684,20 +591,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1146, 673);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel12);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(1146, 701);
+            this.Controls.Add(this.pnlChildForm);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHome";
@@ -706,6 +602,8 @@
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -726,13 +624,10 @@
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.pnlUsers.ResumeLayout(false);
+            this.pnlMenu.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
+            this.pnlUsers.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -740,11 +635,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblProductsNumber;
         private System.Windows.Forms.Panel panel3;
@@ -770,22 +660,19 @@
         private System.Windows.Forms.LinkLabel lblStoresInfo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblStoresNumber;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Panel pnlUsers;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnManageUsers;
         private System.Windows.Forms.Button btnUsers;
-        private System.Windows.Forms.Label lblExit;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel pnlChildForm;
     }
 }

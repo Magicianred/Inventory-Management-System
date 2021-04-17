@@ -10,6 +10,8 @@ namespace InventoryManagementApp.UserInterfaces
     public partial class frmHome : Form
     {
         private Administrator admin;
+        private Form activeForm = null;
+
         public frmHome(Administrator admin)
         {
             InitializeComponent();
@@ -42,16 +44,16 @@ namespace InventoryManagementApp.UserInterfaces
             frmManageProducts.Show();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmManageOrders frmManageOrders = new frmManageOrders();
-            frmManageOrders.Show();
-        }
-
         private void lblUsersInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmManageUsers frmManageUsers = new frmManageUsers();
             frmManageUsers.Show();
+        }
+
+        private void lblOrdersInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmManageOrders frmManageOrders = new frmManageOrders();
+            frmManageOrders.Show();
         }
 
         private void lblCustomersInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -60,14 +62,9 @@ namespace InventoryManagementApp.UserInterfaces
             frmManageCustomers.Show();
         }
 
-        private void lblStoresNumber_Click(object sender, EventArgs e)
+        private void lblStoresInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //StoresForm
-        }
-
-        private void btnUsers_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(pnlUsers);
+            //frmStores
         }
 
         private void ShowSubMenu(Panel subMenu)
@@ -91,6 +88,17 @@ namespace InventoryManagementApp.UserInterfaces
             }
         }
 
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlUsers);
+        }
+
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
             frmManageUsers frmManageUsers = new frmManageUsers();
@@ -98,9 +106,27 @@ namespace InventoryManagementApp.UserInterfaces
             hideSubMenues();
         }
 
-        private void lblExit_Click(object sender, EventArgs e)
+        private void btnAddUser_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //frmAddUser
+        }
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+
+            childForm.TopLevel = false;//child form will behave as a control
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            pnlChildForm.Controls.Add(childForm);
+            pnlChildForm.Tag = childForm;//associate form with the container panel
+            
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }

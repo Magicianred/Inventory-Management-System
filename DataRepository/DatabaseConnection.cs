@@ -21,6 +21,7 @@ namespace InventoryManagementApp.Data
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Status> Statuses { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
     }
