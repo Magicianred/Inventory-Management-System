@@ -162,5 +162,12 @@ namespace InventoryManagementApp.UserInterfaces
         {
             openChildForm(new frmManageOrders());
         }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+        }
     }
 }

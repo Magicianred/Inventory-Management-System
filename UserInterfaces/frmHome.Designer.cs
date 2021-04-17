@@ -769,6 +769,7 @@
             this.btnSignOut.Text = "Log Out ➔";
             this.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // frmHome
             // 
