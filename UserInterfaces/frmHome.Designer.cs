@@ -604,6 +604,7 @@
             this.btnCategories.Text = "Categories";
             this.btnCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategories.UseVisualStyleBackColor = true;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // btnBrands
             // 
@@ -619,6 +620,7 @@
             this.btnBrands.Text = "Brands";
             this.btnBrands.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBrands.UseVisualStyleBackColor = true;
+            this.btnBrands.Click += new System.EventHandler(this.btnBrands_Click);
             // 
             // btnStores
             // 
@@ -634,6 +636,7 @@
             this.btnStores.Text = "Stores";
             this.btnStores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStores.UseVisualStyleBackColor = true;
+            this.btnStores.Click += new System.EventHandler(this.btnStores_Click);
             // 
             // btnCustomers
             // 

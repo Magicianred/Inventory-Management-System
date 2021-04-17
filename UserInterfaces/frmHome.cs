@@ -131,6 +131,7 @@ namespace InventoryManagementApp.UserInterfaces
         {
             if(activeForm!=null)
                 activeForm.Close();
+            hideSubMenues();
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -168,6 +169,24 @@ namespace InventoryManagementApp.UserInterfaces
             this.Hide();
             frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmManageCategories());
+            hideSubMenues();
+        }
+
+        private void btnBrands_Click(object sender, EventArgs e)
+        {
+            //frmBrands
+            hideSubMenues();
+        }
+
+        private void btnStores_Click(object sender, EventArgs e)
+        {
+            //openChildForm(frmManageStores());
+            hideSubMenues();
         }
     }
 }
