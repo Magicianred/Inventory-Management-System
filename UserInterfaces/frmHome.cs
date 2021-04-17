@@ -82,10 +82,10 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void hideSubMenues()
         {
-            if (pnlUsers.Visible)
-            {
-                pnlUsers.Visible = false;
-            }
+            pnlUsers.Visible = false;
+            pnlProducts.Visible = false;
+            pnlCustomers.Visible = false;
+            pnlOrders.Visible = false;
         }
 
 
@@ -101,9 +101,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
-            frmManageUsers frmManageUsers = new frmManageUsers();
-            frmManageUsers.Show();
-            hideSubMenues();
+            openChildForm(new frmManageUsers());
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -127,6 +125,42 @@ namespace InventoryManagementApp.UserInterfaces
             
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            if(activeForm!=null)
+                activeForm.Close();
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlProducts);
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlCustomers);
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlOrders);
+        }
+
+        private void btnManageProducts_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmManageProducts());
+        }
+
+        private void btnManageCustomers_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmManageCustomers());
+        }
+
+        private void btnManageOrders_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmManageOrders());
         }
     }
 }
