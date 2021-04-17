@@ -47,7 +47,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblEmail.Location = new System.Drawing.Point(82, 364);
+            this.lblEmail.Location = new System.Drawing.Point(12, 194);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 29;
@@ -57,7 +57,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmail.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtEmail.Location = new System.Drawing.Point(82, 380);
+            this.txtEmail.Location = new System.Drawing.Point(12, 210);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(238, 20);
             this.txtEmail.TabIndex = 28;
@@ -67,7 +67,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnDelete.Location = new System.Drawing.Point(206, 326);
+            this.btnDelete.Location = new System.Drawing.Point(136, 305);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(111, 23);
             this.btnDelete.TabIndex = 27;
@@ -79,7 +79,7 @@
             this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEdit.Location = new System.Drawing.Point(82, 326);
+            this.btnEdit.Location = new System.Drawing.Point(12, 305);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(118, 23);
             this.btnEdit.TabIndex = 26;
@@ -91,7 +91,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAdd.Location = new System.Drawing.Point(82, 286);
+            this.btnAdd.Location = new System.Drawing.Point(12, 265);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(235, 34);
             this.btnAdd.TabIndex = 25;
@@ -102,7 +102,7 @@
             // 
             this.lblTelephone.AutoSize = true;
             this.lblTelephone.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblTelephone.Location = new System.Drawing.Point(79, 232);
+            this.lblTelephone.Location = new System.Drawing.Point(12, 146);
             this.lblTelephone.Name = "lblTelephone";
             this.lblTelephone.Size = new System.Drawing.Size(41, 13);
             this.lblTelephone.TabIndex = 24;
@@ -112,7 +112,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblPassword.Location = new System.Drawing.Point(79, 187);
+            this.lblPassword.Location = new System.Drawing.Point(12, 101);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(56, 13);
             this.lblPassword.TabIndex = 23;
@@ -122,7 +122,7 @@
             // 
             this.lblFullname.AutoSize = true;
             this.lblFullname.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFullname.Location = new System.Drawing.Point(79, 138);
+            this.lblFullname.Location = new System.Drawing.Point(12, 52);
             this.lblFullname.Name = "lblFullname";
             this.lblFullname.Size = new System.Drawing.Size(57, 13);
             this.lblFullname.TabIndex = 22;
@@ -132,7 +132,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblUsername.Location = new System.Drawing.Point(79, 95);
+            this.lblUsername.Location = new System.Drawing.Point(12, 9);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(58, 13);
             this.lblUsername.TabIndex = 21;
@@ -142,7 +142,7 @@
             // 
             this.txtTelephone.BackColor = System.Drawing.SystemColors.Window;
             this.txtTelephone.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtTelephone.Location = new System.Drawing.Point(79, 248);
+            this.txtTelephone.Location = new System.Drawing.Point(12, 162);
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.Size = new System.Drawing.Size(238, 20);
             this.txtTelephone.TabIndex = 20;
@@ -151,7 +151,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtPassword.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtPassword.Location = new System.Drawing.Point(79, 203);
+            this.txtPassword.Location = new System.Drawing.Point(12, 117);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(238, 20);
             this.txtPassword.TabIndex = 19;
@@ -160,7 +160,7 @@
             // 
             this.txtFullname.BackColor = System.Drawing.SystemColors.Window;
             this.txtFullname.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtFullname.Location = new System.Drawing.Point(79, 154);
+            this.txtFullname.Location = new System.Drawing.Point(12, 68);
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.Size = new System.Drawing.Size(238, 20);
             this.txtFullname.TabIndex = 18;
@@ -169,7 +169,7 @@
             // 
             this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
             this.txtUsername.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtUsername.Location = new System.Drawing.Point(79, 111);
+            this.txtUsername.Location = new System.Drawing.Point(12, 25);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(238, 20);
             this.txtUsername.TabIndex = 17;

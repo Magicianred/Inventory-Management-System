@@ -24,24 +24,24 @@ namespace InventoryManagementApp.Users
         {
             try
             {
-                if (ValidateUserData())
-                {
-                   InventoryManagementDb.DB.Users.Add(
-                        new User()
-                        {
-                            Username = txtUsername.Text,
-                            FullName = txtFullname.Text,
-                            Password = txtPassword.Text,
-                            Telephone = int.Parse(txtTelephone.Text),
-                            Email = txtEmail.Text
-                        });
-                    InventoryManagementDb.DB.SaveChanges();
+                //if (ValidateUserData())
+                //{
+                //   InventoryManagementDb.DB.Users.Add(
+                //        new User()
+                //        {
+                //            Username = txtUsername.Text,
+                //            FullName = txtFullname.Text,
+                //            Password = txtPassword.Text,
+                //            Telephone = int.Parse(txtTelephone.Text),
+                //            Email = txtEmail.Text
+                //        });
+                //    InventoryManagementDb.DB.SaveChanges();
 
-                    MessageBox.Show(Messages.SuccessfullyAdded);
+                //    MessageBox.Show(Messages.SuccessfullyAdded);
                     
-                    ClearData();
-                    LoadUsers();
-                }
+                //    ClearData();
+                //    LoadUsers();
+                //}
             }
             catch (Exception ex)
             {
@@ -51,15 +51,16 @@ namespace InventoryManagementApp.Users
 
         private bool ValidateUserData()
         {
-            return Validator.ValidateControl(txtUsername, err, Messages.RequiredField)
-             && Validator.ValidateControl(txtFullname, err, Messages.RequiredField)
-             && Validator.ValidateControl(txtPassword, err, Messages.RequiredField)
-             && Validator.ValidateNumber(txtTelephone, err, Messages.RequiredNumber);
+            return true;
+            //return Validator.ValidateControl(txtUsername, err, Messages.RequiredField)
+            // && Validator.ValidateControl(txtFullname, err, Messages.RequiredField)
+            // && Validator.ValidateControl(txtPassword, err, Messages.RequiredField)
+            // && Validator.ValidateNumber(txtTelephone, err, Messages.RequiredNumber);
         }
 
         private void ClearData()
         {
-            txtUsername.Text = txtFullname.Text = txtPassword.Text = txtTelephone.Text = ""; 
+           //txtUsername.Text = txtFullname.Text = txtPassword.Text = txtTelephone.Text = ""; 
         }
 
         private void frmManageUsers_Load(object sender, EventArgs e)
@@ -118,15 +119,15 @@ namespace InventoryManagementApp.Users
                 
                 if (ValidateUserData())
                 { 
-                    user.Username = txtUsername.Text;
-                    user.FullName = txtFullname.Text;
-                    user.Password = txtPassword.Text;
-                    user.Telephone = int.Parse(txtTelephone.Text);
-                    user.Email = txtEmail.Text;
+                    //user.Username = txtUsername.Text;
+                    //user.FullName = txtFullname.Text;
+                    //user.Password = txtPassword.Text;
+                    //user.Telephone = int.Parse(txtTelephone.Text);
+                    //user.Email = txtEmail.Text;
                     
-                    InventoryManagementDb.DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
-                    InventoryManagementDb.DB.SaveChanges();
-                    LoadUsers();
+                    //InventoryManagementDb.DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                    //InventoryManagementDb.DB.SaveChanges();
+                    //LoadUsers();
 
                     MessageBox.Show(Messages.SuccessfullyModified);
                     ClearData();
@@ -142,13 +143,13 @@ namespace InventoryManagementApp.Users
         {
             try
             {
-                var user = dgvUsers.SelectedRows[0].DataBoundItem as User;
+                //var user = dgvUsers.SelectedRows[0].DataBoundItem as User;
                
-                txtUsername.Text = user.Username;
-                txtFullname.Text = user.FullName;
-                txtPassword.Text = user.Password;
-                txtTelephone.Text = $"{user.Telephone}";
-                txtEmail.Text = user.Email;
+                //txtUsername.Text = user.Username;
+                //txtFullname.Text = user.FullName;
+                //txtPassword.Text = user.Password;
+                //txtTelephone.Text = $"{user.Telephone}";
+                //txtEmail.Text = user.Email;
             }
             catch (Exception ex)
             {

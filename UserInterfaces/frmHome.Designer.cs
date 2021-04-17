@@ -79,10 +79,10 @@
             this.btnUsers = new System.Windows.Forms.Button();
             this.pnlChildForm = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -101,10 +101,10 @@
             this.pnlUsers.SuspendLayout();
             this.pnlChildForm.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel16.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -156,7 +156,7 @@
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.lblCustomersNumber);
-            this.panel8.Location = new System.Drawing.Point(13, 16);
+            this.panel8.Location = new System.Drawing.Point(7, 7);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(257, 100);
             this.panel8.TabIndex = 24;
@@ -214,7 +214,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.lblProductsNumber);
-            this.panel2.Location = new System.Drawing.Point(16, 14);
+            this.panel2.Location = new System.Drawing.Point(7, 7);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(257, 100);
             this.panel2.TabIndex = 21;
@@ -272,7 +272,7 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.lblOrdersNumber);
-            this.panel4.Location = new System.Drawing.Point(15, 14);
+            this.panel4.Location = new System.Drawing.Point(6, 7);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(257, 100);
             this.panel4.TabIndex = 22;
@@ -330,7 +330,7 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.lblUsersNumber);
-            this.panel6.Location = new System.Drawing.Point(15, 16);
+            this.panel6.Location = new System.Drawing.Point(7, 7);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(257, 100);
             this.panel6.TabIndex = 23;
@@ -388,7 +388,7 @@
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.lblStoresNumber);
-            this.panel10.Location = new System.Drawing.Point(15, 14);
+            this.panel10.Location = new System.Drawing.Point(7, 7);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(257, 100);
             this.panel10.TabIndex = 25;
@@ -467,11 +467,11 @@
             // 
             // btnSignOut
             // 
-            this.btnSignOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSignOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSignOut.FlatAppearance.BorderSize = 0;
             this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignOut.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignOut.Location = new System.Drawing.Point(0, 570);
+            this.btnSignOut.Location = new System.Drawing.Point(0, 597);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSignOut.Size = new System.Drawing.Size(239, 38);
@@ -774,10 +774,10 @@
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlChildForm.Controls.Add(this.panel16);
-            this.pnlChildForm.Controls.Add(this.panel15);
+            this.pnlChildForm.Controls.Add(this.panel18);
             this.pnlChildForm.Controls.Add(this.panel14);
             this.pnlChildForm.Controls.Add(this.panel13);
+            this.pnlChildForm.Controls.Add(this.panel17);
             this.pnlChildForm.Controls.Add(this.panel12);
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(241, 81);
@@ -789,46 +789,46 @@
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
             this.panel12.Controls.Add(this.panel2);
-            this.panel12.Location = new System.Drawing.Point(77, 39);
+            this.panel12.Location = new System.Drawing.Point(151, 39);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(288, 129);
+            this.panel12.Size = new System.Drawing.Size(270, 114);
             this.panel12.TabIndex = 26;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel17.Controls.Add(this.panel4);
+            this.panel17.Location = new System.Drawing.Point(446, 39);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(270, 114);
+            this.panel17.TabIndex = 27;
             // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
-            this.panel13.Controls.Add(this.panel4);
-            this.panel13.Location = new System.Drawing.Point(392, 39);
+            this.panel13.Controls.Add(this.panel10);
+            this.panel13.Location = new System.Drawing.Point(744, 39);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(287, 129);
-            this.panel13.TabIndex = 27;
+            this.panel13.Size = new System.Drawing.Size(270, 114);
+            this.panel13.TabIndex = 28;
             // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
-            this.panel14.Controls.Add(this.panel10);
-            this.panel14.Location = new System.Drawing.Point(705, 39);
+            this.panel14.Controls.Add(this.panel6);
+            this.panel14.Location = new System.Drawing.Point(446, 176);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(287, 129);
-            this.panel14.TabIndex = 27;
+            this.panel14.Size = new System.Drawing.Size(270, 114);
+            this.panel14.TabIndex = 29;
             // 
-            // panel15
+            // panel18
             // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
-            this.panel15.Controls.Add(this.panel6);
-            this.panel15.Location = new System.Drawing.Point(392, 191);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(287, 130);
-            this.panel15.TabIndex = 28;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
-            this.panel16.Controls.Add(this.panel8);
-            this.panel16.Location = new System.Drawing.Point(707, 191);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(285, 131);
-            this.panel16.TabIndex = 27;
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel18.Controls.Add(this.panel8);
+            this.panel18.Location = new System.Drawing.Point(744, 176);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(270, 114);
+            this.panel18.TabIndex = 29;
             // 
             // frmHome
             // 
@@ -874,10 +874,10 @@
             this.pnlUsers.ResumeLayout(false);
             this.pnlChildForm.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -935,9 +935,9 @@
         private System.Windows.Forms.Button btnBrands;
         private System.Windows.Forms.Button btnCategories;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel17;
     }
 }

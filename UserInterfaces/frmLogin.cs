@@ -67,7 +67,8 @@ namespace InventoryManagementApp
                             return;
                         }
                     }
-                    MessageBox.Show(Messages.DataNotMatching);
+
+                    lblInvalidUserInput.Text = Messages.InvalidUserInput;
                 }
             }
             catch (Exception ex)
@@ -81,7 +82,7 @@ namespace InventoryManagementApp
             txtUsername.Text = txtPassword.Text = "";
         }
 
-        private void txtUsername_Click(object sender, EventArgs e)
+        private void pnlUsername_Enter(object sender, EventArgs e)
         {
             txtUsername.BackColor = Color.White;
             pnlUsername.BackColor = Color.White;
@@ -90,7 +91,7 @@ namespace InventoryManagementApp
             pnlPassword.BackColor = SystemColors.Control;
         }
 
-        private void txtPassword_Click(object sender, EventArgs e)
+        private void pnlPassword_Enter(object sender, EventArgs e)
         {
             txtPassword.BackColor = Color.White;
             pnlPassword.BackColor = Color.White;

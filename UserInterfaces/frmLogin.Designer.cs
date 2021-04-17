@@ -41,6 +41,7 @@
             this.lblSignUp = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblInvalidUserInput = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -96,7 +97,6 @@
             this.txtPassword.Size = new System.Drawing.Size(398, 14);
             this.txtPassword.TabIndex = 0;
             this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // txtUsername
             // 
@@ -108,7 +108,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(398, 17);
             this.txtUsername.TabIndex = 0;
-            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
             // 
             // err
             // 
@@ -191,6 +190,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lblInvalidUserInput);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label5);
@@ -203,8 +203,18 @@
             this.panel1.Controls.Add(this.cbShowPassword);
             this.panel1.Location = new System.Drawing.Point(310, -7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(468, 490);
+            this.panel1.Size = new System.Drawing.Size(466, 490);
             this.panel1.TabIndex = 1;
+            // 
+            // lblInvalidUserInput
+            // 
+            this.lblInvalidUserInput.AutoSize = true;
+            this.lblInvalidUserInput.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvalidUserInput.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidUserInput.Location = new System.Drawing.Point(47, 313);
+            this.lblInvalidUserInput.Name = "lblInvalidUserInput";
+            this.lblInvalidUserInput.Size = new System.Drawing.Size(0, 14);
+            this.lblInvalidUserInput.TabIndex = 16;
             // 
             // linkLabel1
             // 
@@ -262,7 +272,7 @@
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(50, 328);
+            this.btnSignIn.Location = new System.Drawing.Point(50, 335);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(164, 39);
             this.btnSignIn.TabIndex = 1;
@@ -279,6 +289,7 @@
             this.pnlPassword.Name = "pnlPassword";
             this.pnlPassword.Size = new System.Drawing.Size(465, 43);
             this.pnlPassword.TabIndex = 12;
+            this.pnlPassword.Enter += new System.EventHandler(this.pnlPassword_Enter);
             // 
             // pictureBox2
             // 
@@ -299,6 +310,7 @@
             this.pnlUsername.Name = "pnlUsername";
             this.pnlUsername.Size = new System.Drawing.Size(465, 43);
             this.pnlUsername.TabIndex = 5;
+            this.pnlUsername.Enter += new System.EventHandler(this.pnlUsername_Enter);
             // 
             // pictureBox1
             // 
@@ -358,8 +370,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.LinkLabel lblSignUp;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -374,6 +384,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblInvalidUserInput;
+        private System.Windows.Forms.LinkLabel lblSignUp;
+        private System.Windows.Forms.Label label3;
     }
 }
 

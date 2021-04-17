@@ -14,7 +14,7 @@ namespace InventoryManagementApp.Helpers
         public const string SuccessfullyDeleted = "Successfully deleted.";
         public const string SuccessfullyModified = "Data successfully modified.";
         public const string Delete = "Are You sure You want to delete?";
-        public const string DataNotMatching = "Data is not matching.";
+        public const string InvalidUserInput = "The username or password you entered is incorrect.";
         public const string Question = "Question";
 
 

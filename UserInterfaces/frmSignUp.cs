@@ -73,7 +73,7 @@ namespace InventoryManagementApp.UserInterfaces
             //add to validator
             if (!txtPassword.Text.Contains(passwordConfirmation))
             {
-                err.SetError(txtPasswordConfirmation, Messages.DataNotMatching);
+                err.SetError(txtPasswordConfirmation, Messages.InvalidUserInput);
                 passwordConfirmed = false;
                 return;
             }

@@ -104,7 +104,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            //frmAddUser
+            openChildForm(new frmAddUser());
         }
         private void openChildForm(Form childForm)
         {

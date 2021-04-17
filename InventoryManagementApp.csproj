@@ -77,6 +77,42 @@
     <Compile Include="DataRepository\InventoryManagementDb.cs" />
     <Compile Include="Helpers\Messages.cs" />
     <Compile Include="Helpers\Validator.cs" />
+    <Compile Include="UserInterfaces\frmAddBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddBrand.Designer.cs">
+      <DependentUpon>frmAddBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddCategory.Designer.cs">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddCustomer.Designer.cs">
+      <DependentUpon>frmAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddOrder.Designer.cs">
+      <DependentUpon>frmAddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddProduct.Designer.cs">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddStore.Designer.cs">
+      <DependentUpon>frmAddStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\frmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +170,9 @@
     <Compile Include="UserInterfaces\frmSignUp.Designer.cs">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\editIcon.jpg" />
+    <None Include="Resources\delete.jpg" />
+    <None Include="Resources\edit.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\user.jpg" />
     <None Include="Resources\passwordIcon.png" />
