@@ -19,7 +19,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void CustomizeDesign()
         {
-            pnlUsers.Visible = false;
+            hideSubMenues();
         }
 
         private void frmHome_Load(object sender, System.EventArgs e)
@@ -74,7 +74,7 @@ namespace InventoryManagementApp.UserInterfaces
         {
             if(!subMenu.Visible)
             {
-                hideSubMenu();
+                hideSubMenues();
                 subMenu.Visible = true;
             }
             else
@@ -83,7 +83,7 @@ namespace InventoryManagementApp.UserInterfaces
             }
         }
 
-        private void hideSubMenu()
+        private void hideSubMenues()
         {
             if (pnlUsers.Visible)
             {
@@ -95,7 +95,7 @@ namespace InventoryManagementApp.UserInterfaces
         {
             frmManageUsers frmManageUsers = new frmManageUsers();
             frmManageUsers.Show();
-            hideSubMenu();
+            hideSubMenues();
         }
 
         private void lblExit_Click(object sender, EventArgs e)

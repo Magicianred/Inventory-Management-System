@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblExit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -68,7 +69,14 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnManageUsers = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
-            this.lblExit = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -82,6 +90,8 @@
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.pnlUsers.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,6 +104,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1147, 123);
             this.panel1.TabIndex = 0;
+            // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.Color.White;
+            this.lblExit.Location = new System.Drawing.Point(1119, 0);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(28, 31);
+            this.lblExit.TabIndex = 11;
+            this.lblExit.Text = "x";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // label1
             // 
@@ -497,6 +520,10 @@
             // 
             this.panel12.BackColor = System.Drawing.Color.SteelBlue;
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.panel14);
+            this.panel12.Controls.Add(this.panel13);
+            this.panel12.Controls.Add(this.button3);
+            this.panel12.Controls.Add(this.button6);
             this.panel12.Controls.Add(this.pnlUsers);
             this.panel12.Controls.Add(this.btnUsers);
             this.panel12.Controls.Add(this.label14);
@@ -555,18 +582,101 @@
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
-            // lblExit
+            // panel13
             // 
-            this.lblExit.AutoSize = true;
-            this.lblExit.BackColor = System.Drawing.Color.SteelBlue;
-            this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExit.ForeColor = System.Drawing.Color.White;
-            this.lblExit.Location = new System.Drawing.Point(1119, 0);
-            this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(28, 31);
-            this.lblExit.TabIndex = 11;
-            this.lblExit.Text = "x";
-            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            this.panel13.BackColor = System.Drawing.Color.DimGray;
+            this.panel13.Controls.Add(this.button1);
+            this.panel13.Controls.Add(this.button2);
+            this.panel13.Location = new System.Drawing.Point(-1, 167);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(232, 76);
+            this.panel13.TabIndex = 33;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 37);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(232, 37);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Add User";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(232, 37);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Manage Users";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(-1, 128);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(232, 42);
+            this.button3.TabIndex = 32;
+            this.button3.Text = "Users";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.DimGray;
+            this.panel14.Controls.Add(this.button4);
+            this.panel14.Controls.Add(this.button5);
+            this.panel14.Location = new System.Drawing.Point(-1, 280);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(232, 76);
+            this.panel14.TabIndex = 35;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(0, 37);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(232, 37);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Add User";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(0, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(232, 37);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Manage Users";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(-1, 241);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(232, 42);
+            this.button6.TabIndex = 34;
+            this.button6.Text = "Users";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // frmHome
             // 
@@ -619,6 +729,8 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.pnlUsers.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,5 +779,13 @@
         private System.Windows.Forms.Button btnManageUsers;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Label lblExit;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
     }
 }

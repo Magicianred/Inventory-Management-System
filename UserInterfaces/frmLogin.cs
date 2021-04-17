@@ -57,9 +57,9 @@ namespace InventoryManagementApp
             {
                 if (ValidateAdminInput())
                 {
-                    foreach (var admin in InventoryManagementDb.DB.Administrators)//should be admin, not user
+                    foreach (var admin in InventoryManagementDb.DB.Administrators)
                     {
-                        if (txtUsername.Text == admin.Username && txtPassword.Text == admin.Password)
+                        if ((txtUsername.Text == admin.Username || txtUsername.Text == admin.Email) && txtPassword.Text == admin.Password)
                         {
                             frmHome frmHome = new frmHome(admin);
                             frmHome.ShowDialog();
