@@ -70,7 +70,7 @@
             this.label2.Location = new System.Drawing.Point(44, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(253, 31);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Login to your account";
             // 
             // cbShowPassword
@@ -81,7 +81,7 @@
             this.cbShowPassword.Location = new System.Drawing.Point(50, 290);
             this.cbShowPassword.Name = "cbShowPassword";
             this.cbShowPassword.Size = new System.Drawing.Size(101, 17);
-            this.cbShowPassword.TabIndex = 0;
+            this.cbShowPassword.TabIndex = 5;
             this.cbShowPassword.Text = "Show password";
             this.cbShowPassword.UseVisualStyleBackColor = false;
             this.cbShowPassword.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -90,24 +90,25 @@
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPassword.Location = new System.Drawing.Point(55, 13);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(398, 14);
+            this.txtPassword.Size = new System.Drawing.Size(398, 17);
             this.txtPassword.TabIndex = 0;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Text = "Password";
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtUsername.Location = new System.Drawing.Point(55, 15);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(398, 17);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "Username / e-mail";
             // 
             // err
             // 
@@ -125,7 +126,7 @@
             this.panel2.Location = new System.Drawing.Point(-9, -8);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 491);
-            this.panel2.TabIndex = 10;
+            this.panel2.TabIndex = 0;
             // 
             // label7
             // 
@@ -171,7 +172,7 @@
             this.lblSignUp.Location = new System.Drawing.Point(21, 462);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(58, 17);
-            this.lblSignUp.TabIndex = 0;
+            this.lblSignUp.TabIndex = 4;
             this.lblSignUp.TabStop = true;
             this.lblSignUp.Text = "Sign Up";
             this.lblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSignUp_LinkClicked);
@@ -184,7 +185,7 @@
             this.label3.Location = new System.Drawing.Point(21, 449);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 13);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Don\'t have an account?";
             // 
             // panel1
@@ -214,7 +215,7 @@
             this.lblInvalidUserInput.Location = new System.Drawing.Point(47, 313);
             this.lblInvalidUserInput.Name = "lblInvalidUserInput";
             this.lblInvalidUserInput.Size = new System.Drawing.Size(0, 14);
-            this.lblInvalidUserInput.TabIndex = 16;
+            this.lblInvalidUserInput.TabIndex = 5;
             // 
             // linkLabel1
             // 
@@ -227,7 +228,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(183, 463);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(86, 15);
-            this.linkLabel1.TabIndex = 2;
+            this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "ims@ims.com";
             // 
@@ -275,7 +276,7 @@
             this.btnSignIn.Location = new System.Drawing.Point(50, 335);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(164, 39);
-            this.btnSignIn.TabIndex = 1;
+            this.btnSignIn.TabIndex = 6;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
@@ -288,8 +289,9 @@
             this.pnlPassword.Location = new System.Drawing.Point(0, 241);
             this.pnlPassword.Name = "pnlPassword";
             this.pnlPassword.Size = new System.Drawing.Size(465, 43);
-            this.pnlPassword.TabIndex = 12;
+            this.pnlPassword.TabIndex = 4;
             this.pnlPassword.Enter += new System.EventHandler(this.pnlPassword_Enter);
+            this.pnlPassword.Leave += new System.EventHandler(this.pnlPassword_Leave);
             // 
             // pictureBox2
             // 
@@ -303,14 +305,15 @@
             // 
             // pnlUsername
             // 
-            this.pnlUsername.BackColor = System.Drawing.Color.White;
+            this.pnlUsername.BackColor = System.Drawing.SystemColors.Control;
             this.pnlUsername.Controls.Add(this.pictureBox1);
             this.pnlUsername.Controls.Add(this.txtUsername);
             this.pnlUsername.Location = new System.Drawing.Point(0, 192);
             this.pnlUsername.Name = "pnlUsername";
             this.pnlUsername.Size = new System.Drawing.Size(465, 43);
-            this.pnlUsername.TabIndex = 5;
+            this.pnlUsername.TabIndex = 3;
             this.pnlUsername.Enter += new System.EventHandler(this.pnlUsername_Enter);
+            this.pnlUsername.Leave += new System.EventHandler(this.pnlUsername_Leave);
             // 
             // pictureBox1
             // 
@@ -330,7 +333,7 @@
             this.lblExit.Location = new System.Drawing.Point(433, 1);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(28, 31);
-            this.lblExit.TabIndex = 3;
+            this.lblExit.TabIndex = 1;
             this.lblExit.Text = "x";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 

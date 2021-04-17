@@ -12,6 +12,7 @@ namespace InventoryManagementApp
         public frmLogin()
         {
             InitializeComponent();
+            cbShowPassword.Enabled = false;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -89,6 +90,12 @@ namespace InventoryManagementApp
 
             txtPassword.BackColor = SystemColors.Control;
             pnlPassword.BackColor = SystemColors.Control;
+
+            if (txtUsername.Text == "Username / e-mail")
+            {
+                txtUsername.Text = "";
+                txtUsername.ForeColor = Color.SteelBlue;
+            }
         }
 
         private void pnlPassword_Enter(object sender, EventArgs e)
@@ -98,6 +105,41 @@ namespace InventoryManagementApp
 
             txtUsername.BackColor = SystemColors.Control;
             pnlUsername.BackColor = SystemColors.Control;
+
+            if (txtPassword.Text == "Password")
+            {
+                txtPassword.Text = "";
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.ForeColor = Color.SteelBlue;
+                cbShowPassword.Enabled = true;
+            }
+        }
+
+        private void pnlUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "Username / e-mail";
+                txtUsername.ForeColor = SystemColors.InactiveCaption;
+            }
+
+            txtUsername.BackColor = SystemColors.Control;
+            pnlUsername.BackColor = SystemColors.Control;
+        }
+
+        private void pnlPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                cbShowPassword.Checked = false;
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.Text = "Password";
+                txtPassword.ForeColor = SystemColors.InactiveCaption;
+                cbShowPassword.Enabled = false;
+            }
+
+            txtPassword.BackColor = SystemColors.Control;
+            pnlPassword.BackColor = SystemColors.Control;
         }
     }
 }

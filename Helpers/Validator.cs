@@ -12,7 +12,7 @@ namespace InventoryManagementApp.Helpers
         public static bool ValidateControl(Control control, ErrorProvider err, string message)
         {
             bool _setError = false;
-            if (control is TextBox && string.IsNullOrEmpty(control.Text))
+            if (control is TextBox && (string.IsNullOrEmpty(control.Text) || control.Text=="Password" || control.Text=="Username / e-mail"))
                 _setError = true;
             else if (control is ComboBox && (string.IsNullOrEmpty((control as ComboBox).Text) || (control as ComboBox).SelectedIndex < 0))
                 _setError = true;

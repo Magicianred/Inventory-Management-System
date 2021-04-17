@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using InventoryManagementApp.DataClasses;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InventoryManagementApp.Users
 {
@@ -11,5 +12,6 @@ namespace InventoryManagementApp.Users
         public string Password { get; set; }
         public int Telephone { get; set; }
         public string Email { get; set; }
+        public virtual Gender Gender { get; set; }
     }
 }

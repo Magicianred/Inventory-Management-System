@@ -69,6 +69,7 @@
     <Compile Include="DataClasses\Brand.cs" />
     <Compile Include="DataClasses\Category.cs" />
     <Compile Include="DataClasses\Customer.cs" />
+    <Compile Include="DataClasses\Gender.cs" />
     <Compile Include="DataClasses\Order.cs" />
     <Compile Include="DataClasses\Product.cs" />
     <Compile Include="DataClasses\Status.cs" />
