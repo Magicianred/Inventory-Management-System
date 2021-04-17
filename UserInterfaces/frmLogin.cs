@@ -63,6 +63,7 @@ namespace InventoryManagementApp
                         {
                             frmHome frmHome = new frmHome(admin);
                             frmHome.ShowDialog();
+                            ClearUserInput();
                             return;
                         }
                     }
@@ -73,6 +74,11 @@ namespace InventoryManagementApp
             {
                 Messages.HandleException(ex);
             }
+        }
+
+        private void ClearUserInput()
+        {
+            txtUsername.Text = txtPassword.Text = "";
         }
 
         private void txtUsername_Click(object sender, EventArgs e)

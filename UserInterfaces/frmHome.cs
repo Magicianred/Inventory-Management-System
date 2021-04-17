@@ -40,26 +40,24 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void lblMoreProductInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmManageProducts frmManageProducts = new frmManageProducts();
-            frmManageProducts.Show();
+            openChildForm(new frmManageProducts());
         }
 
         private void lblUsersInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmManageUsers frmManageUsers = new frmManageUsers();
-            frmManageUsers.Show();
+            openChildForm(new frmManageUsers());
         }
 
         private void lblOrdersInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmManageOrders frmManageOrders = new frmManageOrders();
-            frmManageOrders.Show();
+            openChildForm(new frmManageOrders());
+
         }
 
         private void lblCustomersInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmManageCustomers frmManageCustomers = new frmManageCustomers();
-            frmManageCustomers.Show();
+            openChildForm(new frmManageCustomers());
+
         }
 
         private void lblStoresInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

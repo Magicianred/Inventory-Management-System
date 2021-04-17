@@ -32,7 +32,8 @@ namespace InventoryManagementApp.Users
                             Username = txtUsername.Text,
                             FullName = txtFullname.Text,
                             Password = txtPassword.Text,
-                            Telephone = int.Parse(txtTelephone.Text)
+                            Telephone = int.Parse(txtTelephone.Text),
+                            Email = txtEmail.Text
                         });
                     InventoryManagementDb.DB.SaveChanges();
 
@@ -121,6 +122,7 @@ namespace InventoryManagementApp.Users
                     user.FullName = txtFullname.Text;
                     user.Password = txtPassword.Text;
                     user.Telephone = int.Parse(txtTelephone.Text);
+                    user.Email = txtEmail.Text;
                     
                     InventoryManagementDb.DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
                     InventoryManagementDb.DB.SaveChanges();
@@ -146,6 +148,7 @@ namespace InventoryManagementApp.Users
                 txtFullname.Text = user.FullName;
                 txtPassword.Text = user.Password;
                 txtTelephone.Text = $"{user.Telephone}";
+                txtEmail.Text = user.Email;
             }
             catch (Exception ex)
             {

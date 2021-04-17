@@ -69,7 +69,7 @@
             this.label2.Location = new System.Drawing.Point(44, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(253, 31);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Login to your account";
             // 
             // cbShowPassword
@@ -80,7 +80,7 @@
             this.cbShowPassword.Location = new System.Drawing.Point(50, 290);
             this.cbShowPassword.Name = "cbShowPassword";
             this.cbShowPassword.Size = new System.Drawing.Size(101, 17);
-            this.cbShowPassword.TabIndex = 2;
+            this.cbShowPassword.TabIndex = 0;
             this.cbShowPassword.Text = "Show password";
             this.cbShowPassword.UseVisualStyleBackColor = false;
             this.cbShowPassword.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -94,7 +94,7 @@
             this.txtPassword.Location = new System.Drawing.Point(55, 13);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(398, 14);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 0;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
@@ -172,7 +172,7 @@
             this.lblSignUp.Location = new System.Drawing.Point(21, 462);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(58, 17);
-            this.lblSignUp.TabIndex = 4;
+            this.lblSignUp.TabIndex = 0;
             this.lblSignUp.TabStop = true;
             this.lblSignUp.Text = "Sign Up";
             this.lblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSignUp_LinkClicked);
@@ -204,7 +204,7 @@
             this.panel1.Location = new System.Drawing.Point(310, -7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(468, 490);
-            this.panel1.TabIndex = 11;
+            this.panel1.TabIndex = 1;
             // 
             // linkLabel1
             // 
@@ -217,7 +217,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(183, 463);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(86, 15);
-            this.linkLabel1.TabIndex = 16;
+            this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "ims@ims.com";
             // 
@@ -265,7 +265,7 @@
             this.btnSignIn.Location = new System.Drawing.Point(50, 328);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(164, 39);
-            this.btnSignIn.TabIndex = 3;
+            this.btnSignIn.TabIndex = 1;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
@@ -298,7 +298,7 @@
             this.pnlUsername.Location = new System.Drawing.Point(0, 192);
             this.pnlUsername.Name = "pnlUsername";
             this.pnlUsername.Size = new System.Drawing.Size(465, 43);
-            this.pnlUsername.TabIndex = 11;
+            this.pnlUsername.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -318,7 +318,7 @@
             this.lblExit.Location = new System.Drawing.Point(433, 1);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(28, 31);
-            this.lblExit.TabIndex = 10;
+            this.lblExit.TabIndex = 3;
             this.lblExit.Text = "x";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 

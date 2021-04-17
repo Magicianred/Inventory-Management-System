@@ -57,6 +57,18 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lblStoresNumber = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnSignOut = new System.Windows.Forms.Button();
+            this.pnlOrders = new System.Windows.Forms.Panel();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.btnManageOrders = new System.Windows.Forms.Button();
+            this.btnOrders = new System.Windows.Forms.Button();
+            this.pnlCustomers = new System.Windows.Forms.Panel();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.btnManageCustomers = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnStores = new System.Windows.Forms.Button();
+            this.btnBrands = new System.Windows.Forms.Button();
+            this.btnCategories = new System.Windows.Forms.Button();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnManageProducts = new System.Windows.Forms.Button();
@@ -66,18 +78,11 @@
             this.btnManageUsers = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.btnCategories = new System.Windows.Forms.Button();
-            this.btnBrands = new System.Windows.Forms.Button();
-            this.btnStores = new System.Windows.Forms.Button();
-            this.btnCustomers = new System.Windows.Forms.Button();
-            this.pnlCustomers = new System.Windows.Forms.Panel();
-            this.btnAddCustomer = new System.Windows.Forms.Button();
-            this.btnManageCustomers = new System.Windows.Forms.Button();
-            this.btnOrders = new System.Windows.Forms.Button();
-            this.pnlOrders = new System.Windows.Forms.Panel();
-            this.btnAddOrder = new System.Windows.Forms.Button();
-            this.btnManageOrders = new System.Windows.Forms.Button();
-            this.btnSignOut = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -90,11 +95,16 @@
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.pnlMenu.SuspendLayout();
+            this.pnlOrders.SuspendLayout();
+            this.pnlCustomers.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.pnlUsers.SuspendLayout();
             this.pnlChildForm.SuspendLayout();
-            this.pnlCustomers.SuspendLayout();
-            this.pnlOrders.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -142,11 +152,11 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.Red;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(42)))), ((int)(((byte)(34)))));
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.lblCustomersNumber);
-            this.panel8.Location = new System.Drawing.Point(741, 189);
+            this.panel8.Location = new System.Drawing.Point(13, 16);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(257, 100);
             this.panel8.TabIndex = 24;
@@ -204,7 +214,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.lblProductsNumber);
-            this.panel2.Location = new System.Drawing.Point(145, 46);
+            this.panel2.Location = new System.Drawing.Point(16, 14);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(257, 100);
             this.panel2.TabIndex = 21;
@@ -262,7 +272,7 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.lblOrdersNumber);
-            this.panel4.Location = new System.Drawing.Point(445, 46);
+            this.panel4.Location = new System.Drawing.Point(15, 14);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(257, 100);
             this.panel4.TabIndex = 22;
@@ -316,18 +326,18 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Orange;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(156)))), ((int)(((byte)(87)))));
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.lblUsersNumber);
-            this.panel6.Location = new System.Drawing.Point(445, 189);
+            this.panel6.Location = new System.Drawing.Point(15, 16);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(257, 100);
             this.panel6.TabIndex = 23;
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(129)))), ((int)(((byte)(41)))));
             this.panel7.Controls.Add(this.lblUsersInfo);
             this.panel7.Location = new System.Drawing.Point(-11, 79);
             this.panel7.Name = "panel7";
@@ -378,7 +388,7 @@
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.lblStoresNumber);
-            this.panel10.Location = new System.Drawing.Point(741, 46);
+            this.panel10.Location = new System.Drawing.Point(15, 14);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(257, 100);
             this.panel10.TabIndex = 25;
@@ -454,6 +464,190 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(241, 637);
             this.pnlMenu.TabIndex = 29;
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSignOut.FlatAppearance.BorderSize = 0;
+            this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignOut.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignOut.Location = new System.Drawing.Point(0, 570);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSignOut.Size = new System.Drawing.Size(239, 38);
+            this.btnSignOut.TabIndex = 36;
+            this.btnSignOut.Text = "Log Out ➔";
+            this.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // pnlOrders
+            // 
+            this.pnlOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            this.pnlOrders.Controls.Add(this.btnAddOrder);
+            this.pnlOrders.Controls.Add(this.btnManageOrders);
+            this.pnlOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOrders.Location = new System.Drawing.Point(0, 494);
+            this.pnlOrders.Name = "pnlOrders";
+            this.pnlOrders.Size = new System.Drawing.Size(239, 76);
+            this.pnlOrders.TabIndex = 35;
+            // 
+            // btnAddOrder
+            // 
+            this.btnAddOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            this.btnAddOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddOrder.FlatAppearance.BorderSize = 0;
+            this.btnAddOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOrder.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddOrder.Location = new System.Drawing.Point(0, 38);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAddOrder.Size = new System.Drawing.Size(239, 38);
+            this.btnAddOrder.TabIndex = 1;
+            this.btnAddOrder.Text = "Add Order";
+            this.btnAddOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddOrder.UseVisualStyleBackColor = false;
+            // 
+            // btnManageOrders
+            // 
+            this.btnManageOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            this.btnManageOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageOrders.FlatAppearance.BorderSize = 0;
+            this.btnManageOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageOrders.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageOrders.Location = new System.Drawing.Point(0, 0);
+            this.btnManageOrders.Name = "btnManageOrders";
+            this.btnManageOrders.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnManageOrders.Size = new System.Drawing.Size(239, 38);
+            this.btnManageOrders.TabIndex = 0;
+            this.btnManageOrders.Text = "Manage Orders";
+            this.btnManageOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageOrders.UseVisualStyleBackColor = false;
+            this.btnManageOrders.Click += new System.EventHandler(this.btnManageOrders_Click);
+            // 
+            // btnOrders
+            // 
+            this.btnOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrders.FlatAppearance.BorderSize = 0;
+            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrders.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.Location = new System.Drawing.Point(0, 456);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnOrders.Size = new System.Drawing.Size(239, 38);
+            this.btnOrders.TabIndex = 34;
+            this.btnOrders.Text = "Orders";
+            this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
+            // 
+            // pnlCustomers
+            // 
+            this.pnlCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            this.pnlCustomers.Controls.Add(this.btnAddCustomer);
+            this.pnlCustomers.Controls.Add(this.btnManageCustomers);
+            this.pnlCustomers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCustomers.Location = new System.Drawing.Point(0, 380);
+            this.pnlCustomers.Name = "pnlCustomers";
+            this.pnlCustomers.Size = new System.Drawing.Size(239, 76);
+            this.pnlCustomers.TabIndex = 33;
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            this.btnAddCustomer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomer.Location = new System.Drawing.Point(0, 38);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAddCustomer.Size = new System.Drawing.Size(239, 38);
+            this.btnAddCustomer.TabIndex = 1;
+            this.btnAddCustomer.Text = "Add Customer";
+            this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            // 
+            // btnManageCustomers
+            // 
+            this.btnManageCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            this.btnManageCustomers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageCustomers.FlatAppearance.BorderSize = 0;
+            this.btnManageCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageCustomers.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageCustomers.Location = new System.Drawing.Point(0, 0);
+            this.btnManageCustomers.Name = "btnManageCustomers";
+            this.btnManageCustomers.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnManageCustomers.Size = new System.Drawing.Size(239, 38);
+            this.btnManageCustomers.TabIndex = 0;
+            this.btnManageCustomers.Text = "Manage Customers";
+            this.btnManageCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageCustomers.UseVisualStyleBackColor = false;
+            this.btnManageCustomers.Click += new System.EventHandler(this.btnManageCustomers_Click);
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCustomers.FlatAppearance.BorderSize = 0;
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomers.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.Location = new System.Drawing.Point(0, 342);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCustomers.Size = new System.Drawing.Size(239, 38);
+            this.btnCustomers.TabIndex = 32;
+            this.btnCustomers.Text = "Customers";
+            this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            // 
+            // btnStores
+            // 
+            this.btnStores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStores.FlatAppearance.BorderSize = 0;
+            this.btnStores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStores.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStores.Location = new System.Drawing.Point(0, 304);
+            this.btnStores.Name = "btnStores";
+            this.btnStores.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnStores.Size = new System.Drawing.Size(239, 38);
+            this.btnStores.TabIndex = 31;
+            this.btnStores.Text = "Stores";
+            this.btnStores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStores.UseVisualStyleBackColor = true;
+            this.btnStores.Click += new System.EventHandler(this.btnStores_Click);
+            // 
+            // btnBrands
+            // 
+            this.btnBrands.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBrands.FlatAppearance.BorderSize = 0;
+            this.btnBrands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrands.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrands.Location = new System.Drawing.Point(0, 266);
+            this.btnBrands.Name = "btnBrands";
+            this.btnBrands.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBrands.Size = new System.Drawing.Size(239, 38);
+            this.btnBrands.TabIndex = 30;
+            this.btnBrands.Text = "Brands";
+            this.btnBrands.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBrands.UseVisualStyleBackColor = true;
+            this.btnBrands.Click += new System.EventHandler(this.btnBrands_Click);
+            // 
+            // btnCategories
+            // 
+            this.btnCategories.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategories.FlatAppearance.BorderSize = 0;
+            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategories.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategories.Location = new System.Drawing.Point(0, 228);
+            this.btnCategories.Name = "btnCategories";
+            this.btnCategories.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCategories.Size = new System.Drawing.Size(239, 38);
+            this.btnCategories.TabIndex = 29;
+            this.btnCategories.Text = "Categories";
+            this.btnCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategories.UseVisualStyleBackColor = true;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // pnlProducts
             // 
@@ -562,6 +756,7 @@
             // 
             // btnUsers
             // 
+            this.btnUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
             this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsers.FlatAppearance.BorderSize = 0;
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -573,206 +768,67 @@
             this.btnUsers.TabIndex = 1;
             this.btnUsers.Text = "Users";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.UseVisualStyleBackColor = false;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // pnlChildForm
             // 
-            this.pnlChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(230)))));
-            this.pnlChildForm.Controls.Add(this.panel6);
-            this.pnlChildForm.Controls.Add(this.panel2);
-            this.pnlChildForm.Controls.Add(this.panel10);
-            this.pnlChildForm.Controls.Add(this.panel4);
-            this.pnlChildForm.Controls.Add(this.panel8);
+            this.pnlChildForm.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlChildForm.Controls.Add(this.panel16);
+            this.pnlChildForm.Controls.Add(this.panel15);
+            this.pnlChildForm.Controls.Add(this.panel14);
+            this.pnlChildForm.Controls.Add(this.panel13);
+            this.pnlChildForm.Controls.Add(this.panel12);
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(241, 81);
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(1039, 637);
             this.pnlChildForm.TabIndex = 30;
             // 
-            // btnCategories
+            // panel12
             // 
-            this.btnCategories.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategories.FlatAppearance.BorderSize = 0;
-            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategories.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategories.Location = new System.Drawing.Point(0, 228);
-            this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCategories.Size = new System.Drawing.Size(239, 38);
-            this.btnCategories.TabIndex = 29;
-            this.btnCategories.Text = "Categories";
-            this.btnCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategories.UseVisualStyleBackColor = true;
-            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel12.Controls.Add(this.panel2);
+            this.panel12.Location = new System.Drawing.Point(77, 39);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(288, 129);
+            this.panel12.TabIndex = 26;
             // 
-            // btnBrands
+            // panel13
             // 
-            this.btnBrands.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBrands.FlatAppearance.BorderSize = 0;
-            this.btnBrands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrands.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrands.Location = new System.Drawing.Point(0, 266);
-            this.btnBrands.Name = "btnBrands";
-            this.btnBrands.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnBrands.Size = new System.Drawing.Size(239, 38);
-            this.btnBrands.TabIndex = 30;
-            this.btnBrands.Text = "Brands";
-            this.btnBrands.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBrands.UseVisualStyleBackColor = true;
-            this.btnBrands.Click += new System.EventHandler(this.btnBrands_Click);
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel13.Controls.Add(this.panel4);
+            this.panel13.Location = new System.Drawing.Point(392, 39);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(287, 129);
+            this.panel13.TabIndex = 27;
             // 
-            // btnStores
+            // panel14
             // 
-            this.btnStores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStores.FlatAppearance.BorderSize = 0;
-            this.btnStores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStores.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStores.Location = new System.Drawing.Point(0, 304);
-            this.btnStores.Name = "btnStores";
-            this.btnStores.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnStores.Size = new System.Drawing.Size(239, 38);
-            this.btnStores.TabIndex = 31;
-            this.btnStores.Text = "Stores";
-            this.btnStores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStores.UseVisualStyleBackColor = true;
-            this.btnStores.Click += new System.EventHandler(this.btnStores_Click);
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel14.Controls.Add(this.panel10);
+            this.panel14.Location = new System.Drawing.Point(705, 39);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(287, 129);
+            this.panel14.TabIndex = 27;
             // 
-            // btnCustomers
+            // panel15
             // 
-            this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCustomers.FlatAppearance.BorderSize = 0;
-            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.Location = new System.Drawing.Point(0, 342);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCustomers.Size = new System.Drawing.Size(239, 38);
-            this.btnCustomers.TabIndex = 32;
-            this.btnCustomers.Text = "Customers";
-            this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomers.UseVisualStyleBackColor = true;
-            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel15.Controls.Add(this.panel6);
+            this.panel15.Location = new System.Drawing.Point(392, 191);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(287, 130);
+            this.panel15.TabIndex = 28;
             // 
-            // pnlCustomers
+            // panel16
             // 
-            this.pnlCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            this.pnlCustomers.Controls.Add(this.btnAddCustomer);
-            this.pnlCustomers.Controls.Add(this.btnManageCustomers);
-            this.pnlCustomers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlCustomers.Location = new System.Drawing.Point(0, 380);
-            this.pnlCustomers.Name = "pnlCustomers";
-            this.pnlCustomers.Size = new System.Drawing.Size(239, 76);
-            this.pnlCustomers.TabIndex = 33;
-            // 
-            // btnAddCustomer
-            // 
-            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            this.btnAddCustomer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
-            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomer.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomer.Location = new System.Drawing.Point(0, 38);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAddCustomer.Size = new System.Drawing.Size(239, 38);
-            this.btnAddCustomer.TabIndex = 1;
-            this.btnAddCustomer.Text = "Add Customer";
-            this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCustomer.UseVisualStyleBackColor = false;
-            // 
-            // btnManageCustomers
-            // 
-            this.btnManageCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            this.btnManageCustomers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManageCustomers.FlatAppearance.BorderSize = 0;
-            this.btnManageCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageCustomers.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageCustomers.Location = new System.Drawing.Point(0, 0);
-            this.btnManageCustomers.Name = "btnManageCustomers";
-            this.btnManageCustomers.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnManageCustomers.Size = new System.Drawing.Size(239, 38);
-            this.btnManageCustomers.TabIndex = 0;
-            this.btnManageCustomers.Text = "Manage Customers";
-            this.btnManageCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManageCustomers.UseVisualStyleBackColor = false;
-            this.btnManageCustomers.Click += new System.EventHandler(this.btnManageCustomers_Click);
-            // 
-            // btnOrders
-            // 
-            this.btnOrders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOrders.FlatAppearance.BorderSize = 0;
-            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrders.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrders.Location = new System.Drawing.Point(0, 456);
-            this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnOrders.Size = new System.Drawing.Size(239, 38);
-            this.btnOrders.TabIndex = 34;
-            this.btnOrders.Text = "Orders";
-            this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrders.UseVisualStyleBackColor = true;
-            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
-            // 
-            // pnlOrders
-            // 
-            this.pnlOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            this.pnlOrders.Controls.Add(this.btnAddOrder);
-            this.pnlOrders.Controls.Add(this.btnManageOrders);
-            this.pnlOrders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlOrders.Location = new System.Drawing.Point(0, 494);
-            this.pnlOrders.Name = "pnlOrders";
-            this.pnlOrders.Size = new System.Drawing.Size(239, 76);
-            this.pnlOrders.TabIndex = 35;
-            // 
-            // btnAddOrder
-            // 
-            this.btnAddOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            this.btnAddOrder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddOrder.FlatAppearance.BorderSize = 0;
-            this.btnAddOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddOrder.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrder.Location = new System.Drawing.Point(0, 38);
-            this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAddOrder.Size = new System.Drawing.Size(239, 38);
-            this.btnAddOrder.TabIndex = 1;
-            this.btnAddOrder.Text = "Add Order";
-            this.btnAddOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddOrder.UseVisualStyleBackColor = false;
-            // 
-            // btnManageOrders
-            // 
-            this.btnManageOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            this.btnManageOrders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManageOrders.FlatAppearance.BorderSize = 0;
-            this.btnManageOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageOrders.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageOrders.Location = new System.Drawing.Point(0, 0);
-            this.btnManageOrders.Name = "btnManageOrders";
-            this.btnManageOrders.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnManageOrders.Size = new System.Drawing.Size(239, 38);
-            this.btnManageOrders.TabIndex = 0;
-            this.btnManageOrders.Text = "Manage Orders";
-            this.btnManageOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManageOrders.UseVisualStyleBackColor = false;
-            this.btnManageOrders.Click += new System.EventHandler(this.btnManageOrders_Click);
-            // 
-            // btnSignOut
-            // 
-            this.btnSignOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSignOut.FlatAppearance.BorderSize = 0;
-            this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignOut.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignOut.Location = new System.Drawing.Point(0, 570);
-            this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSignOut.Size = new System.Drawing.Size(239, 38);
-            this.btnSignOut.TabIndex = 36;
-            this.btnSignOut.Text = "Log Out ➔";
-            this.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSignOut.UseVisualStyleBackColor = true;
-            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel16.Controls.Add(this.panel8);
+            this.panel16.Location = new System.Drawing.Point(707, 191);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(285, 131);
+            this.panel16.TabIndex = 27;
             // 
             // frmHome
             // 
@@ -812,11 +868,16 @@
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
+            this.pnlOrders.ResumeLayout(false);
+            this.pnlCustomers.ResumeLayout(false);
             this.pnlProducts.ResumeLayout(false);
             this.pnlUsers.ResumeLayout(false);
             this.pnlChildForm.ResumeLayout(false);
-            this.pnlCustomers.ResumeLayout(false);
-            this.pnlOrders.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -873,5 +934,10 @@
         private System.Windows.Forms.Button btnStores;
         private System.Windows.Forms.Button btnBrands;
         private System.Windows.Forms.Button btnCategories;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel13;
     }
 }

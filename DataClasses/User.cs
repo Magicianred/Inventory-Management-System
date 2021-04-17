@@ -10,6 +10,6 @@ namespace InventoryManagementApp.Users
         public string FullName { get; set; }
         public string Password { get; set; }
         public int Telephone { get; set; }
-        //add email
+        public string Email { get; set; }
     }
 }

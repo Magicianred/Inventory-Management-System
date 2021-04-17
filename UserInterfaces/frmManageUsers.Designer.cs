@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -51,36 +49,17 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel1.SuspendLayout();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1026, 61);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(31, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Manage Users";
             // 
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
             this.txtUsername.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtUsername.Location = new System.Drawing.Point(12, 92);
+            this.txtUsername.Location = new System.Drawing.Point(12, 147);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(238, 20);
             this.txtUsername.TabIndex = 1;
@@ -89,7 +68,7 @@
             // 
             this.txtFullname.BackColor = System.Drawing.SystemColors.Window;
             this.txtFullname.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtFullname.Location = new System.Drawing.Point(12, 135);
+            this.txtFullname.Location = new System.Drawing.Point(12, 190);
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.Size = new System.Drawing.Size(238, 20);
             this.txtFullname.TabIndex = 2;
@@ -98,7 +77,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtPassword.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtPassword.Location = new System.Drawing.Point(12, 184);
+            this.txtPassword.Location = new System.Drawing.Point(12, 239);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(238, 20);
             this.txtPassword.TabIndex = 3;
@@ -107,7 +86,7 @@
             // 
             this.txtTelephone.BackColor = System.Drawing.SystemColors.Window;
             this.txtTelephone.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtTelephone.Location = new System.Drawing.Point(12, 229);
+            this.txtTelephone.Location = new System.Drawing.Point(12, 284);
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.Size = new System.Drawing.Size(238, 20);
             this.txtTelephone.TabIndex = 4;
@@ -116,7 +95,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblUsername.Location = new System.Drawing.Point(12, 76);
+            this.lblUsername.Location = new System.Drawing.Point(12, 131);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(58, 13);
             this.lblUsername.TabIndex = 5;
@@ -126,7 +105,7 @@
             // 
             this.lblFullname.AutoSize = true;
             this.lblFullname.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFullname.Location = new System.Drawing.Point(12, 119);
+            this.lblFullname.Location = new System.Drawing.Point(12, 174);
             this.lblFullname.Name = "lblFullname";
             this.lblFullname.Size = new System.Drawing.Size(57, 13);
             this.lblFullname.TabIndex = 6;
@@ -136,7 +115,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblPassword.Location = new System.Drawing.Point(12, 168);
+            this.lblPassword.Location = new System.Drawing.Point(12, 223);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(56, 13);
             this.lblPassword.TabIndex = 7;
@@ -146,7 +125,7 @@
             // 
             this.lblTelephone.AutoSize = true;
             this.lblTelephone.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblTelephone.Location = new System.Drawing.Point(12, 213);
+            this.lblTelephone.Location = new System.Drawing.Point(12, 268);
             this.lblTelephone.Name = "lblTelephone";
             this.lblTelephone.Size = new System.Drawing.Size(41, 13);
             this.lblTelephone.TabIndex = 8;
@@ -180,7 +159,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsers.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvUsers.Location = new System.Drawing.Point(270, 76);
+            this.dgvUsers.Location = new System.Drawing.Point(326, 131);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -223,7 +202,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAdd.Location = new System.Drawing.Point(15, 267);
+            this.btnAdd.Location = new System.Drawing.Point(15, 322);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(235, 34);
             this.btnAdd.TabIndex = 11;
@@ -236,7 +215,7 @@
             this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEdit.Location = new System.Drawing.Point(15, 307);
+            this.btnEdit.Location = new System.Drawing.Point(15, 362);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(118, 23);
             this.btnEdit.TabIndex = 12;
@@ -249,7 +228,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnDelete.Location = new System.Drawing.Point(139, 307);
+            this.btnDelete.Location = new System.Drawing.Point(139, 362);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(111, 23);
             this.btnDelete.TabIndex = 13;
@@ -262,7 +241,7 @@
             this.btnHome.BackColor = System.Drawing.Color.SteelBlue;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnHome.Location = new System.Drawing.Point(15, 452);
+            this.btnHome.Location = new System.Drawing.Point(15, 507);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(235, 44);
             this.btnHome.TabIndex = 14;
@@ -273,11 +252,32 @@
             // 
             this.err.ContainerControl = this;
             // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblEmail.Location = new System.Drawing.Point(15, 400);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 16;
+            this.lblEmail.Text = "Email:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtEmail.Location = new System.Drawing.Point(15, 416);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(238, 20);
+            this.txtEmail.TabIndex = 15;
+            // 
             // frmManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 614);
+            this.ClientSize = new System.Drawing.Size(1039, 637);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -291,15 +291,12 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtFullname);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management";
             this.Load += new System.EventHandler(this.frmManageUsers_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
@@ -308,9 +305,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtFullname;
         private System.Windows.Forms.TextBox txtPassword;
@@ -329,5 +323,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telephone;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }
