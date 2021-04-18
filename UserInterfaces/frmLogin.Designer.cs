@@ -100,7 +100,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.SystemColors.InactiveCaption;
@@ -305,7 +305,7 @@
             // 
             // pnlUsername
             // 
-            this.pnlUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlUsername.BackColor = System.Drawing.Color.White;
             this.pnlUsername.Controls.Add(this.pictureBox1);
             this.pnlUsername.Controls.Add(this.txtUsername);
             this.pnlUsername.Location = new System.Drawing.Point(0, 192);
