@@ -49,5 +49,25 @@ namespace InventoryManagementApp.Helpers
             err.Clear();
             return true;
         }
+
+        public static bool ValidatePassword(Control control, Control controlConfirmation, ErrorProvider err, string message)
+        {
+
+            bool _setError = false;
+            
+
+            if (controlConfirmation is TextBox && (string.IsNullOrEmpty(controlConfirmation.Text) || !control.Text.Contains(controlConfirmation.Text)))
+            {
+                _setError = true;
+            }
+
+            if (_setError)
+            {
+                err.SetError(controlConfirmation, message);
+                return false;
+            }
+            err.Clear();
+            return true;
+        }
     }
 }

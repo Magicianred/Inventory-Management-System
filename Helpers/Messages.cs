@@ -16,7 +16,7 @@ namespace InventoryManagementApp.Helpers
         public const string Delete = "Are You sure You want to delete?";
         public const string InvalidUserInput = "The username or password you entered is incorrect.";
         public const string Question = "Question";
-
+        public const string DataNotMatching = "Data is not matching.";
 
         public static void HandleException(Exception ex)
         {

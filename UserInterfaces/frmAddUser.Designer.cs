@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -37,18 +38,22 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtTelephone = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtFullname = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbGenders = new System.Windows.Forms.ComboBox();
+            this.lblEvidentUser = new System.Windows.Forms.Label();
+            this.txtPasswordConfirmation = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsers = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblEvidentUser = new System.Windows.Forms.Label();
-            this.cmbGenders = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblOperationInfo = new System.Windows.Forms.Label();
+            this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -56,20 +61,21 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblEmail.Location = new System.Drawing.Point(14, 278);
+            this.lblEmail.Location = new System.Drawing.Point(14, 180);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(40, 16);
-            this.lblEmail.TabIndex = 29;
+            this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtEmail.Location = new System.Drawing.Point(17, 294);
+            this.txtEmail.Location = new System.Drawing.Point(17, 196);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(975, 23);
-            this.txtEmail.TabIndex = 28;
+            this.txtEmail.Size = new System.Drawing.Size(975, 16);
+            this.txtEmail.TabIndex = 2;
             // 
             // btnSave
             // 
@@ -81,9 +87,10 @@
             this.btnSave.Location = new System.Drawing.Point(17, 453);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(158, 34);
-            this.btnSave.TabIndex = 25;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblTelephone
             // 
@@ -93,7 +100,7 @@
             this.lblTelephone.Location = new System.Drawing.Point(17, 330);
             this.lblTelephone.Name = "lblTelephone";
             this.lblTelephone.Size = new System.Drawing.Size(45, 16);
-            this.lblTelephone.TabIndex = 24;
+            this.lblTelephone.TabIndex = 15;
             this.lblTelephone.Text = "Phone:";
             // 
             // lblPassword
@@ -101,10 +108,10 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblPassword.Location = new System.Drawing.Point(17, 176);
+            this.lblPassword.Location = new System.Drawing.Point(17, 227);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(61, 16);
-            this.lblPassword.TabIndex = 23;
+            this.lblPassword.TabIndex = 13;
             this.lblPassword.Text = "Password:";
             // 
             // lblFullname
@@ -112,10 +119,10 @@
             this.lblFullname.AutoSize = true;
             this.lblFullname.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullname.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFullname.Location = new System.Drawing.Point(17, 128);
+            this.lblFullname.Location = new System.Drawing.Point(17, 87);
             this.lblFullname.Name = "lblFullname";
             this.lblFullname.Size = new System.Drawing.Size(65, 16);
-            this.lblFullname.TabIndex = 22;
+            this.lblFullname.TabIndex = 10;
             this.lblFullname.Text = "Full Name:";
             // 
             // lblUsername
@@ -123,61 +130,69 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblUsername.Location = new System.Drawing.Point(17, 78);
+            this.lblUsername.Location = new System.Drawing.Point(17, 132);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(64, 16);
-            this.lblUsername.TabIndex = 21;
+            this.lblUsername.TabIndex = 11;
             this.lblUsername.Text = "Username:";
             // 
             // txtTelephone
             // 
-            this.txtTelephone.BackColor = System.Drawing.SystemColors.Window;
+            this.txtTelephone.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTelephone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelephone.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtTelephone.Location = new System.Drawing.Point(17, 346);
             this.txtTelephone.Name = "txtTelephone";
-            this.txtTelephone.Size = new System.Drawing.Size(248, 23);
-            this.txtTelephone.TabIndex = 20;
+            this.txtTelephone.Size = new System.Drawing.Size(248, 16);
+            this.txtTelephone.TabIndex = 6;
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtPassword.Location = new System.Drawing.Point(17, 192);
+            this.txtPassword.Location = new System.Drawing.Point(17, 243);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(975, 23);
-            this.txtPassword.TabIndex = 19;
+            this.txtPassword.Size = new System.Drawing.Size(975, 14);
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // txtFullname
+            // txtFullName
             // 
-            this.txtFullname.BackColor = System.Drawing.SystemColors.Window;
-            this.txtFullname.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtFullname.Location = new System.Drawing.Point(17, 144);
-            this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(975, 23);
-            this.txtFullname.TabIndex = 18;
+            this.txtFullName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFullName.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtFullName.Location = new System.Drawing.Point(17, 103);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(975, 16);
+            this.txtFullName.TabIndex = 0;
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
+            this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtUsername.Location = new System.Drawing.Point(17, 94);
+            this.txtUsername.Location = new System.Drawing.Point(17, 148);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(975, 23);
-            this.txtUsername.TabIndex = 17;
+            this.txtUsername.Size = new System.Drawing.Size(975, 16);
+            this.txtUsername.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cbShowPassword);
+            this.panel1.Controls.Add(this.lblOperationInfo);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cmbGenders);
             this.panel1.Controls.Add(this.lblEvidentUser);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtPasswordConfirmation);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Controls.Add(this.txtFullname);
+            this.panel1.Controls.Add(this.txtFullName);
             this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtEmail);
@@ -189,7 +204,78 @@
             this.panel1.Location = new System.Drawing.Point(12, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 535);
-            this.panel1.TabIndex = 30;
+            this.panel1.TabIndex = 0;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnClear.Location = new System.Drawing.Point(181, 453);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(84, 34);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label4.Location = new System.Drawing.Point(17, 378);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Gender:";
+            // 
+            // cmbGenders
+            // 
+            this.cmbGenders.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbGenders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbGenders.FormattingEnabled = true;
+            this.cmbGenders.Location = new System.Drawing.Point(17, 394);
+            this.cmbGenders.Name = "cmbGenders";
+            this.cmbGenders.Size = new System.Drawing.Size(248, 24);
+            this.cmbGenders.TabIndex = 7;
+            // 
+            // lblEvidentUser
+            // 
+            this.lblEvidentUser.AutoSize = true;
+            this.lblEvidentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvidentUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblEvidentUser.Location = new System.Drawing.Point(425, 17);
+            this.lblEvidentUser.Name = "lblEvidentUser";
+            this.lblEvidentUser.Size = new System.Drawing.Size(85, 22);
+            this.lblEvidentUser.TabIndex = 18;
+            this.lblEvidentUser.Text = "Add User";
+            // 
+            // txtPasswordConfirmation
+            // 
+            this.txtPasswordConfirmation.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPasswordConfirmation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPasswordConfirmation.Font = new System.Drawing.Font("Microsoft Tai Le", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordConfirmation.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtPasswordConfirmation.Location = new System.Drawing.Point(17, 294);
+            this.txtPasswordConfirmation.Name = "txtPasswordConfirmation";
+            this.txtPasswordConfirmation.Size = new System.Drawing.Size(975, 14);
+            this.txtPasswordConfirmation.TabIndex = 4;
+            this.txtPasswordConfirmation.UseSystemPasswordChar = true;
+            this.txtPasswordConfirmation.TextChanged += new System.EventHandler(this.txtPasswordConfirmation_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(17, 278);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 16);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Confirm Password:";
             // 
             // label1
             // 
@@ -213,69 +299,32 @@
             this.lblUsers.TabIndex = 32;
             this.lblUsers.Text = "Users";
             // 
-            // textBox1
+            // err
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.Location = new System.Drawing.Point(17, 243);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(975, 23);
-            this.textBox1.TabIndex = 30;
+            this.err.ContainerControl = this;
             // 
-            // label2
+            // lblOperationInfo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(17, 227);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 16);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Confirm Password:";
+            this.lblOperationInfo.AutoSize = true;
+            this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblOperationInfo.Location = new System.Drawing.Point(17, 502);
+            this.lblOperationInfo.Name = "lblOperationInfo";
+            this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
+            this.lblOperationInfo.TabIndex = 17;
             // 
-            // lblEvidentUser
+            // cbShowPassword
             // 
-            this.lblEvidentUser.AutoSize = true;
-            this.lblEvidentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvidentUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.lblEvidentUser.Location = new System.Drawing.Point(425, 17);
-            this.lblEvidentUser.Name = "lblEvidentUser";
-            this.lblEvidentUser.Size = new System.Drawing.Size(85, 22);
-            this.lblEvidentUser.TabIndex = 33;
-            this.lblEvidentUser.Text = "Add User";
-            // 
-            // cmbGenders
-            // 
-            this.cmbGenders.FormattingEnabled = true;
-            this.cmbGenders.Location = new System.Drawing.Point(17, 394);
-            this.cmbGenders.Name = "cmbGenders";
-            this.cmbGenders.Size = new System.Drawing.Size(248, 24);
-            this.cmbGenders.TabIndex = 33;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(17, 378);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 16);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Gender:";
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.btnClear.FlatAppearance.BorderSize = 0;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClear.Location = new System.Drawing.Point(181, 453);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(84, 34);
-            this.btnClear.TabIndex = 35;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.cbShowPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.cbShowPassword.Location = new System.Drawing.Point(883, 316);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(109, 20);
+            this.cbShowPassword.TabIndex = 5;
+            this.cbShowPassword.Text = "Show password";
+            this.cbShowPassword.UseVisualStyleBackColor = false;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // frmAddUser
             // 
@@ -293,6 +342,7 @@
             this.Load += new System.EventHandler(this.frmAddUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,16 +359,19 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtTelephone;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtFullname;
+        private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsers;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPasswordConfirmation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEvidentUser;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbGenders;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ErrorProvider err;
+        private System.Windows.Forms.Label lblOperationInfo;
+        private System.Windows.Forms.CheckBox cbShowPassword;
     }
 }

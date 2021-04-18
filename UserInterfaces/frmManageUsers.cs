@@ -24,24 +24,7 @@ namespace InventoryManagementApp.Users
         {
             try
             {
-                //if (ValidateUserData())
-                //{
-                //   InventoryManagementDb.DB.Users.Add(
-                //        new User()
-                //        {
-                //            Username = txtUsername.Text,
-                //            FullName = txtFullname.Text,
-                //            Password = txtPassword.Text,
-                //            Telephone = int.Parse(txtTelephone.Text),
-                //            Email = txtEmail.Text
-                //        });
-                //    InventoryManagementDb.DB.SaveChanges();
-
-                //    MessageBox.Show(Messages.SuccessfullyAdded);
-                    
-                //    ClearData();
-                //    LoadUsers();
-                //}
+                
             }
             catch (Exception ex)
             {
@@ -49,19 +32,6 @@ namespace InventoryManagementApp.Users
             }
         }
 
-        private bool ValidateUserData()
-        {
-            return true;
-            //return Validator.ValidateControl(txtUsername, err, Messages.RequiredField)
-            // && Validator.ValidateControl(txtFullname, err, Messages.RequiredField)
-            // && Validator.ValidateControl(txtPassword, err, Messages.RequiredField)
-            // && Validator.ValidateNumber(txtTelephone, err, Messages.RequiredNumber);
-        }
-
-        private void ClearData()
-        {
-           //txtUsername.Text = txtFullname.Text = txtPassword.Text = txtTelephone.Text = ""; 
-        }
 
         private void frmManageUsers_Load(object sender, EventArgs e)
         {
@@ -113,30 +83,30 @@ namespace InventoryManagementApp.Users
         private void btnEdit_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                var user = dgvUsers.SelectedRows[0].DataBoundItem as User;//TO-DO: make sure it's the same user(data of the selected user) 
+            //try
+            //{
+            //    var user = dgvUsers.SelectedRows[0].DataBoundItem as User;//TO-DO: make sure it's the same user(data of the selected user) 
                 
-                if (ValidateUserData())
-                { 
-                    //user.Username = txtUsername.Text;
-                    //user.FullName = txtFullname.Text;
-                    //user.Password = txtPassword.Text;
-                    //user.Telephone = int.Parse(txtTelephone.Text);
-                    //user.Email = txtEmail.Text;
+            //    if (ValidateUserData())
+            //    { 
+            //        //user.Username = txtUsername.Text;
+            //        //user.FullName = txtFullname.Text;
+            //        //user.Password = txtPassword.Text;
+            //        //user.Telephone = int.Parse(txtTelephone.Text);
+            //        //user.Email = txtEmail.Text;
                     
-                    //InventoryManagementDb.DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
-                    //InventoryManagementDb.DB.SaveChanges();
-                    //LoadUsers();
+            //        //InventoryManagementDb.DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
+            //        //InventoryManagementDb.DB.SaveChanges();
+            //        //LoadUsers();
 
-                    MessageBox.Show(Messages.SuccessfullyModified);
-                    ClearData();
-                }
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
+            //        MessageBox.Show(Messages.SuccessfullyModified);
+            //        ClearData();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Messages.HandleException(ex);
+            //}
         }
 
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
