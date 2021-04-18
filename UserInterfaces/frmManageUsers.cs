@@ -1,5 +1,6 @@
 ﻿using InventoryManagementApp.Data;
 using InventoryManagementApp.Helpers;
+using InventoryManagementApp.UserInterfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace InventoryManagementApp.Users
 {
     public partial class frmManageUsers : Form
     {
+        private Form activeForm = null;
         public frmManageUsers()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace InventoryManagementApp.Users
         {
             try
             {
-                
+                openChildForm(new frmAddUser());
             }
             catch (Exception ex)
             {
@@ -125,6 +127,25 @@ namespace InventoryManagementApp.Users
             {
                 Messages.HandleException(ex);
             }
+        }
+
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            pnlChildForm.Controls.Add(childForm);
+            pnlChildForm.Tag = childForm;
+
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }
