@@ -40,6 +40,8 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 dgvProducts.DataSource = null;
                 dgvProducts.DataSource = products ?? InventoryManagementDb.DB.Products.ToList();
+
+                lblProductsNumber.Text = $"{(dgvProducts.DataSource as List<Product>).Count()} products";
             }
             catch (Exception ex)
             {
