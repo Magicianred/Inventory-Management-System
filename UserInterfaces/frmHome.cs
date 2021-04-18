@@ -186,5 +186,10 @@ namespace InventoryManagementApp.UserInterfaces
             //openChildForm(frmManageStores());
             hideSubMenues();
         }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmAddProduct());
+        }
     }
 }

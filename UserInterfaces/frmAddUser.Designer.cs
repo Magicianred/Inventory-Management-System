@@ -41,17 +41,16 @@
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbShowPassword = new System.Windows.Forms.CheckBox();
+            this.lblOperationInfo = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbGenders = new System.Windows.Forms.ComboBox();
             this.lblEvidentUser = new System.Windows.Forms.Label();
             this.txtPasswordConfirmation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblUsers = new System.Windows.Forms.Label();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblOperationInfo = new System.Windows.Forms.Label();
-            this.cbShowPassword = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
@@ -206,6 +205,29 @@
             this.panel1.Size = new System.Drawing.Size(1015, 535);
             this.panel1.TabIndex = 0;
             // 
+            // cbShowPassword
+            // 
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.cbShowPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.cbShowPassword.Location = new System.Drawing.Point(883, 316);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(109, 20);
+            this.cbShowPassword.TabIndex = 5;
+            this.cbShowPassword.Text = "Show password";
+            this.cbShowPassword.UseVisualStyleBackColor = false;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
+            // 
+            // lblOperationInfo
+            // 
+            this.lblOperationInfo.AutoSize = true;
+            this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblOperationInfo.Location = new System.Drawing.Point(17, 502);
+            this.lblOperationInfo.Name = "lblOperationInfo";
+            this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
+            this.lblOperationInfo.TabIndex = 17;
+            // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
@@ -277,54 +299,20 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Confirm Password:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(13, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 22);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Manage";
-            // 
-            // lblUsers
-            // 
-            this.lblUsers.AutoSize = true;
-            this.lblUsers.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsers.ForeColor = System.Drawing.Color.Gray;
-            this.lblUsers.Location = new System.Drawing.Point(89, 33);
-            this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(41, 16);
-            this.lblUsers.TabIndex = 32;
-            this.lblUsers.Text = "Users";
-            // 
             // err
             // 
             this.err.ContainerControl = this;
             // 
-            // lblOperationInfo
+            // label3
             // 
-            this.lblOperationInfo.AutoSize = true;
-            this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblOperationInfo.Location = new System.Drawing.Point(17, 502);
-            this.lblOperationInfo.Name = "lblOperationInfo";
-            this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
-            this.lblOperationInfo.TabIndex = 17;
-            // 
-            // cbShowPassword
-            // 
-            this.cbShowPassword.AutoSize = true;
-            this.cbShowPassword.BackColor = System.Drawing.Color.Transparent;
-            this.cbShowPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.cbShowPassword.Location = new System.Drawing.Point(883, 316);
-            this.cbShowPassword.Name = "cbShowPassword";
-            this.cbShowPassword.Size = new System.Drawing.Size(109, 20);
-            this.cbShowPassword.TabIndex = 5;
-            this.cbShowPassword.Text = "Show password";
-            this.cbShowPassword.UseVisualStyleBackColor = false;
-            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(25, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 21);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Users";
             // 
             // frmAddUser
             // 
@@ -332,8 +320,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1039, 637);
-            this.Controls.Add(this.lblUsers);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddUser";
@@ -362,8 +349,6 @@
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblUsers;
         private System.Windows.Forms.TextBox txtPasswordConfirmation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEvidentUser;
@@ -373,5 +358,6 @@
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Label lblOperationInfo;
         private System.Windows.Forms.CheckBox cbShowPassword;
+        private System.Windows.Forms.Label label3;
     }
 }

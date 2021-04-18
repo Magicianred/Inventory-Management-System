@@ -185,6 +185,9 @@
     <None Include="Resources\products.png" />
     <None Include="Resources\customers.png" />
     <None Include="Resources\users.png" />
+    <EmbeddedResource Include="UserInterfaces\frmAddProduct.resx">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>

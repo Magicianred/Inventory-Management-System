@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryManagementApp.DataClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace InventoryManagementApp.UserInterfaces
 {
     public partial class frmAddProduct : Form
     {
+        private Product product;
+
         public frmAddProduct()
         {
             InitializeComponent();
+        }
+
+        public frmAddProduct(Product product)
+        {
+            this.product = product;
         }
     }
 }

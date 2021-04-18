@@ -78,11 +78,11 @@
             this.btnManageUsers = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -100,11 +100,11 @@
             this.pnlProducts.SuspendLayout();
             this.pnlUsers.SuspendLayout();
             this.pnlChildForm.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -675,6 +675,7 @@
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnManageProducts
             // 
@@ -785,32 +786,14 @@
             this.pnlChildForm.Size = new System.Drawing.Size(1039, 637);
             this.pnlChildForm.TabIndex = 30;
             // 
-            // panel12
+            // panel18
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
-            this.panel12.Controls.Add(this.panel2);
-            this.panel12.Location = new System.Drawing.Point(151, 39);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(270, 114);
-            this.panel12.TabIndex = 26;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
-            this.panel17.Controls.Add(this.panel4);
-            this.panel17.Location = new System.Drawing.Point(446, 39);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(270, 114);
-            this.panel17.TabIndex = 27;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
-            this.panel13.Controls.Add(this.panel10);
-            this.panel13.Location = new System.Drawing.Point(744, 39);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(270, 114);
-            this.panel13.TabIndex = 28;
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel18.Controls.Add(this.panel8);
+            this.panel18.Location = new System.Drawing.Point(744, 176);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(270, 114);
+            this.panel18.TabIndex = 29;
             // 
             // panel14
             // 
@@ -821,14 +804,32 @@
             this.panel14.Size = new System.Drawing.Size(270, 114);
             this.panel14.TabIndex = 29;
             // 
-            // panel18
+            // panel13
             // 
-            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
-            this.panel18.Controls.Add(this.panel8);
-            this.panel18.Location = new System.Drawing.Point(744, 176);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(270, 114);
-            this.panel18.TabIndex = 29;
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel13.Controls.Add(this.panel10);
+            this.panel13.Location = new System.Drawing.Point(744, 39);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(270, 114);
+            this.panel13.TabIndex = 28;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel17.Controls.Add(this.panel4);
+            this.panel17.Location = new System.Drawing.Point(446, 39);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(270, 114);
+            this.panel17.TabIndex = 27;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(219)))));
+            this.panel12.Controls.Add(this.panel2);
+            this.panel12.Location = new System.Drawing.Point(151, 39);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(270, 114);
+            this.panel12.TabIndex = 26;
             // 
             // frmHome
             // 
@@ -873,11 +874,11 @@
             this.pnlProducts.ResumeLayout(false);
             this.pnlUsers.ResumeLayout(false);
             this.pnlChildForm.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

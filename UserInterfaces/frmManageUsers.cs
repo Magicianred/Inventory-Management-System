@@ -33,6 +33,8 @@ namespace InventoryManagementApp.Users
             {
                 dgvUsers.DataSource = null;
                 dgvUsers.DataSource = users ?? InventoryManagementDb.DB.Users.ToList();
+
+                lblUsersNumber.Text = $"{(dgvUsers.DataSource as List<User>).Count()} users";
             }
             catch (Exception ex)
             {
@@ -67,35 +69,6 @@ namespace InventoryManagementApp.Users
             {
                 Messages.HandleException(ex);
             }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-
-            //try
-            //{
-            //    var user = dgvUsers.SelectedRows[0].DataBoundItem as User;//TO-DO: make sure it's the same user(data of the selected user) 
-                
-            //    if (ValidateUserData())
-            //    { 
-            //        //user.Username = txtUsername.Text;
-            //        //user.FullName = txtFullname.Text;
-            //        //user.Password = txtPassword.Text;
-            //        //user.Telephone = int.Parse(txtTelephone.Text);
-            //        //user.Email = txtEmail.Text;
-                    
-            //        //InventoryManagementDb.DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
-            //        //InventoryManagementDb.DB.SaveChanges();
-            //        //LoadUsers();
-
-            //        MessageBox.Show(Messages.SuccessfullyModified);
-            //        ClearData();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Messages.HandleException(ex);
-            //}
         }
 
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)

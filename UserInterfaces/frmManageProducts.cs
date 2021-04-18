@@ -18,6 +18,7 @@ namespace InventoryManagementApp.UserInterfaces
         public frmManageProducts()
         {
             InitializeComponent();
+            dgvProducts.AutoGenerateColumns = false;
         }
 
         private void frmManageProducts_Load(object sender, EventArgs e)
@@ -28,10 +29,6 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void LoadCategories()
         {
-            cmbCategories.DataSource = InventoryManagementDb.DB.Categories.ToList();
-            cmbCategories.ValueMember = "Id";
-            cmbCategories.DisplayMember = "CategoryName";
-
             cmbCategorySearch.DataSource = InventoryManagementDb.DB.Categories.ToList();
             cmbCategorySearch.ValueMember = "Id";
             cmbCategorySearch.DisplayMember = "CategoryName";
@@ -56,23 +53,23 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 if (ValidateProductData())
                 {
-                    var category = cmbCategories.SelectedItem as Category;
+                    //var category = cmbCategories.SelectedItem as Category;
 
-                    InventoryManagementDb.DB.Products.Add(
-                         new Product()
-                         {
-                             ProductName = txtProductName.Text,
-                             ProductQuantity = int.Parse(txtProductQuantity.Text),
-                             ProductPrice = int.Parse(txtProductPrice.Text),
-                             Description = txtDescription.Text,
-                             Category = category
-                         });
-                    InventoryManagementDb.DB.SaveChanges();
+                    //InventoryManagementDb.DB.Products.Add(
+                    //     new Product()
+                    //     {
+                    //         ProductName = txtProductName.Text,
+                    //         ProductQuantity = int.Parse(txtProductQuantity.Text),
+                    //         ProductPrice = int.Parse(txtProductPrice.Text),
+                    //         Description = txtDescription.Text,
+                    //         Category = category
+                    //     });
+                    //InventoryManagementDb.DB.SaveChanges();
 
-                    MessageBox.Show(Messages.SuccessfullyAdded);
+                    //MessageBox.Show(Messages.SuccessfullyAdded);
 
-                    ClearData();
-                    LoadProducts();
+                    //ClearData();
+                    //LoadProducts();
                 }
             }
             catch (Exception ex)
@@ -83,15 +80,16 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void ClearData()
         {
-            txtProductName.Text = txtProductQuantity.Text = txtProductPrice.Text = txtDescription.Text = "";
+            //txtProductName.Text = txtProductQuantity.Text = txtProductPrice.Text = txtDescription.Text = "";
         }
 
         private bool ValidateProductData()
         {
-            return Validator.ValidateControl(txtProductName, err, Messages.RequiredField)
-                && Validator.ValidateControl(txtDescription, err, Messages.RequiredField)
-                && Validator.ValidateNumber(txtProductQuantity, err, Messages.RequiredNumber)
-                && Validator.ValidateNumber(txtProductPrice, err, Messages.RequiredNumber);
+            return true;
+            //return Validator.ValidateControl(txtProductName, err, Messages.RequiredField)
+            //    && Validator.ValidateControl(txtDescription, err, Messages.RequiredField)
+            //    && Validator.ValidateNumber(txtProductQuantity, err, Messages.RequiredNumber)
+            //    && Validator.ValidateNumber(txtProductPrice, err, Messages.RequiredNumber);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -102,19 +100,19 @@ namespace InventoryManagementApp.UserInterfaces
                                                                                       //TO-DD: You can't add new data and overwrite existing object, new form for adding and editing!!!
                 if (ValidateProductData())
                 {
-                    product.ProductName = txtProductName.Text;
-                    product.ProductQuantity = int.Parse(txtProductQuantity.Text);
-                    product.ProductPrice = int.Parse(txtProductPrice.Text);
-                    product.Description = txtDescription.Text;
-                    product.Category = (cmbCategories.SelectedItem as Category);
+                    //product.ProductName = txtProductName.Text;
+                    //product.ProductQuantity = int.Parse(txtProductQuantity.Text);
+                    //product.ProductPrice = int.Parse(txtProductPrice.Text);
+                    //product.Description = txtDescription.Text;
+                    //product.Category = (cmbCategories.SelectedItem as Category);
 
-                    InventoryManagementDb.DB.Entry(product).State = System.Data.Entity.EntityState.Modified;
-                    InventoryManagementDb.DB.SaveChanges();
+                    //InventoryManagementDb.DB.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                    //InventoryManagementDb.DB.SaveChanges();
 
-                    LoadProducts();
+                    //LoadProducts();
 
-                    MessageBox.Show(Messages.SuccessfullyModified);
-                    ClearData();
+                    //MessageBox.Show(Messages.SuccessfullyModified);
+                    //ClearData();
                 }
             }
             catch (Exception ex)
@@ -157,12 +155,25 @@ namespace InventoryManagementApp.UserInterfaces
             try
             {
                 var product = dgvProducts.SelectedRows[0].DataBoundItem as Product;
+                if (e.ColumnIndex == 5)
+                {
+                    frmAddProduct frmAddProduct = new frmAddProduct(product);
+                    frmAddProduct.Show();
+                }
+                if (e.ColumnIndex == 6
+                    && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    == DialogResult.Yes)
+                {
+                    InventoryManagementDb.DB.Products.Remove(product);
+                    InventoryManagementDb.DB.SaveChanges();
+                }
 
-                txtProductName.Text = product.ProductName;
-                txtProductQuantity.Text = $"{product.ProductQuantity}";  
-                txtProductPrice.Text = $"{product.ProductPrice}";
-                txtDescription.Text = product.Description;
-                cmbCategories.SelectedValue = product.Category.Id; 
+                LoadProducts();
+                //txtProductName.Text = product.ProductName;
+                //txtProductQuantity.Text = $"{product.ProductQuantity}";  
+                //txtProductPrice.Text = $"{product.ProductPrice}";
+                //txtDescription.Text = product.Description;
+                //cmbCategories.SelectedValue = product.Category.Id; 
             }
             catch (Exception ex)
             {
