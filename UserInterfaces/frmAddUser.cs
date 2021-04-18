@@ -25,11 +25,17 @@ namespace InventoryManagementApp.UserInterfaces
             InitializeComponent();
         }
 
+        public frmAddUser(User user) : this()
+        {
+            this.user = user;
+        }
+
         private void frmAddUser_Load(object sender, EventArgs e)
         {
             if (user != null)
             {
                 lblEvidentUser.Text = "Edit User Info";
+                LoadUserData();
             }
             else
             {
@@ -37,6 +43,15 @@ namespace InventoryManagementApp.UserInterfaces
             }
 
             LoadGenders();
+        }
+
+        private void LoadUserData()
+        {
+            txtFullName.Text = user.FullName;
+            txtUsername.Text = user.Username;
+            txtEmail.Text = user.Email;
+            txtTelephone.Text = $"{user.Telephone}";
+            txtEmail.Text = user.Email;
         }
 
         private void LoadGenders()

@@ -36,19 +36,17 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblUsers = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.lblOperationInfo = new System.Windows.Forms.Label();
-            this.lblEvidentUser = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblUsersNumber = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblEvidentUser = new System.Windows.Forms.Label();
+            this.lblUsersNumber = new System.Windows.Forms.Label();
+            this.lblOperationInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.pnlChildForm.SuspendLayout();
@@ -127,21 +125,6 @@
             this.Delete.ReadOnly = true;
             this.Delete.Width = 50;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAdd.Location = new System.Drawing.Point(18, 61);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(108, 34);
-            this.btnAdd.TabIndex = 11;
-            this.btnAdd.Text = "Add User";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // err
             // 
             this.err.ContainerControl = this;
@@ -165,69 +148,39 @@
             // lblUsers
             // 
             this.lblUsers.AutoSize = true;
-            this.lblUsers.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsers.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsers.ForeColor = System.Drawing.Color.Gray;
-            this.lblUsers.Location = new System.Drawing.Point(87, 26);
+            this.lblUsers.Location = new System.Drawing.Point(34, 34);
             this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(41, 16);
+            this.lblUsers.Size = new System.Drawing.Size(49, 21);
             this.lblUsers.TabIndex = 35;
             this.lblUsers.Text = "Users";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(16, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 22);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Manage";
             // 
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.SystemColors.Control;
             this.pnlChildForm.Controls.Add(this.panel1);
             this.pnlChildForm.Controls.Add(this.lblUsers);
-            this.pnlChildForm.Controls.Add(this.lblUsersNumber);
-            this.pnlChildForm.Controls.Add(this.label1);
-            this.pnlChildForm.Controls.Add(this.btnAdd);
             this.pnlChildForm.Controls.Add(this.lblOperationInfo);
+            this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlChildForm.Location = new System.Drawing.Point(0, 0);
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(1039, 637);
             this.pnlChildForm.TabIndex = 33;
             // 
-            // lblOperationInfo
+            // panel1
             // 
-            this.lblOperationInfo.AutoSize = true;
-            this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblOperationInfo.Location = new System.Drawing.Point(17, 502);
-            this.lblOperationInfo.Name = "lblOperationInfo";
-            this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
-            this.lblOperationInfo.TabIndex = 17;
-            // 
-            // lblEvidentUser
-            // 
-            this.lblEvidentUser.AutoSize = true;
-            this.lblEvidentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvidentUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.lblEvidentUser.Location = new System.Drawing.Point(398, 14);
-            this.lblEvidentUser.Name = "lblEvidentUser";
-            this.lblEvidentUser.Size = new System.Drawing.Size(126, 22);
-            this.lblEvidentUser.TabIndex = 19;
-            this.lblEvidentUser.Text = "Manage Users";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Location = new System.Drawing.Point(70, 74);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(924, 16);
-            this.txtSearch.TabIndex = 20;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dgvUsers);
+            this.panel1.Controls.Add(this.lblUsersNumber);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.lblEvidentUser);
+            this.panel1.Location = new System.Drawing.Point(20, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1011, 384);
+            this.panel1.TabIndex = 38;
             // 
             // label2
             // 
@@ -240,27 +193,46 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "Search:";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Location = new System.Drawing.Point(70, 74);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(924, 16);
+            this.txtSearch.TabIndex = 20;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // lblEvidentUser
+            // 
+            this.lblEvidentUser.AutoSize = true;
+            this.lblEvidentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvidentUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblEvidentUser.Location = new System.Drawing.Point(398, 14);
+            this.lblEvidentUser.Name = "lblEvidentUser";
+            this.lblEvidentUser.Size = new System.Drawing.Size(126, 22);
+            this.lblEvidentUser.TabIndex = 19;
+            this.lblEvidentUser.Text = "Manage Users";
+            // 
             // lblUsersNumber
             // 
             this.lblUsersNumber.AutoSize = true;
             this.lblUsersNumber.BackColor = System.Drawing.SystemColors.Window;
             this.lblUsersNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblUsersNumber.Location = new System.Drawing.Point(17, 352);
+            this.lblUsersNumber.Location = new System.Drawing.Point(14, 339);
             this.lblUsersNumber.Name = "lblUsersNumber";
             this.lblUsersNumber.Size = new System.Drawing.Size(0, 16);
             this.lblUsersNumber.TabIndex = 37;
             // 
-            // panel1
+            // lblOperationInfo
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dgvUsers);
-            this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.lblEvidentUser);
-            this.panel1.Location = new System.Drawing.Point(16, 116);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1011, 372);
-            this.panel1.TabIndex = 38;
+            this.lblOperationInfo.AutoSize = true;
+            this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblOperationInfo.Location = new System.Drawing.Point(17, 502);
+            this.lblOperationInfo.Name = "lblOperationInfo";
+            this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
+            this.lblOperationInfo.TabIndex = 17;
             // 
             // frmManageUsers
             // 
@@ -286,7 +258,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvUsers;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
@@ -297,7 +268,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Label lblUsers;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlChildForm;
         private System.Windows.Forms.Label lblOperationInfo;
         private System.Windows.Forms.Label lblEvidentUser;

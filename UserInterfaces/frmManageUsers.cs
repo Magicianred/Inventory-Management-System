@@ -22,19 +22,6 @@ namespace InventoryManagementApp.Users
             dgvUsers.AutoGenerateColumns = false;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                openChildForm(new frmAddUser());
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);                
-            }
-        }
-
-
         private void frmManageUsers_Load(object sender, EventArgs e)
         {
             LoadUsers();
@@ -115,13 +102,22 @@ namespace InventoryManagementApp.Users
         {
             try
             {
-                //var user = dgvUsers.SelectedRows[0].DataBoundItem as User;
-               
-                //txtUsername.Text = user.Username;
-                //txtFullname.Text = user.FullName;
-                //txtPassword.Text = user.Password;
-                //txtTelephone.Text = $"{user.Telephone}";
-                //txtEmail.Text = user.Email;
+                var user = dgvUsers.SelectedRows[0].DataBoundItem as User;
+
+                if(e.ColumnIndex==4)
+                {
+                    frmAddUser frmAddUser = new frmAddUser(user);
+                    frmAddUser.Show();
+                }
+                if (e.ColumnIndex == 5 
+                    && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
+                    == DialogResult.Yes)
+                {
+                    InventoryManagementDb.DB.Users.Remove(user);
+                    InventoryManagementDb.DB.SaveChanges();
+                }
+
+                LoadUsers();
             }
             catch (Exception ex)
             {
@@ -129,23 +125,18 @@ namespace InventoryManagementApp.Users
             }
         }
 
-        private void openChildForm(Form childForm)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-            activeForm = childForm;
+            var filter = txtSearch.Text.ToLower();
 
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-
-            pnlChildForm.Controls.Add(childForm);
-            pnlChildForm.Tag = childForm;
-
-            childForm.BringToFront();
-            childForm.Show();
+            LoadUsers(
+                InventoryManagementDb.DB.Users.Where(
+                    u => u.Username.ToLower().Contains(filter)
+                    || u.FullName.ToLower().Contains(filter)
+                    || u.Email.ToLower().Contains(filter)
+                    || u.Telephone.ToString().ToLower().Contains(filter)
+                    || string.IsNullOrEmpty(filter)
+                    ).ToList());
         }
     }
 }
