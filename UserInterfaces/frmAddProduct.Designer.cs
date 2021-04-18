@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddProduct));
+            this.components = new System.ComponentModel.Container();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cmbCategories = new System.Windows.Forms.ComboBox();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.lblProductQty = new System.Windows.Forms.Label();
@@ -44,191 +40,275 @@
             this.txtProductQuantity = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.lblProducts = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbStores = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbBrands = new System.Windows.Forms.ComboBox();
+            this.lblEvidentProduct = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblOperationInfo = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblCategory.Location = new System.Drawing.Point(679, 356);
+            this.lblCategory.Location = new System.Drawing.Point(18, 315);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(92, 13);
+            this.lblCategory.Size = new System.Drawing.Size(59, 16);
             this.lblCategory.TabIndex = 44;
-            this.lblCategory.Text = "Product Category:";
+            this.lblCategory.Text = "Category:";
             // 
             // cmbCategories
             // 
-            this.cmbCategories.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.cmbCategories.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCategories.FormattingEnabled = true;
-            this.cmbCategories.Location = new System.Drawing.Point(679, 372);
+            this.cmbCategories.Location = new System.Drawing.Point(18, 331);
             this.cmbCategories.Name = "cmbCategories";
-            this.cmbCategories.Size = new System.Drawing.Size(235, 21);
-            this.cmbCategories.TabIndex = 43;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHome.BackgroundImage")));
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnHome.Location = new System.Drawing.Point(682, 527);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(235, 44);
-            this.btnHome.TabIndex = 42;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnDelete.Location = new System.Drawing.Point(803, 456);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 23);
-            this.btnDelete.TabIndex = 41;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEdit.Location = new System.Drawing.Point(679, 456);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(118, 23);
-            this.btnEdit.TabIndex = 40;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAdd.BackgroundImage = global::InventoryManagementApp.Properties.Resources.bck;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAdd.Location = new System.Drawing.Point(679, 416);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(235, 34);
-            this.btnAdd.TabIndex = 39;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.cmbCategories.Size = new System.Drawing.Size(288, 21);
+            this.cmbCategories.TabIndex = 5;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDescription.Location = new System.Drawing.Point(679, 272);
+            this.lblDescription.Location = new System.Drawing.Point(18, 231);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(63, 13);
+            this.lblDescription.Size = new System.Drawing.Size(71, 16);
             this.lblDescription.TabIndex = 38;
             this.lblDescription.Text = "Description:";
             // 
             // lblProductPrice
             // 
             this.lblProductPrice.AutoSize = true;
+            this.lblProductPrice.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblProductPrice.Location = new System.Drawing.Point(679, 227);
+            this.lblProductPrice.Location = new System.Drawing.Point(18, 186);
             this.lblProductPrice.Name = "lblProductPrice";
-            this.lblProductPrice.Size = new System.Drawing.Size(74, 13);
+            this.lblProductPrice.Size = new System.Drawing.Size(82, 16);
             this.lblProductPrice.TabIndex = 37;
             this.lblProductPrice.Text = "Product Price:";
             // 
             // lblProductQty
             // 
             this.lblProductQty.AutoSize = true;
+            this.lblProductQty.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductQty.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblProductQty.Location = new System.Drawing.Point(679, 178);
+            this.lblProductQty.Location = new System.Drawing.Point(18, 137);
             this.lblProductQty.Name = "lblProductQty";
-            this.lblProductQty.Size = new System.Drawing.Size(89, 13);
+            this.lblProductQty.Size = new System.Drawing.Size(102, 16);
             this.lblProductQty.TabIndex = 36;
             this.lblProductQty.Text = "Product Quantity:";
             // 
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
+            this.lblProductName.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductName.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblProductName.Location = new System.Drawing.Point(679, 135);
+            this.lblProductName.Location = new System.Drawing.Point(18, 94);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(78, 13);
+            this.lblProductName.Size = new System.Drawing.Size(88, 16);
             this.lblProductName.TabIndex = 35;
             this.lblProductName.Text = "Product Name:";
             // 
             // txtDescription
             // 
-            this.txtDescription.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescription.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtDescription.Location = new System.Drawing.Point(679, 288);
+            this.txtDescription.Location = new System.Drawing.Point(18, 247);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(238, 55);
-            this.txtDescription.TabIndex = 34;
+            this.txtDescription.Size = new System.Drawing.Size(979, 55);
+            this.txtDescription.TabIndex = 4;
             // 
             // txtProductPrice
             // 
-            this.txtProductPrice.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtProductPrice.BackColor = System.Drawing.SystemColors.Control;
+            this.txtProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProductPrice.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtProductPrice.Location = new System.Drawing.Point(679, 243);
+            this.txtProductPrice.Location = new System.Drawing.Point(18, 202);
             this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(238, 20);
-            this.txtProductPrice.TabIndex = 33;
+            this.txtProductPrice.Size = new System.Drawing.Size(979, 13);
+            this.txtProductPrice.TabIndex = 3;
             // 
             // txtProductQuantity
             // 
-            this.txtProductQuantity.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtProductQuantity.BackColor = System.Drawing.SystemColors.Control;
+            this.txtProductQuantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProductQuantity.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtProductQuantity.Location = new System.Drawing.Point(679, 194);
+            this.txtProductQuantity.Location = new System.Drawing.Point(18, 153);
             this.txtProductQuantity.Name = "txtProductQuantity";
-            this.txtProductQuantity.Size = new System.Drawing.Size(238, 20);
-            this.txtProductQuantity.TabIndex = 32;
+            this.txtProductQuantity.Size = new System.Drawing.Size(979, 13);
+            this.txtProductQuantity.TabIndex = 2;
             // 
             // txtProductName
             // 
-            this.txtProductName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtProductName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProductName.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtProductName.Location = new System.Drawing.Point(679, 151);
+            this.txtProductName.Location = new System.Drawing.Point(18, 110);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(238, 20);
-            this.txtProductName.TabIndex = 31;
+            this.txtProductName.Size = new System.Drawing.Size(979, 13);
+            this.txtProductName.TabIndex = 1;
             // 
             // lblProducts
             // 
             this.lblProducts.AutoSize = true;
             this.lblProducts.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProducts.ForeColor = System.Drawing.Color.Gray;
-            this.lblProducts.Location = new System.Drawing.Point(29, 24);
+            this.lblProducts.Location = new System.Drawing.Point(26, 26);
             this.lblProducts.Name = "lblProducts";
             this.lblProducts.Size = new System.Drawing.Size(71, 21);
             this.lblProducts.TabIndex = 45;
             this.lblProducts.Text = "Products";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblOperationInfo);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cmbStores);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.cmbBrands);
+            this.panel1.Controls.Add(this.lblEvidentProduct);
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.lblProductName);
+            this.panel1.Controls.Add(this.txtProductName);
+            this.panel1.Controls.Add(this.lblCategory);
+            this.panel1.Controls.Add(this.txtProductQuantity);
+            this.panel1.Controls.Add(this.cmbCategories);
+            this.panel1.Controls.Add(this.txtProductPrice);
+            this.panel1.Controls.Add(this.txtDescription);
+            this.panel1.Controls.Add(this.lblProductQty);
+            this.panel1.Controls.Add(this.lblProductPrice);
+            this.panel1.Controls.Add(this.lblDescription);
+            this.panel1.Location = new System.Drawing.Point(12, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1015, 535);
+            this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(627, 315);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Store:";
+            // 
+            // cmbStores
+            // 
+            this.cmbStores.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbStores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbStores.FormattingEnabled = true;
+            this.cmbStores.Location = new System.Drawing.Point(627, 331);
+            this.cmbStores.Name = "cmbStores";
+            this.cmbStores.Size = new System.Drawing.Size(370, 21);
+            this.cmbStores.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(329, 315);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Brand:";
+            // 
+            // cmbBrands
+            // 
+            this.cmbBrands.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbBrands.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBrands.FormattingEnabled = true;
+            this.cmbBrands.Location = new System.Drawing.Point(329, 331);
+            this.cmbBrands.Name = "cmbBrands";
+            this.cmbBrands.Size = new System.Drawing.Size(274, 21);
+            this.cmbBrands.TabIndex = 6;
+            // 
+            // lblEvidentProduct
+            // 
+            this.lblEvidentProduct.AutoSize = true;
+            this.lblEvidentProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvidentProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblEvidentProduct.Location = new System.Drawing.Point(411, 9);
+            this.lblEvidentProduct.Name = "lblEvidentProduct";
+            this.lblEvidentProduct.Size = new System.Drawing.Size(109, 22);
+            this.lblEvidentProduct.TabIndex = 47;
+            this.lblEvidentProduct.Text = "Add Product";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnClear.Location = new System.Drawing.Point(182, 453);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(84, 34);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSave.Location = new System.Drawing.Point(18, 453);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(158, 34);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
+            // lblOperationInfo
+            // 
+            this.lblOperationInfo.AutoSize = true;
+            this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblOperationInfo.Location = new System.Drawing.Point(18, 502);
+            this.lblOperationInfo.Name = "lblOperationInfo";
+            this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
+            this.lblOperationInfo.TabIndex = 52;
             // 
             // frmAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 637);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblProducts);
-            this.Controls.Add(this.lblCategory);
-            this.Controls.Add(this.cmbCategories);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.lblProductPrice);
-            this.Controls.Add(this.lblProductQty);
-            this.Controls.Add(this.lblProductName);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtProductPrice);
-            this.Controls.Add(this.txtProductQuantity);
-            this.Controls.Add(this.txtProductName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddProduct";
+            this.Load += new System.EventHandler(this.frmAddProduct_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,10 +318,6 @@
 
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.ComboBox cmbCategories;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.Label lblProductQty;
@@ -251,5 +327,15 @@
         private System.Windows.Forms.TextBox txtProductQuantity;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label lblProducts;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblEvidentProduct;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbStores;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbBrands;
+        private System.Windows.Forms.ErrorProvider err;
+        private System.Windows.Forms.Label lblOperationInfo;
     }
 }

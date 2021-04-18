@@ -37,11 +37,7 @@ namespace InventoryManagementApp.UserInterfaces
                 lblEvidentUser.Text = "Edit User Info";
                 LoadUserData();
             }
-            else
-            {
-                lblEvidentUser.Text = "Add User";
-            }
-
+            
             LoadGenders();
         }
 

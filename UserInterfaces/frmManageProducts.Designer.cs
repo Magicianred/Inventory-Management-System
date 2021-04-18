@@ -32,14 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cmbCategorySearch = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblManageProducts = new System.Windows.Forms.Label();
-            this.lblProducts = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +39,15 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cmbCategorySearch = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblProductsNumber = new System.Windows.Forms.Label();
+            this.lblManageProducts = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblProducts = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.panel1.SuspendLayout();
@@ -89,93 +89,8 @@
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.Size = new System.Drawing.Size(958, 196);
-            this.dgvProducts.TabIndex = 24;
+            this.dgvProducts.TabIndex = 3;
             this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
-            // 
-            // err
-            // 
-            this.err.ContainerControl = this;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(75, 87);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(905, 14);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // cmbCategorySearch
-            // 
-            this.cmbCategorySearch.BackColor = System.Drawing.SystemColors.Control;
-            this.cmbCategorySearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbCategorySearch.FormattingEnabled = true;
-            this.cmbCategorySearch.Location = new System.Drawing.Point(745, 334);
-            this.cmbCategorySearch.Name = "cmbCategorySearch";
-            this.cmbCategorySearch.Size = new System.Drawing.Size(235, 21);
-            this.cmbCategorySearch.TabIndex = 30;
-            this.cmbCategorySearch.SelectedIndexChanged += new System.EventHandler(this.cmbCategorySearch_SelectedIndexChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblProductsNumber);
-            this.panel1.Controls.Add(this.lblManageProducts);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dgvProducts);
-            this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.cmbCategorySearch);
-            this.panel1.Location = new System.Drawing.Point(12, 86);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 386);
-            this.panel1.TabIndex = 31;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(19, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 16);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Search:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(675, 339);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Category:";
-            // 
-            // lblManageProducts
-            // 
-            this.lblManageProducts.AutoSize = true;
-            this.lblManageProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.lblManageProducts.Location = new System.Drawing.Point(424, 16);
-            this.lblManageProducts.Name = "lblManageProducts";
-            this.lblManageProducts.Size = new System.Drawing.Size(150, 22);
-            this.lblManageProducts.TabIndex = 39;
-            this.lblManageProducts.Text = "Manage Products";
-            // 
-            // lblProducts
-            // 
-            this.lblProducts.AutoSize = true;
-            this.lblProducts.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducts.ForeColor = System.Drawing.Color.Gray;
-            this.lblProducts.Location = new System.Drawing.Point(35, 43);
-            this.lblProducts.Name = "lblProducts";
-            this.lblProducts.Size = new System.Drawing.Size(71, 21);
-            this.lblProducts.TabIndex = 36;
-            this.lblProducts.Text = "Products";
             // 
             // ID
             // 
@@ -237,6 +152,47 @@
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Width = 50;
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(75, 87);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(905, 14);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // cmbCategorySearch
+            // 
+            this.cmbCategorySearch.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbCategorySearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCategorySearch.FormattingEnabled = true;
+            this.cmbCategorySearch.Location = new System.Drawing.Point(745, 334);
+            this.cmbCategorySearch.Name = "cmbCategorySearch";
+            this.cmbCategorySearch.Size = new System.Drawing.Size(235, 21);
+            this.cmbCategorySearch.TabIndex = 2;
+            this.cmbCategorySearch.SelectedIndexChanged += new System.EventHandler(this.cmbCategorySearch_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblProductsNumber);
+            this.panel1.Controls.Add(this.lblManageProducts);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dgvProducts);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.cmbCategorySearch);
+            this.panel1.Location = new System.Drawing.Point(12, 86);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1000, 386);
+            this.panel1.TabIndex = 0;
+            // 
             // lblProductsNumber
             // 
             this.lblProductsNumber.AutoSize = true;
@@ -246,6 +202,50 @@
             this.lblProductsNumber.Name = "lblProductsNumber";
             this.lblProductsNumber.Size = new System.Drawing.Size(0, 13);
             this.lblProductsNumber.TabIndex = 38;
+            // 
+            // lblManageProducts
+            // 
+            this.lblManageProducts.AutoSize = true;
+            this.lblManageProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblManageProducts.Location = new System.Drawing.Point(424, 16);
+            this.lblManageProducts.Name = "lblManageProducts";
+            this.lblManageProducts.Size = new System.Drawing.Size(150, 22);
+            this.lblManageProducts.TabIndex = 39;
+            this.lblManageProducts.Text = "Manage Products";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(675, 339);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Category:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(19, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Search:";
+            // 
+            // lblProducts
+            // 
+            this.lblProducts.AutoSize = true;
+            this.lblProducts.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducts.ForeColor = System.Drawing.Color.Gray;
+            this.lblProducts.Location = new System.Drawing.Point(35, 43);
+            this.lblProducts.Name = "lblProducts";
+            this.lblProducts.Size = new System.Drawing.Size(71, 21);
+            this.lblProducts.TabIndex = 36;
+            this.lblProducts.Text = "Products";
             // 
             // frmManageProducts
             // 

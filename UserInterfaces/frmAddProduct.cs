@@ -1,4 +1,6 @@
-﻿using InventoryManagementApp.DataClasses;
+﻿using InventoryManagementApp.Data;
+using InventoryManagementApp.DataClasses;
+using InventoryManagementApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +16,144 @@ namespace InventoryManagementApp.UserInterfaces
     public partial class frmAddProduct : Form
     {
         private Product product;
+        private bool editProduct = true;
 
         public frmAddProduct()
         {
             InitializeComponent();
         }
 
-        public frmAddProduct(Product product)
+        public frmAddProduct(Product product) : this()
         {
             this.product = product;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ValidateProductData())
+                {
+                    if (product == null)
+                    {
+                        product = new Product();
+                        editProduct = false;
+                    }
+
+                    product.ProductName = txtProductName.Text;
+                    product.ProductQuantity = int.Parse(txtProductQuantity.Text);
+                    product.ProductPrice = int.Parse(txtProductPrice.Text);
+                    product.Description = txtDescription.Text;
+                    product.Category = cmbCategories.SelectedItem as Category;
+                    product.Brand = cmbBrands.SelectedItem as Brand;
+                    product.Store = cmbStores.SelectedItem as Store;
+
+                    if (editProduct)
+                    {
+                        InventoryManagementDb.DB.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    else
+                    {
+                        InventoryManagementDb.DB.Products.Add(product);
+                    }
+
+                    InventoryManagementDb.DB.SaveChanges();
+                    ClearData();
+
+                    if (editProduct)
+                        lblOperationInfo.Text = Messages.SuccessfullyModified;
+                    else
+                        lblOperationInfo.Text = Messages.SuccessfullyAdded;
+                }
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+        }
+
+        private void ClearData()
+        {
+            txtProductName.Text = txtProductQuantity.Text = txtProductPrice.Text = txtDescription.Text = "";
+        }
+
+        private bool ValidateProductData()//add Validation for cmb-s - in case there are no active stores or any brands
+        {
+            return Validator.ValidateControl(txtProductName, err, Messages.RequiredField)
+                && Validator.ValidateControl(txtDescription, err, Messages.RequiredField)
+                && Validator.ValidateNumber(txtProductQuantity, err, Messages.RequiredNumber)
+                && Validator.ValidateNumber(txtProductPrice, err, Messages.RequiredNumber);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearData();
+        }
+
+        private void frmAddProduct_Load(object sender, EventArgs e)
+        {
+            if (product != null)
+            {
+                lblEvidentProduct.Text = "Edit Product Info";
+                LoadProductData();
+            }
+
+            LoadCategories();
+            LoadBrands();
+            LoadStores();
+        }
+
+        private void LoadStores()
+        {
+            try
+            {
+                cmbStores.DataSource = InventoryManagementDb.DB.Stores.ToList();
+                cmbStores.ValueMember = "Id";
+                cmbStores.DisplayMember = "Name";
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+        }
+
+        private void LoadBrands()
+        {
+            try
+            {
+                cmbBrands.DataSource = InventoryManagementDb.DB.Brands.ToList();
+                cmbBrands.ValueMember = "Id";
+                cmbBrands.DisplayMember = "Name";
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+        }
+
+        private void LoadCategories()
+        {
+            try
+            {
+                cmbCategories.DataSource = InventoryManagementDb.DB.Categories.ToList();
+                cmbCategories.ValueMember = "Id";
+                cmbCategories.DisplayMember = "CategoryName";
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+        }
+
+        private void LoadProductData()
+        {
+            txtProductName.Text = product.ProductName;
+            txtProductQuantity.Text = $"{product.ProductQuantity}";
+            txtProductPrice.Text = $"{product.ProductPrice}";
+            txtDescription.Text = product.Description;
+            cmbCategories.SelectedValue = product.Category.Id;
+            cmbBrands.SelectedValue = product.Brand.Id;
+            cmbStores.SelectedValue = product.Store.Id;
         }
     }
 }
