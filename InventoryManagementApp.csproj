@@ -170,6 +170,12 @@
     <Compile Include="UserInterfaces\frmManageProducts.Designer.cs">
       <DependentUpon>frmManageProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterfaces\frmManageStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmManageStores.Designer.cs">
+      <DependentUpon>frmManageStores.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\frmManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     <EmbeddedResource Include="UserInterfaces\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\frmAddStore.resx">
+      <DependentUpon>frmAddStore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmManageBrands.resx">
       <DependentUpon>frmManageBrands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\frmManageStores.resx">
+      <DependentUpon>frmManageStores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>

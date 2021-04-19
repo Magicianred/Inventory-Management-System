@@ -172,7 +172,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnStores_Click(object sender, EventArgs e)
         {
-            //openChildForm(frmManageStores());
+            openChildForm(new frmManageStores());
             hideSubMenues();
         }
 

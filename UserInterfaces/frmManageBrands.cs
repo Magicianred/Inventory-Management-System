@@ -77,7 +77,7 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 var brand = dgvBrands.SelectedRows[0].DataBoundItem as Brand;
 
-                if (e.ColumnIndex == 2)//not working
+                if (e.ColumnIndex == 2)
                 {
                     Panel pnlChildForm = this.Parent as Panel;
                     if (pnlChildForm != null)
