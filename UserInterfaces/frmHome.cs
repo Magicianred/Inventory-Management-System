@@ -26,16 +26,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmHome_Load(object sender, System.EventArgs e)
         {
-            LoadData();
-        }
-
-        private void LoadData()
-        {
-            lblProductsNumber.Text = InventoryManagementDb.DB.Products.ToList().Count().ToString();
-            lblOrdersNumber.Text = InventoryManagementDb.DB.Orders.ToList().Count().ToString();
-            lblUsersNumber.Text = InventoryManagementDb.DB.Users.ToList().Count().ToString();
-            lblCustomersNumber.Text = InventoryManagementDb.DB.Customers.ToList().Count().ToString();
-            lblStoresNumber.Text = InventoryManagementDb.DB.Stores.ToList().Count().ToString();
+            openChildForm(new frmDashboard());
         }
 
         private void lblMoreProductInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -86,7 +77,6 @@ namespace InventoryManagementApp.UserInterfaces
             pnlOrders.Visible = false;
         }
 
-
         private void lblExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -127,8 +117,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            if(activeForm!=null)
-                activeForm.Close();
+            openChildForm(new frmDashboard());
             hideSubMenues();
         }
 

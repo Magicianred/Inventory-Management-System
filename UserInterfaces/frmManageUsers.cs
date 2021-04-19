@@ -79,16 +79,20 @@ namespace InventoryManagementApp.Users
 
                 if(e.ColumnIndex==4)
                 {
-                    frmAddUser frmAddUser = new frmAddUser(user);
-                    frmAddUser.TopLevel = false;
-                    frmAddUser.FormBorderStyle = FormBorderStyle.None;
-                    frmAddUser.Dock = DockStyle.Fill;
+                    pnlChildForm = this.Parent as Panel;
+                    if (pnlChildForm != null)
+                    {
+                        frmAddUser frmAddUser = new frmAddUser(user);
+                        frmAddUser.FormBorderStyle = FormBorderStyle.None;
+                        frmAddUser.TopLevel = false;
+                        frmAddUser.BringToFront();
 
-                    pnlChildForm.Controls.Add(frmAddUser);
-                    pnlChildForm.Tag = frmAddUser;//associate form with the container panel
+                        pnlChildForm.Controls.Clear();
+                        pnlChildForm.Controls.Add(frmAddUser);
+                        frmAddUser.Show();
+                        this.Hide();
+                    }
 
-                    frmAddUser.BringToFront();
-                    frmAddUser.Show();
                 }
                 if (e.ColumnIndex == 5 
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question) 

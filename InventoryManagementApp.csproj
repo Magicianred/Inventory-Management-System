@@ -120,6 +120,12 @@
     <Compile Include="UserInterfaces\frmAddUser.Designer.cs">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterfaces\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>
