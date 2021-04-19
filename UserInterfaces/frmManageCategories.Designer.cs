@@ -32,20 +32,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCategories = new System.Windows.Forms.DataGridView();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.lblCustomerName = new System.Windows.Forms.Label();
-            this.txtCategoryName = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAddCategory = new System.Windows.Forms.Button();
+            this.lblCategories = new System.Windows.Forms.Label();
+            this.pnlUsers = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblUsersNumber = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblManageCategories = new System.Windows.Forms.Label();
+            this.lblCategoriesNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
+            this.pnlUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvCategories
@@ -64,7 +66,9 @@
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.CategoryName});
+            this.CategoryName,
+            this.Edit,
+            this.Delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,105 +78,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCategories.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvCategories.Location = new System.Drawing.Point(28, 129);
+            this.dgvCategories.Location = new System.Drawing.Point(12, 105);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.ReadOnly = true;
             this.dgvCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategories.Size = new System.Drawing.Size(323, 141);
+            this.dgvCategories.Size = new System.Drawing.Size(982, 141);
             this.dgvCategories.TabIndex = 33;
             this.dgvCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellContentClick);
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnHome.Location = new System.Drawing.Point(506, 454);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(235, 44);
-            this.btnHome.TabIndex = 32;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnDelete.Location = new System.Drawing.Point(269, 286);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 34);
-            this.btnDelete.TabIndex = 31;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEdit.Location = new System.Drawing.Point(283, 90);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(68, 23);
-            this.btnEdit.TabIndex = 30;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAdd.Location = new System.Drawing.Point(28, 286);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(235, 34);
-            this.btnAdd.TabIndex = 29;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // lblCustomerName
-            // 
-            this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblCustomerName.Location = new System.Drawing.Point(28, 77);
-            this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(38, 13);
-            this.lblCustomerName.TabIndex = 27;
-            this.lblCustomerName.Text = "Name:";
-            // 
-            // txtCategoryName
-            // 
-            this.txtCategoryName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCategoryName.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtCategoryName.Location = new System.Drawing.Point(28, 93);
-            this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(238, 20);
-            this.txtCategoryName.TabIndex = 25;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(866, 61);
-            this.panel1.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(26, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Manage Categories";
             // 
             // err
             // 
@@ -184,6 +96,7 @@
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 50;
             // 
             // CategoryName
             // 
@@ -193,28 +106,133 @@
             this.CategoryName.Name = "CategoryName";
             this.CategoryName.ReadOnly = true;
             // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddCategory.FlatAppearance.BorderSize = 0;
+            this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCategory.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnAddCategory.Location = new System.Drawing.Point(13, 73);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(158, 34);
+            this.btnAddCategory.TabIndex = 41;
+            this.btnAddCategory.Text = "Add Category";
+            this.btnAddCategory.UseVisualStyleBackColor = false;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            // 
+            // lblCategories
+            // 
+            this.lblCategories.AutoSize = true;
+            this.lblCategories.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategories.ForeColor = System.Drawing.Color.Gray;
+            this.lblCategories.Location = new System.Drawing.Point(32, 40);
+            this.lblCategories.Name = "lblCategories";
+            this.lblCategories.Size = new System.Drawing.Size(84, 21);
+            this.lblCategories.TabIndex = 40;
+            this.lblCategories.Text = "Categories";
+            // 
+            // pnlUsers
+            // 
+            this.pnlUsers.BackColor = System.Drawing.Color.White;
+            this.pnlUsers.Controls.Add(this.lblCategoriesNumber);
+            this.pnlUsers.Controls.Add(this.label2);
+            this.pnlUsers.Controls.Add(this.lblUsersNumber);
+            this.pnlUsers.Controls.Add(this.txtSearch);
+            this.pnlUsers.Controls.Add(this.dgvCategories);
+            this.pnlUsers.Controls.Add(this.lblManageCategories);
+            this.pnlUsers.Location = new System.Drawing.Point(13, 128);
+            this.pnlUsers.Name = "pnlUsers";
+            this.pnlUsers.Size = new System.Drawing.Size(1012, 304);
+            this.pnlUsers.TabIndex = 42;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(14, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Search:";
+            // 
+            // lblUsersNumber
+            // 
+            this.lblUsersNumber.AutoSize = true;
+            this.lblUsersNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.lblUsersNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblUsersNumber.Location = new System.Drawing.Point(14, 339);
+            this.lblUsersNumber.Name = "lblUsersNumber";
+            this.lblUsersNumber.Size = new System.Drawing.Size(0, 13);
+            this.lblUsersNumber.TabIndex = 37;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Location = new System.Drawing.Point(70, 74);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(924, 13);
+            this.txtSearch.TabIndex = 20;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // lblManageCategories
+            // 
+            this.lblManageCategories.AutoSize = true;
+            this.lblManageCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblManageCategories.Location = new System.Drawing.Point(398, 14);
+            this.lblManageCategories.Name = "lblManageCategories";
+            this.lblManageCategories.Size = new System.Drawing.Size(166, 22);
+            this.lblManageCategories.TabIndex = 19;
+            this.lblManageCategories.Text = "Manage Categories";
+            // 
+            // lblCategoriesNumber
+            // 
+            this.lblCategoriesNumber.AutoSize = true;
+            this.lblCategoriesNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.lblCategoriesNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblCategoriesNumber.Location = new System.Drawing.Point(14, 262);
+            this.lblCategoriesNumber.Name = "lblCategoriesNumber";
+            this.lblCategoriesNumber.Size = new System.Drawing.Size(0, 13);
+            this.lblCategoriesNumber.TabIndex = 38;
+            // 
             // frmManageCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 332);
-            this.Controls.Add(this.dgvCategories);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblCustomerName);
-            this.Controls.Add(this.txtCategoryName);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.ClientSize = new System.Drawing.Size(1039, 637);
+            this.Controls.Add(this.pnlUsers);
+            this.Controls.Add(this.btnAddCategory);
+            this.Controls.Add(this.lblCategories);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management";
             this.Load += new System.EventHandler(this.frmManageCategories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
+            this.pnlUsers.ResumeLayout(false);
+            this.pnlUsers.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,16 +241,18 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCategories;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lblCustomerName;
-        private System.Windows.Forms.TextBox txtCategoryName;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Button btnAddCategory;
+        private System.Windows.Forms.Label lblCategories;
+        private System.Windows.Forms.Panel pnlUsers;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUsersNumber;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblManageCategories;
+        private System.Windows.Forms.Label lblCategoriesNumber;
     }
 }

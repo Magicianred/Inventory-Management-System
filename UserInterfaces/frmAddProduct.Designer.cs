@@ -41,6 +41,7 @@
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.lblProducts = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblOperationInfo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbStores = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblOperationInfo = new System.Windows.Forms.Label();
+            this.btnManageProducts = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
@@ -192,10 +193,20 @@
             this.panel1.Controls.Add(this.lblProductQty);
             this.panel1.Controls.Add(this.lblProductPrice);
             this.panel1.Controls.Add(this.lblDescription);
-            this.panel1.Location = new System.Drawing.Point(12, 65);
+            this.panel1.Location = new System.Drawing.Point(12, 106);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 535);
+            this.panel1.Size = new System.Drawing.Size(1015, 515);
             this.panel1.TabIndex = 0;
+            // 
+            // lblOperationInfo
+            // 
+            this.lblOperationInfo.AutoSize = true;
+            this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblOperationInfo.Location = new System.Drawing.Point(18, 482);
+            this.lblOperationInfo.Name = "lblOperationInfo";
+            this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
+            this.lblOperationInfo.TabIndex = 52;
             // 
             // label2
             // 
@@ -257,7 +268,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClear.Location = new System.Drawing.Point(182, 453);
+            this.btnClear.Location = new System.Drawing.Point(182, 437);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(84, 34);
             this.btnClear.TabIndex = 9;
@@ -272,7 +283,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSave.Location = new System.Drawing.Point(18, 453);
+            this.btnSave.Location = new System.Drawing.Point(18, 437);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(158, 34);
             this.btnSave.TabIndex = 8;
@@ -284,21 +295,27 @@
             // 
             this.err.ContainerControl = this;
             // 
-            // lblOperationInfo
+            // btnManageProducts
             // 
-            this.lblOperationInfo.AutoSize = true;
-            this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblOperationInfo.Location = new System.Drawing.Point(18, 502);
-            this.lblOperationInfo.Name = "lblOperationInfo";
-            this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
-            this.lblOperationInfo.TabIndex = 52;
+            this.btnManageProducts.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageProducts.FlatAppearance.BorderSize = 0;
+            this.btnManageProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageProducts.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageProducts.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnManageProducts.Location = new System.Drawing.Point(12, 61);
+            this.btnManageProducts.Name = "btnManageProducts";
+            this.btnManageProducts.Size = new System.Drawing.Size(158, 34);
+            this.btnManageProducts.TabIndex = 46;
+            this.btnManageProducts.Text = "Manage Products";
+            this.btnManageProducts.UseVisualStyleBackColor = false;
+            this.btnManageProducts.Click += new System.EventHandler(this.btnManageProducts_Click);
             // 
             // frmAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 637);
+            this.Controls.Add(this.btnManageProducts);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblProducts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -337,5 +354,6 @@
         private System.Windows.Forms.ComboBox cmbBrands;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Label lblOperationInfo;
+        private System.Windows.Forms.Button btnManageProducts;
     }
 }

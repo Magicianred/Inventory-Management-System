@@ -155,5 +155,23 @@ namespace InventoryManagementApp.UserInterfaces
             cmbBrands.SelectedValue = product.Brand.Id;
             cmbStores.SelectedValue = product.Store.Id;
         }
+
+        private void btnManageProducts_Click(object sender, EventArgs e)
+        {
+            Panel pnlChildForm = this.Parent as Panel;
+
+            if (pnlChildForm != null)
+            {
+                frmManageProducts frmManageProducts = new frmManageProducts();
+                frmManageProducts.FormBorderStyle = FormBorderStyle.None;
+                frmManageProducts.TopLevel = false;
+                frmManageProducts.BringToFront();
+
+                pnlChildForm.Controls.Clear();
+                pnlChildForm.Controls.Add(frmManageProducts);
+                frmManageProducts.Show();
+                this.Hide();
+            }
+        }
     }
 }

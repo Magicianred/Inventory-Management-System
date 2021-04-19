@@ -55,11 +55,20 @@ namespace InventoryManagementApp.UserInterfaces
                 var product = dgvProducts.SelectedRows[0].DataBoundItem as Product;
                 if (e.ColumnIndex == 5)
                 {
-                    frmAddProduct frmAddProduct = new frmAddProduct(product);
-                    frmAddProduct.TopLevel = false;
-                    frmAddProduct.FormBorderStyle = FormBorderStyle.None;
-                    frmAddProduct.Dock = DockStyle.Fill;
-                    frmAddProduct.Show();
+                    Panel pnlChildForm = this.Parent as Panel;
+
+                    if (pnlChildForm != null)
+                    {
+                        frmAddProduct frmAddProduct = new frmAddProduct(product);
+                        frmAddProduct.FormBorderStyle = FormBorderStyle.None;
+                        frmAddProduct.TopLevel = false;
+                        frmAddProduct.BringToFront();
+
+                        pnlChildForm.Controls.Clear();
+                        pnlChildForm.Controls.Add(frmAddProduct);
+                        frmAddProduct.Show();
+                        this.Hide();
+                    }
                 }
                 if (e.ColumnIndex == 6
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -104,6 +113,24 @@ namespace InventoryManagementApp.UserInterfaces
             catch (Exception ex)
             {
                 Messages.HandleException(ex);
+            }
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            Panel pnlChildForm = this.Parent as Panel;
+
+            if (pnlChildForm != null)
+            {
+                frmAddProduct frmAddProduct = new frmAddProduct();
+                frmAddProduct.FormBorderStyle = FormBorderStyle.None;
+                frmAddProduct.TopLevel = false;
+                frmAddProduct.BringToFront();
+
+                pnlChildForm.Controls.Clear();
+                pnlChildForm.Controls.Add(frmAddProduct);
+                frmAddProduct.Show();
+                this.Hide();
             }
         }
     }
