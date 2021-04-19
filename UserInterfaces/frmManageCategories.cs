@@ -18,6 +18,7 @@ namespace InventoryManagementApp.UserInterfaces
         public frmManageCategories()
         {
             InitializeComponent();
+            dgvCategories.AutoGenerateColumns = false;
         }
 
         private void frmManageCategories_Load(object sender, EventArgs e)
@@ -31,97 +32,8 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 dgvCategories.DataSource = null;
                 dgvCategories.DataSource = categories ?? InventoryManagementDb.DB.Categories.ToList();
-
-                lblCategories.Text = $"{(dgvCategories.DataSource as List<Category>).Count()} categories";
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (ValidateCategoryData())
-                {
-                    InventoryManagementDb.DB.Categories.Add(
-                         new Category()
-                         {
-                             CategoryName = txtCategoryName.Text
-                         });
-                    InventoryManagementDb.DB.SaveChanges();
-
-                    MessageBox.Show(Messages.SuccessfullyAdded);
-
-                    ClearData();
-                    LoadCategories();
-                }
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
-        }
-
-        private void ClearData()
-        {
-            txtCategoryName.Text = "";
-        }
-
-        private bool ValidateCategoryData()
-        {
-            return Validator.ValidateControl(txtCategoryName, err, Messages.RequiredField);             
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            var category = dgvCategories.SelectedRows[0].DataBoundItem as Category;
-
-            try
-            {
-                foreach (var item in InventoryManagementDb.DB.Categories)
-                {
-                    if (item.Id == category.Id
-                        && MessageBox.Show(Messages.Delete,
-                        Messages.Question,
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question)
-                        == DialogResult.Yes)
-                    {
-                        InventoryManagementDb.DB.Categories.Remove(item);
-                        InventoryManagementDb.DB.SaveChanges();
-
-                        LoadCategories();
-                        MessageBox.Show(Messages.SuccessfullyDeleted);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var category = dgvCategories.SelectedRows[0].DataBoundItem as Category;//TO-DO: make sure it's the same user(data of the selected user) 
-
-                if (ValidateCategoryData())
-                {
-                    category.CategoryName = txtCategoryName.Text;
-
-                    InventoryManagementDb.DB.Entry(category).State = System.Data.Entity.EntityState.Modified;
-                    InventoryManagementDb.DB.SaveChanges();
-
-                    LoadCategories();
-
-                    MessageBox.Show(Messages.SuccessfullyModified);
-                    ClearData();
-                }
+                
+                lblCategoriesNumber.Text = $"{(dgvCategories.DataSource as List<Category>).Count()} categories";
             }
             catch (Exception ex)
             {

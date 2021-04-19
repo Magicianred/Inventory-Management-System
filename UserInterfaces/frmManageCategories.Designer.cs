@@ -32,22 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCategories = new System.Windows.Forms.DataGridView();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.lblCategories = new System.Windows.Forms.Label();
-            this.pnlUsers = new System.Windows.Forms.Panel();
+            this.pnlCategories = new System.Windows.Forms.Panel();
+            this.lblCategoriesNumber = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblUsersNumber = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblManageCategories = new System.Windows.Forms.Label();
-            this.lblCategoriesNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
-            this.pnlUsers.SuspendLayout();
+            this.pnlCategories.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvCategories
@@ -86,10 +85,6 @@
             this.dgvCategories.TabIndex = 33;
             this.dgvCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellContentClick);
             // 
-            // err
-            // 
-            this.err.ContainerControl = this;
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "Id";
@@ -124,6 +119,10 @@
             this.Delete.ReadOnly = true;
             this.Delete.Width = 50;
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // btnAddCategory
             // 
             this.btnAddCategory.BackColor = System.Drawing.Color.SteelBlue;
@@ -150,19 +149,28 @@
             this.lblCategories.TabIndex = 40;
             this.lblCategories.Text = "Categories";
             // 
-            // pnlUsers
+            // pnlCategories
             // 
-            this.pnlUsers.BackColor = System.Drawing.Color.White;
-            this.pnlUsers.Controls.Add(this.lblCategoriesNumber);
-            this.pnlUsers.Controls.Add(this.label2);
-            this.pnlUsers.Controls.Add(this.lblUsersNumber);
-            this.pnlUsers.Controls.Add(this.txtSearch);
-            this.pnlUsers.Controls.Add(this.dgvCategories);
-            this.pnlUsers.Controls.Add(this.lblManageCategories);
-            this.pnlUsers.Location = new System.Drawing.Point(13, 128);
-            this.pnlUsers.Name = "pnlUsers";
-            this.pnlUsers.Size = new System.Drawing.Size(1012, 304);
-            this.pnlUsers.TabIndex = 42;
+            this.pnlCategories.BackColor = System.Drawing.Color.White;
+            this.pnlCategories.Controls.Add(this.lblCategoriesNumber);
+            this.pnlCategories.Controls.Add(this.label2);
+            this.pnlCategories.Controls.Add(this.txtSearch);
+            this.pnlCategories.Controls.Add(this.dgvCategories);
+            this.pnlCategories.Controls.Add(this.lblManageCategories);
+            this.pnlCategories.Location = new System.Drawing.Point(13, 128);
+            this.pnlCategories.Name = "pnlCategories";
+            this.pnlCategories.Size = new System.Drawing.Size(1012, 304);
+            this.pnlCategories.TabIndex = 42;
+            // 
+            // lblCategoriesNumber
+            // 
+            this.lblCategoriesNumber.AutoSize = true;
+            this.lblCategoriesNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.lblCategoriesNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblCategoriesNumber.Location = new System.Drawing.Point(14, 262);
+            this.lblCategoriesNumber.Name = "lblCategoriesNumber";
+            this.lblCategoriesNumber.Size = new System.Drawing.Size(0, 13);
+            this.lblCategoriesNumber.TabIndex = 38;
             // 
             // label2
             // 
@@ -174,16 +182,6 @@
             this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 36;
             this.label2.Text = "Search:";
-            // 
-            // lblUsersNumber
-            // 
-            this.lblUsersNumber.AutoSize = true;
-            this.lblUsersNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.lblUsersNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblUsersNumber.Location = new System.Drawing.Point(14, 339);
-            this.lblUsersNumber.Name = "lblUsersNumber";
-            this.lblUsersNumber.Size = new System.Drawing.Size(0, 13);
-            this.lblUsersNumber.TabIndex = 37;
             // 
             // txtSearch
             // 
@@ -206,22 +204,12 @@
             this.lblManageCategories.TabIndex = 19;
             this.lblManageCategories.Text = "Manage Categories";
             // 
-            // lblCategoriesNumber
-            // 
-            this.lblCategoriesNumber.AutoSize = true;
-            this.lblCategoriesNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.lblCategoriesNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblCategoriesNumber.Location = new System.Drawing.Point(14, 262);
-            this.lblCategoriesNumber.Name = "lblCategoriesNumber";
-            this.lblCategoriesNumber.Size = new System.Drawing.Size(0, 13);
-            this.lblCategoriesNumber.TabIndex = 38;
-            // 
             // frmManageCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 637);
-            this.Controls.Add(this.pnlUsers);
+            this.Controls.Add(this.pnlCategories);
             this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.lblCategories);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -231,8 +219,8 @@
             this.Load += new System.EventHandler(this.frmManageCategories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
-            this.pnlUsers.ResumeLayout(false);
-            this.pnlUsers.PerformLayout();
+            this.pnlCategories.ResumeLayout(false);
+            this.pnlCategories.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,9 +236,8 @@
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.Label lblCategories;
-        private System.Windows.Forms.Panel pnlUsers;
+        private System.Windows.Forms.Panel pnlCategories;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblUsersNumber;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblManageCategories;
         private System.Windows.Forms.Label lblCategoriesNumber;
