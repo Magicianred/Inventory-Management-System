@@ -34,16 +34,18 @@
             this.dgvCategories = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.lblCategories = new System.Windows.Forms.Label();
             this.pnlCategories = new System.Windows.Forms.Panel();
-            this.lblCategoriesNumber = new System.Windows.Forms.Label();
+            this.lblBrandsNumber = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblManageCategories = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.pnlCategories.SuspendLayout();
@@ -101,24 +103,6 @@
             this.CategoryName.Name = "CategoryName";
             this.CategoryName.ReadOnly = true;
             // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
-            // 
             // err
             // 
             this.err.ContainerControl = this;
@@ -152,7 +136,7 @@
             // pnlCategories
             // 
             this.pnlCategories.BackColor = System.Drawing.Color.White;
-            this.pnlCategories.Controls.Add(this.lblCategoriesNumber);
+            this.pnlCategories.Controls.Add(this.lblBrandsNumber);
             this.pnlCategories.Controls.Add(this.label2);
             this.pnlCategories.Controls.Add(this.txtSearch);
             this.pnlCategories.Controls.Add(this.dgvCategories);
@@ -162,15 +146,15 @@
             this.pnlCategories.Size = new System.Drawing.Size(1012, 304);
             this.pnlCategories.TabIndex = 42;
             // 
-            // lblCategoriesNumber
+            // lblBrandsNumber
             // 
-            this.lblCategoriesNumber.AutoSize = true;
-            this.lblCategoriesNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.lblCategoriesNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblCategoriesNumber.Location = new System.Drawing.Point(14, 262);
-            this.lblCategoriesNumber.Name = "lblCategoriesNumber";
-            this.lblCategoriesNumber.Size = new System.Drawing.Size(0, 13);
-            this.lblCategoriesNumber.TabIndex = 38;
+            this.lblBrandsNumber.AutoSize = true;
+            this.lblBrandsNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBrandsNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblBrandsNumber.Location = new System.Drawing.Point(14, 262);
+            this.lblBrandsNumber.Name = "lblBrandsNumber";
+            this.lblBrandsNumber.Size = new System.Drawing.Size(0, 13);
+            this.lblBrandsNumber.TabIndex = 38;
             // 
             // label2
             // 
@@ -187,7 +171,7 @@
             // 
             this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Location = new System.Drawing.Point(70, 74);
+            this.txtSearch.Location = new System.Drawing.Point(70, 75);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(924, 13);
             this.txtSearch.TabIndex = 20;
@@ -203,6 +187,40 @@
             this.lblManageCategories.Size = new System.Drawing.Size(166, 22);
             this.lblManageCategories.TabIndex = 19;
             this.lblManageCategories.Text = "Manage Categories";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
             // 
             // frmManageCategories
             // 
@@ -240,6 +258,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblManageCategories;
-        private System.Windows.Forms.Label lblCategoriesNumber;
+        private System.Windows.Forms.Label lblBrandsNumber;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }

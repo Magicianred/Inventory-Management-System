@@ -140,6 +140,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInterfaces\frmManageBrands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmManageBrands.Designer.cs">
+      <DependentUpon>frmManageBrands.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\frmManageCategories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     <None Include="Resources\products.png" />
     <None Include="Resources\customers.png" />
     <None Include="Resources\users.png" />
+    <EmbeddedResource Include="UserInterfaces\frmAddBrand.resx">
+      <DependentUpon>frmAddBrand.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmAddCategory.resx">
       <DependentUpon>frmAddCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\frmManageBrands.resx">
+      <DependentUpon>frmManageBrands.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>

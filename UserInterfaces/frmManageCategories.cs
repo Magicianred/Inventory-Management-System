@@ -33,7 +33,7 @@ namespace InventoryManagementApp.UserInterfaces
                 dgvCategories.DataSource = null;
                 dgvCategories.DataSource = categories ?? InventoryManagementDb.DB.Categories.ToList();
                 
-                lblCategoriesNumber.Text = $"{(dgvCategories.DataSource as List<Category>).Count()} categories";
+                lblBrandsNumber.Text = $"{(dgvCategories.DataSource as List<Category>).Count()} categories";
             }
             catch (Exception ex)
             {
@@ -103,13 +103,20 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            var filter = txtSearch.Text.ToLower();
+            try
+            {
+                var filter = txtSearch.Text.ToLower();
 
-            LoadCategories(
-                InventoryManagementDb.DB.Categories.Where(
-                    u => u.CategoryName.ToLower().Contains(filter)
-                    || string.IsNullOrEmpty(filter)
-                    ).ToList());
+                LoadCategories(
+                    InventoryManagementDb.DB.Categories.Where(
+                        u => u.CategoryName.ToLower().Contains(filter)
+                        || string.IsNullOrEmpty(filter)
+                        ).ToList());
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
         }
     }
 }

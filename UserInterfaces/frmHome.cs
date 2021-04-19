@@ -166,7 +166,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnBrands_Click(object sender, EventArgs e)
         {
-            //frmBrands
+            openChildForm(new frmManageBrands());
             hideSubMenues();
         }
 
