@@ -47,6 +47,7 @@
             this.lblOperationInfo = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAddUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.pnlChildForm.SuspendLayout();
@@ -143,6 +144,7 @@
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlChildForm.Controls.Add(this.btnAddUser);
             this.pnlChildForm.Controls.Add(this.pnlUsers);
             this.pnlChildForm.Controls.Add(this.lblUsers);
             this.pnlChildForm.Controls.Add(this.lblOperationInfo);
@@ -161,7 +163,7 @@
             this.pnlUsers.Controls.Add(this.lblUsersNumber);
             this.pnlUsers.Controls.Add(this.txtSearch);
             this.pnlUsers.Controls.Add(this.lblEvidentUser);
-            this.pnlUsers.Location = new System.Drawing.Point(15, 67);
+            this.pnlUsers.Location = new System.Drawing.Point(15, 118);
             this.pnlUsers.Name = "pnlUsers";
             this.pnlUsers.Size = new System.Drawing.Size(1012, 381);
             this.pnlUsers.TabIndex = 38;
@@ -236,6 +238,21 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 50;
             // 
+            // btnAddUser
+            // 
+            this.btnAddUser.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddUser.FlatAppearance.BorderSize = 0;
+            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUser.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUser.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnAddUser.Location = new System.Drawing.Point(15, 67);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(158, 34);
+            this.btnAddUser.TabIndex = 39;
+            this.btnAddUser.Text = "Add User";
+            this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
             // frmManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,5 +294,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblUsersNumber;
         private System.Windows.Forms.Panel pnlUsers;
+        private System.Windows.Forms.Button btnAddUser;
     }
 }

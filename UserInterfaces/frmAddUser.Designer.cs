@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.btnManageUsers = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
@@ -200,9 +201,9 @@
             this.panel1.Controls.Add(this.lblPassword);
             this.panel1.Controls.Add(this.lblTelephone);
             this.panel1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(12, 61);
+            this.panel1.Location = new System.Drawing.Point(12, 99);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 535);
+            this.panel1.Size = new System.Drawing.Size(1015, 522);
             this.panel1.TabIndex = 0;
             // 
             // cbShowPassword
@@ -223,7 +224,7 @@
             this.lblOperationInfo.AutoSize = true;
             this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblOperationInfo.Location = new System.Drawing.Point(17, 502);
+            this.lblOperationInfo.Location = new System.Drawing.Point(17, 498);
             this.lblOperationInfo.Name = "lblOperationInfo";
             this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
             this.lblOperationInfo.TabIndex = 17;
@@ -308,11 +309,26 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(25, 25);
+            this.label3.Location = new System.Drawing.Point(25, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 21);
             this.label3.TabIndex = 36;
             this.label3.Text = "Users";
+            // 
+            // btnManageUsers
+            // 
+            this.btnManageUsers.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManageUsers.FlatAppearance.BorderSize = 0;
+            this.btnManageUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageUsers.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageUsers.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnManageUsers.Location = new System.Drawing.Point(12, 49);
+            this.btnManageUsers.Name = "btnManageUsers";
+            this.btnManageUsers.Size = new System.Drawing.Size(158, 34);
+            this.btnManageUsers.TabIndex = 37;
+            this.btnManageUsers.Text = "Manage Users";
+            this.btnManageUsers.UseVisualStyleBackColor = false;
+            this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
             // frmAddUser
             // 
@@ -320,6 +336,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1039, 637);
+            this.Controls.Add(this.btnManageUsers);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -359,5 +376,6 @@
         private System.Windows.Forms.Label lblOperationInfo;
         private System.Windows.Forms.CheckBox cbShowPassword;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnManageUsers;
     }
 }

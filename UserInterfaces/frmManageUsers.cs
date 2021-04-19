@@ -100,6 +100,8 @@ namespace InventoryManagementApp.Users
                 {
                     InventoryManagementDb.DB.Users.Remove(user);
                     InventoryManagementDb.DB.SaveChanges();
+
+                    txtSearch.Text = "";
                 }
 
                 LoadUsers();
@@ -122,6 +124,23 @@ namespace InventoryManagementApp.Users
                     || u.Telephone.ToString().ToLower().Contains(filter)
                     || string.IsNullOrEmpty(filter)
                     ).ToList());
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            pnlChildForm = this.Parent as Panel;
+            if (pnlChildForm != null)
+            {
+                frmAddUser frmAddUser = new frmAddUser();
+                frmAddUser.FormBorderStyle = FormBorderStyle.None;
+                frmAddUser.TopLevel = false;
+                frmAddUser.BringToFront();
+
+                pnlChildForm.Controls.Clear();
+                pnlChildForm.Controls.Add(frmAddUser);
+                frmAddUser.Show();
+                this.Hide();
+            }
         }
     }
 }

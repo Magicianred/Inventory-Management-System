@@ -150,5 +150,23 @@ namespace InventoryManagementApp.UserInterfaces
             else
                 txtPassword.UseSystemPasswordChar = txtPasswordConfirmation.UseSystemPasswordChar = true;
         }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            Panel pnlChildForm = this.Parent as Panel;
+            
+            if (pnlChildForm != null)
+            {
+                frmManageUsers frmManageUsers = new frmManageUsers();
+                frmManageUsers.FormBorderStyle = FormBorderStyle.None;
+                frmManageUsers.TopLevel = false;
+                frmManageUsers.BringToFront();
+
+                pnlChildForm.Controls.Clear();
+                pnlChildForm.Controls.Add(frmManageUsers);
+                frmManageUsers.Show();
+                this.Hide();
+            }
+        }
     }
 }
