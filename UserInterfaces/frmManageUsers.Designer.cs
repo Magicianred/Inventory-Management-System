@@ -34,23 +34,23 @@
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblUsers = new System.Windows.Forms.Label();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlUsers = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblUsersNumber = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblEvidentUser = new System.Windows.Forms.Label();
-            this.lblUsersNumber = new System.Windows.Forms.Label();
             this.lblOperationInfo = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.pnlChildForm.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvUsers
@@ -107,6 +107,24 @@
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
+            // 
             // err
             // 
             this.err.ContainerControl = this;
@@ -125,7 +143,7 @@
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlChildForm.Controls.Add(this.panel1);
+            this.pnlChildForm.Controls.Add(this.pnlUsers);
             this.pnlChildForm.Controls.Add(this.lblUsers);
             this.pnlChildForm.Controls.Add(this.lblOperationInfo);
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -135,18 +153,18 @@
             this.pnlChildForm.Size = new System.Drawing.Size(1039, 637);
             this.pnlChildForm.TabIndex = 33;
             // 
-            // panel1
+            // pnlUsers
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dgvUsers);
-            this.panel1.Controls.Add(this.lblUsersNumber);
-            this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.lblEvidentUser);
-            this.panel1.Location = new System.Drawing.Point(20, 67);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1011, 384);
-            this.panel1.TabIndex = 38;
+            this.pnlUsers.BackColor = System.Drawing.Color.White;
+            this.pnlUsers.Controls.Add(this.label2);
+            this.pnlUsers.Controls.Add(this.dgvUsers);
+            this.pnlUsers.Controls.Add(this.lblUsersNumber);
+            this.pnlUsers.Controls.Add(this.txtSearch);
+            this.pnlUsers.Controls.Add(this.lblEvidentUser);
+            this.pnlUsers.Location = new System.Drawing.Point(15, 67);
+            this.pnlUsers.Name = "pnlUsers";
+            this.pnlUsers.Size = new System.Drawing.Size(1012, 381);
+            this.pnlUsers.TabIndex = 38;
             // 
             // label2
             // 
@@ -158,6 +176,16 @@
             this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 36;
             this.label2.Text = "Search:";
+            // 
+            // lblUsersNumber
+            // 
+            this.lblUsersNumber.AutoSize = true;
+            this.lblUsersNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.lblUsersNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblUsersNumber.Location = new System.Drawing.Point(14, 339);
+            this.lblUsersNumber.Name = "lblUsersNumber";
+            this.lblUsersNumber.Size = new System.Drawing.Size(0, 16);
+            this.lblUsersNumber.TabIndex = 37;
             // 
             // txtSearch
             // 
@@ -179,16 +207,6 @@
             this.lblEvidentUser.Size = new System.Drawing.Size(126, 22);
             this.lblEvidentUser.TabIndex = 19;
             this.lblEvidentUser.Text = "Manage Users";
-            // 
-            // lblUsersNumber
-            // 
-            this.lblUsersNumber.AutoSize = true;
-            this.lblUsersNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.lblUsersNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblUsersNumber.Location = new System.Drawing.Point(14, 339);
-            this.lblUsersNumber.Name = "lblUsersNumber";
-            this.lblUsersNumber.Size = new System.Drawing.Size(0, 16);
-            this.lblUsersNumber.TabIndex = 37;
             // 
             // lblOperationInfo
             // 
@@ -218,24 +236,6 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
-            // 
             // frmManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,8 +252,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.pnlChildForm.ResumeLayout(false);
             this.pnlChildForm.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlUsers.ResumeLayout(false);
+            this.pnlUsers.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -276,6 +276,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblUsersNumber;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlUsers;
     }
 }

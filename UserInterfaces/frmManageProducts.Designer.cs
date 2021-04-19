@@ -172,7 +172,7 @@
             this.cmbCategorySearch.BackColor = System.Drawing.SystemColors.Control;
             this.cmbCategorySearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCategorySearch.FormattingEnabled = true;
-            this.cmbCategorySearch.Location = new System.Drawing.Point(745, 334);
+            this.cmbCategorySearch.Location = new System.Drawing.Point(745, 336);
             this.cmbCategorySearch.Name = "cmbCategorySearch";
             this.cmbCategorySearch.Size = new System.Drawing.Size(235, 21);
             this.cmbCategorySearch.TabIndex = 2;

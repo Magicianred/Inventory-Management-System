@@ -56,6 +56,9 @@ namespace InventoryManagementApp.UserInterfaces
                 if (e.ColumnIndex == 5)
                 {
                     frmAddProduct frmAddProduct = new frmAddProduct(product);
+                    frmAddProduct.TopLevel = false;
+                    frmAddProduct.FormBorderStyle = FormBorderStyle.None;
+                    frmAddProduct.Dock = DockStyle.Fill;
                     frmAddProduct.Show();
                 }
                 if (e.ColumnIndex == 6

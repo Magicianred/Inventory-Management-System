@@ -80,6 +80,14 @@ namespace InventoryManagementApp.Users
                 if(e.ColumnIndex==4)
                 {
                     frmAddUser frmAddUser = new frmAddUser(user);
+                    frmAddUser.TopLevel = false;
+                    frmAddUser.FormBorderStyle = FormBorderStyle.None;
+                    frmAddUser.Dock = DockStyle.Fill;
+
+                    pnlChildForm.Controls.Add(frmAddUser);
+                    pnlChildForm.Tag = frmAddUser;//associate form with the container panel
+
+                    frmAddUser.BringToFront();
                     frmAddUser.Show();
                 }
                 if (e.ColumnIndex == 5 
