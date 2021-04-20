@@ -171,6 +171,7 @@
             this.btnAddOrder.Text = "Add Order";
             this.btnAddOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddOrder.UseVisualStyleBackColor = false;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // btnManageOrders
             // 

@@ -103,6 +103,12 @@
     <Compile Include="UserInterfaces\frmAddOrder.Designer.cs">
       <DependentUpon>frmAddOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterfaces\frmAddOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAddOrderDetails.Designer.cs">
+      <DependentUpon>frmAddOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\frmAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmAddCustomer.resx">
       <DependentUpon>frmAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\frmAddOrder.resx">
+      <DependentUpon>frmAddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\frmAddOrderDetails.resx">
+      <DependentUpon>frmAddOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
