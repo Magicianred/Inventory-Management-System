@@ -1,5 +1,4 @@
-﻿using InventoryManagementApp.DataClasses;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,18 +10,11 @@ using System.Windows.Forms;
 
 namespace InventoryManagementApp.UserInterfaces
 {
-    public partial class frmAddOrder : Form
+    public partial class frmPrintOrder : Form
     {
-        private Order order;
-
-        public frmAddOrder()
+        public frmPrintOrder(DataClasses.Order order)
         {
             InitializeComponent();
-        }
-
-        public frmAddOrder(Order order)
-        {
-            this.order = order;
         }
     }
 }

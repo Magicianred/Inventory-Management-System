@@ -71,6 +71,7 @@
     <Compile Include="DataClasses\Customer.cs" />
     <Compile Include="DataClasses\Gender.cs" />
     <Compile Include="DataClasses\Order.cs" />
+    <Compile Include="DataClasses\OrderDetails.cs" />
     <Compile Include="DataClasses\Product.cs" />
     <Compile Include="DataClasses\Status.cs" />
     <Compile Include="DataClasses\Store.cs" />
@@ -183,12 +184,19 @@
       <DependentUpon>frmManageUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\User.cs" />
+    <Compile Include="UserInterfaces\frmPrintOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmPrintOrder.Designer.cs">
+      <DependentUpon>frmPrintOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\frmSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserInterfaces\frmSignUp.Designer.cs">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\print.png" />
     <None Include="Resources\editIcon.jpg" />
     <None Include="Resources\delete.jpg" />
     <None Include="Resources\edit.png" />

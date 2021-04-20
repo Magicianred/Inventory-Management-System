@@ -38,21 +38,21 @@
             this.cmbBrands = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCategories = new System.Windows.Forms.ComboBox();
-            this.lblProductsNumber = new System.Windows.Forms.Label();
+            this.lblOrdersNumber = new System.Windows.Forms.Label();
             this.lblManageOrders = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Store = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Print = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,7 @@
             this.btnAddOrder.TabIndex = 41;
             this.btnAddOrder.Text = "Add Order";
             this.btnAddOrder.UseVisualStyleBackColor = false;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // lblOrders
             // 
@@ -90,7 +91,7 @@
             this.panel1.Controls.Add(this.cmbBrands);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbCategories);
-            this.panel1.Controls.Add(this.lblProductsNumber);
+            this.panel1.Controls.Add(this.lblOrdersNumber);
             this.panel1.Controls.Add(this.lblManageOrders);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dgvOrders);
@@ -153,15 +154,15 @@
             this.cmbCategories.Size = new System.Drawing.Size(271, 21);
             this.cmbCategories.TabIndex = 46;
             // 
-            // lblProductsNumber
+            // lblOrdersNumber
             // 
-            this.lblProductsNumber.AutoSize = true;
-            this.lblProductsNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.lblProductsNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblProductsNumber.Location = new System.Drawing.Point(19, 342);
-            this.lblProductsNumber.Name = "lblProductsNumber";
-            this.lblProductsNumber.Size = new System.Drawing.Size(0, 13);
-            this.lblProductsNumber.TabIndex = 38;
+            this.lblOrdersNumber.AutoSize = true;
+            this.lblOrdersNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.lblOrdersNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblOrdersNumber.Location = new System.Drawing.Point(19, 342);
+            this.lblOrdersNumber.Name = "lblOrdersNumber";
+            this.lblOrdersNumber.Size = new System.Drawing.Size(0, 13);
+            this.lblOrdersNumber.TabIndex = 38;
             // 
             // lblManageOrders
             // 
@@ -201,14 +202,11 @@
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.ProductName,
-            this.ProductQuantity,
-            this.ProductPrice,
-            this.Description,
-            this.Category,
-            this.Brand,
-            this.Store,
+            this.Customer,
+            this.OrderDate,
+            this.OrderTotal,
             this.Edit,
+            this.Print,
             this.Delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -226,65 +224,76 @@
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrders.Size = new System.Drawing.Size(958, 196);
             this.dgvOrders.TabIndex = 3;
+            this.dgvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellContentClick);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(75, 87);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(905, 14);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::InventoryManagementApp.Properties.Resources.print;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 70;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn3.Width = 50;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
+            this.ID.HeaderText = "Order Number";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 50;
             // 
-            // ProductName
+            // Customer
             // 
-            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "Name";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
+            this.Customer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Customer.DataPropertyName = "Customer";
+            this.Customer.HeaderText = "Customer";
+            this.Customer.Name = "Customer";
+            this.Customer.ReadOnly = true;
             // 
-            // ProductQuantity
+            // OrderDate
             // 
-            this.ProductQuantity.DataPropertyName = "ProductQuantity";
-            this.ProductQuantity.HeaderText = "Quantity";
-            this.ProductQuantity.Name = "ProductQuantity";
-            this.ProductQuantity.ReadOnly = true;
+            this.OrderDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.OrderDate.DataPropertyName = "OrderDate";
+            this.OrderDate.HeaderText = "Order Date";
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.ReadOnly = true;
             // 
-            // ProductPrice
+            // OrderTotal
             // 
-            this.ProductPrice.DataPropertyName = "ProductPrice";
-            this.ProductPrice.HeaderText = "Price";
-            this.ProductPrice.Name = "ProductPrice";
-            this.ProductPrice.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // Category
-            // 
-            this.Category.DataPropertyName = "Category";
-            this.Category.HeaderText = "Category";
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "Brand";
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            this.Brand.ReadOnly = true;
-            // 
-            // Store
-            // 
-            this.Store.DataPropertyName = "Store";
-            this.Store.HeaderText = "Store";
-            this.Store.Name = "Store";
-            this.Store.ReadOnly = true;
+            this.OrderTotal.DataPropertyName = "OrderTotal";
+            this.OrderTotal.HeaderText = "Total";
+            this.OrderTotal.Name = "OrderTotal";
+            this.OrderTotal.ReadOnly = true;
             // 
             // Edit
             // 
@@ -297,6 +306,15 @@
             this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Edit.Width = 50;
             // 
+            // Print
+            // 
+            this.Print.HeaderText = "";
+            this.Print.Image = global::InventoryManagementApp.Properties.Resources.print;
+            this.Print.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Print.Name = "Print";
+            this.Print.ReadOnly = true;
+            this.Print.Width = 70;
+            // 
             // Delete
             // 
             this.Delete.HeaderText = "";
@@ -307,16 +325,6 @@
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Width = 50;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(75, 87);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(905, 14);
-            this.txtSearch.TabIndex = 1;
             // 
             // frmManageOrders
             // 
@@ -330,6 +338,7 @@
             this.Name = "frmManageOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management";
+            this.Load += new System.EventHandler(this.frmManageOrders_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
@@ -348,20 +357,20 @@
         private System.Windows.Forms.ComboBox cmbBrands;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbCategories;
-        private System.Windows.Forms.Label lblProductsNumber;
+        private System.Windows.Forms.Label lblOrdersNumber;
         private System.Windows.Forms.Label lblManageOrders;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvOrders;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Store;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderTotal;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Print;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
     }
 }

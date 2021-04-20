@@ -81,8 +81,8 @@ namespace InventoryManagementApp.UserInterfaces
         {
             return Validator.ValidateControl(txtProductName, err, Messages.RequiredField)
                 && Validator.ValidateNumber(txtProductQuantity, err, Messages.RequiredNumber)
-                && Validator.ValidateNumber(txtProductPrice, err, Messages.RequiredNumber);
-                && Validator.ValidateControl(txtDescription, err, Messages.RequiredField)
+                && Validator.ValidateNumber(txtProductPrice, err, Messages.RequiredNumber)
+                && Validator.ValidateControl(txtDescription, err, Messages.RequiredField);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
