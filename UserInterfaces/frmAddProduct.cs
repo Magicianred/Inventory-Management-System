@@ -42,7 +42,7 @@ namespace InventoryManagementApp.UserInterfaces
 
                     product.ProductName = txtProductName.Text;
                     product.ProductQuantity = int.Parse(txtProductQuantity.Text);
-                    product.ProductPrice = int.Parse(txtProductPrice.Text);
+                    product.ProductPrice = float.Parse(txtProductPrice.Text);
                     product.Description = txtDescription.Text;
                     product.Category = cmbCategories.SelectedItem as Category;
                     product.Brand = cmbBrands.SelectedItem as Brand;

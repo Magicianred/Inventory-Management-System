@@ -13,7 +13,7 @@ namespace InventoryManagementApp.DataClasses
         public int Id { get; set; }
         public string ProductName { get; set; }
         public int ProductQuantity { get; set; }
-        public int ProductPrice { get; set; }
+        public float ProductPrice { get; set; }
         public string Description { get; set; }
         public virtual Category Category { get; set; }
         public virtual Brand Brand { get; set; }

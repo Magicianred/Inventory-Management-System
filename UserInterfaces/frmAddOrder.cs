@@ -141,5 +141,28 @@ namespace InventoryManagementApp.UserInterfaces
                 Messages.HandleException(ex);
             }
         }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (order == null)
+                {
+                    order = new Order()
+                    {
+                        Customer = (cmbCustomers.SelectedItem as Customer),
+                        OrderDate = DateTime.Now,
+                        OrderTotal = 0
+                    };
+                    editOrder = false;
+                }
+                frmAddOrderDetails frmAddOrderDetails = new frmAddOrderDetails(order);
+                frmAddOrderDetails.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+        }
     }
 }
