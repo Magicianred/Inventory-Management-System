@@ -25,13 +25,50 @@ namespace InventoryManagementApp.UserInterfaces
         {
             LoadProducts();
             LoadCategories();
+            LoadBrands();
+            LoadStores();
+        }
+
+        private void LoadStores()
+        {
+            try
+            {
+                cmbStores.DataSource = InventoryManagementDb.DB.Stores.ToList();
+                cmbStores.ValueMember = "Id";
+                cmbStores.DisplayMember = "Name";
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+        }
+
+        private void LoadBrands()
+        {
+            try
+            {
+                cmbBrands.DataSource = InventoryManagementDb.DB.Brands.ToList();
+                cmbBrands.ValueMember = "Id";
+                cmbBrands.DisplayMember = "Name";
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
         }
 
         private void LoadCategories()
         {
-            cmbCategorySearch.DataSource = InventoryManagementDb.DB.Categories.ToList();
-            cmbCategorySearch.ValueMember = "Id";
-            cmbCategorySearch.DisplayMember = "CategoryName";
+            try
+            {
+                cmbCategories.DataSource = InventoryManagementDb.DB.Categories.ToList();
+                cmbCategories.ValueMember = "Id";
+                cmbCategories.DisplayMember = "CategoryName";
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
         }
 
         private void LoadProducts(List<Product> products = null)
@@ -91,24 +128,29 @@ namespace InventoryManagementApp.UserInterfaces
             Filter();
         }
 
-        private void cmbCategorySearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Filter();
-        }
+        
 
         private void Filter()
         {
             try
             {
-                var filter = txtSearch.Text.ToLower();
-                var category = cmbCategorySearch.SelectedItem as Category;
+                if (InventoryManagementDb.DB.Products.ToList().Count() > 0)
+                {
+                    var filter = txtSearch.Text.ToLower();
+                    var category = cmbCategories.SelectedItem as Category;
+                    var brand = cmbBrands.SelectedItem as Brand;
+                    var store = cmbStores.SelectedItem as Store;
 
-                LoadProducts(
-                    InventoryManagementDb.DB.Products.Where(p =>
-                        (p.ProductName.ToLower().Contains(filter)
-                        || p.Description.ToLower().Contains(filter)
-                        || string.IsNullOrEmpty(filter))
-                        && p.Category.Id == category.Id).ToList());
+                    LoadProducts(
+                        InventoryManagementDb.DB.Products.Where(p =>
+                            (p.ProductName.ToLower().Contains(filter)
+                            || p.Description.ToLower().Contains(filter)
+                            || string.IsNullOrEmpty(filter))
+                            //&& (p.Category.Id == category.Id
+                            //|| p.Brand.Id == brand.Id
+                            //|| p.Store.Id == store.Id)
+                            ).ToList());
+                }
             }
             catch (Exception ex)
             {
@@ -132,6 +174,21 @@ namespace InventoryManagementApp.UserInterfaces
                 frmAddProduct.Show();
                 this.Hide();
             }
+        }
+
+        private void cmbStores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void cmbBrands_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filter();
         }
     }
 }
