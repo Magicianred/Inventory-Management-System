@@ -12,9 +12,7 @@ namespace InventoryManagementApp.DataClasses
     {
         public int Id { get; set; }
         public virtual Customer Customer { get; set; }
-        public virtual Product Product { get; set; }
-        public DateTime DateAndTime { get; set; }
-        public int Quantity { get; set; }
-        public float TotalAmount { get; set; }
+        public DateTime OrderDate { get; set; }
+        public float OrderTotal { get; set; }
     }
 }

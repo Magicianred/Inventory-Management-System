@@ -74,7 +74,7 @@
             this.cmbCategories.Location = new System.Drawing.Point(18, 331);
             this.cmbCategories.Name = "cmbCategories";
             this.cmbCategories.Size = new System.Drawing.Size(288, 21);
-            this.cmbCategories.TabIndex = 5;
+            this.cmbCategories.TabIndex = 4;
             // 
             // lblDescription
             // 
@@ -129,7 +129,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(979, 55);
-            this.txtDescription.TabIndex = 4;
+            this.txtDescription.TabIndex = 3;
             // 
             // txtProductPrice
             // 
@@ -139,7 +139,7 @@
             this.txtProductPrice.Location = new System.Drawing.Point(18, 202);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(979, 13);
-            this.txtProductPrice.TabIndex = 3;
+            this.txtProductPrice.TabIndex = 2;
             // 
             // txtProductQuantity
             // 
@@ -149,7 +149,7 @@
             this.txtProductQuantity.Location = new System.Drawing.Point(18, 153);
             this.txtProductQuantity.Name = "txtProductQuantity";
             this.txtProductQuantity.Size = new System.Drawing.Size(979, 13);
-            this.txtProductQuantity.TabIndex = 2;
+            this.txtProductQuantity.TabIndex = 1;
             // 
             // txtProductName
             // 
@@ -159,7 +159,7 @@
             this.txtProductName.Location = new System.Drawing.Point(18, 110);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(979, 13);
-            this.txtProductName.TabIndex = 1;
+            this.txtProductName.TabIndex = 0;
             // 
             // lblProducts
             // 
@@ -227,7 +227,7 @@
             this.cmbStores.Location = new System.Drawing.Point(627, 331);
             this.cmbStores.Name = "cmbStores";
             this.cmbStores.Size = new System.Drawing.Size(370, 21);
-            this.cmbStores.TabIndex = 7;
+            this.cmbStores.TabIndex = 6;
             // 
             // label1
             // 
@@ -248,7 +248,7 @@
             this.cmbBrands.Location = new System.Drawing.Point(329, 331);
             this.cmbBrands.Name = "cmbBrands";
             this.cmbBrands.Size = new System.Drawing.Size(274, 21);
-            this.cmbBrands.TabIndex = 6;
+            this.cmbBrands.TabIndex = 5;
             // 
             // lblEvidentProduct
             // 
@@ -271,7 +271,7 @@
             this.btnClear.Location = new System.Drawing.Point(182, 437);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(84, 34);
-            this.btnClear.TabIndex = 9;
+            this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -286,7 +286,7 @@
             this.btnSave.Location = new System.Drawing.Point(18, 437);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(158, 34);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
