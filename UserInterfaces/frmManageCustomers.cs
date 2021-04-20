@@ -32,6 +32,8 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 dgvCustomers.DataSource = null;
                 dgvCustomers.DataSource = customers ?? InventoryManagementDb.DB.Customers.ToList();
+
+                lblCustomersNumber.Text = $"{(dgvCustomers.DataSource as List<Customer>).Count()} customers";
             }
             catch (Exception ex)
             {
@@ -39,96 +41,34 @@ namespace InventoryManagementApp.UserInterfaces
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            try
+            Panel pnlChildForm = this.Parent as Panel;
+            if (pnlChildForm != null)
             {
-                if (ValidateCustomerData())
-                {
-                    InventoryManagementDb.DB.Customers.Add(
-                         new Customer()
-                         {
-                             FullName = txtCustomerName.Text,
-                             Phone = int.Parse(txtCustomerPhone.Text)
-                         });
-                    InventoryManagementDb.DB.SaveChanges();
+                frmAddCustomer frmAddCustomer = new frmAddCustomer();
+                frmAddCustomer.FormBorderStyle = FormBorderStyle.None;
+                frmAddCustomer.TopLevel = false;
+                frmAddCustomer.BringToFront();
 
-                    MessageBox.Show(Messages.SuccessfullyAdded);
-
-                    ClearData();
-                    LoadCustomers();
-                }
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
+                pnlChildForm.Controls.Clear();
+                pnlChildForm.Controls.Add(frmAddCustomer);
+                frmAddCustomer.Show();
+                this.Hide();
             }
         }
 
-        private void ClearData()
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            txtCustomerName.Text = txtCustomerPhone.Text = "";
-        }
+            var filter = txtSearch.Text.ToLower();
 
-        private bool ValidateCustomerData()
-        {
-            return Validator.ValidateControl(txtCustomerName, err, Messages.RequiredField)
-             && Validator.ValidateNumber(txtCustomerPhone, err, Messages.RequiredNumber);
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            var customer = dgvCustomers.SelectedRows[0].DataBoundItem as Customer;
-
-            try
-            {
-                foreach (var item in InventoryManagementDb.DB.Customers)
-                {
-                    if (item.Id == customer.Id
-                        && MessageBox.Show(Messages.Delete,
-                        Messages.Question,
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question)
-                        == DialogResult.Yes)
-                    {
-                        InventoryManagementDb.DB.Customers.Remove(item);
-                        InventoryManagementDb.DB.SaveChanges();
-
-                        LoadCustomers();
-                        MessageBox.Show(Messages.SuccessfullyDeleted);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var customer = dgvCustomers.SelectedRows[0].DataBoundItem as Customer;//TO-DO: make sure it's the same user(data of the selected user) 
-                                                                                      //TO-DD: You can't add new data and overwrite existing object, new form for adding and editing!!!
-                if (ValidateCustomerData())
-                {
-                    customer.FullName = txtCustomerName.Text;
-                    customer.Phone= int.Parse(txtCustomerPhone.Text);
-
-                    InventoryManagementDb.DB.Entry(customer).State = System.Data.Entity.EntityState.Modified;
-                    InventoryManagementDb.DB.SaveChanges();
-                    
-                    LoadCustomers();
-
-                    MessageBox.Show(Messages.SuccessfullyModified);
-                    ClearData();
-                }
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
+            LoadCustomers(
+                InventoryManagementDb.DB.Customers.Where(
+                    c => c.FullName.ToLower().Contains(filter)
+                    || c.Email.ToLower().Contains(filter)
+                    || c.Phone.ToString().ToLower().Contains(filter)
+                    || string.IsNullOrEmpty(filter)
+                    ).ToList());
         }
 
         private void dgvCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -137,8 +77,34 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 var customer = dgvCustomers.SelectedRows[0].DataBoundItem as Customer;
 
-                txtCustomerName.Text = customer.FullName;
-                txtCustomerPhone.Text = $"{customer.Phone}";
+                if (e.ColumnIndex == 3)
+                {
+                    Panel pnlChildForm = this.Parent as Panel;
+                    if (pnlChildForm != null)
+                    {
+                        frmAddCustomer frmAddCustomer = new frmAddCustomer(customer);
+                        frmAddCustomer.FormBorderStyle = FormBorderStyle.None;
+                        frmAddCustomer.TopLevel = false;
+                        frmAddCustomer.BringToFront();
+
+                        pnlChildForm.Controls.Clear();
+                        pnlChildForm.Controls.Add(frmAddCustomer);
+                        frmAddCustomer.Show();
+                        this.Hide();
+                    }
+
+                }
+                if (e.ColumnIndex == 4
+                    && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    == DialogResult.Yes)
+                {
+                    InventoryManagementDb.DB.Customers.Remove(customer);
+                    InventoryManagementDb.DB.SaveChanges();
+
+                    txtSearch.Text = "";
+                }
+
+                LoadCustomers();
             }
             catch (Exception ex)
             {

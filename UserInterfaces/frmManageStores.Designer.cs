@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlStores = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
@@ -39,7 +39,6 @@
             this.dgvStores = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblManageStores = new System.Windows.Forms.Label();
@@ -61,7 +60,7 @@
             this.pnlStores.Controls.Add(this.lblManageStores);
             this.pnlStores.Location = new System.Drawing.Point(15, 139);
             this.pnlStores.Name = "pnlStores";
-            this.pnlStores.Size = new System.Drawing.Size(1012, 319);
+            this.pnlStores.Size = new System.Drawing.Size(1012, 387);
             this.pnlStores.TabIndex = 48;
             // 
             // label3
@@ -69,7 +68,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(707, 265);
+            this.label3.Location = new System.Drawing.Point(707, 336);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 16);
             this.label3.TabIndex = 58;
@@ -80,7 +79,7 @@
             this.cmbStatus.BackColor = System.Drawing.SystemColors.Control;
             this.cmbStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(759, 262);
+            this.cmbStatus.Location = new System.Drawing.Point(759, 333);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(235, 21);
             this.cmbStatus.TabIndex = 57;
@@ -91,7 +90,7 @@
             this.lblStoresNumber.AutoSize = true;
             this.lblStoresNumber.BackColor = System.Drawing.SystemColors.Window;
             this.lblStoresNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblStoresNumber.Location = new System.Drawing.Point(14, 262);
+            this.lblStoresNumber.Location = new System.Drawing.Point(14, 333);
             this.lblStoresNumber.Name = "lblStoresNumber";
             this.lblStoresNumber.Size = new System.Drawing.Size(0, 13);
             this.lblStoresNumber.TabIndex = 38;
@@ -122,35 +121,35 @@
             this.dgvStores.AllowUserToAddRows = false;
             this.dgvStores.AllowUserToDeleteRows = false;
             this.dgvStores.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.BrandName,
-            this.Status,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStores.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStores.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStores.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvStores.Location = new System.Drawing.Point(12, 105);
+            this.dgvStores.Location = new System.Drawing.Point(17, 105);
             this.dgvStores.Name = "dgvStores";
             this.dgvStores.ReadOnly = true;
+            this.dgvStores.RowTemplate.Height = 35;
             this.dgvStores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStores.Size = new System.Drawing.Size(982, 141);
+            this.dgvStores.Size = new System.Drawing.Size(977, 216);
             this.dgvStores.TabIndex = 33;
             this.dgvStores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStores_CellContentClick);
             // 
@@ -169,15 +168,6 @@
             this.BrandName.HeaderText = "Name";
             this.BrandName.Name = "BrandName";
             this.BrandName.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Edit
             // 
@@ -265,12 +255,11 @@
         private System.Windows.Forms.Label lblManageStores;
         private System.Windows.Forms.Button btnAddStore;
         private System.Windows.Forms.Label lblStores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

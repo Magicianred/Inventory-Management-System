@@ -84,7 +84,7 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 var store = dgvStores.SelectedRows[0].DataBoundItem as Store;
 
-                if (e.ColumnIndex == 3)
+                if (e.ColumnIndex == 2)
                 {
                     Panel pnlChildForm = this.Parent as Panel;
                     if (pnlChildForm != null)
@@ -101,7 +101,7 @@ namespace InventoryManagementApp.UserInterfaces
                     }
 
                 }
-                if (e.ColumnIndex == 4
+                if (e.ColumnIndex == 3
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {

@@ -45,6 +45,7 @@
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblClearFilter = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbBrands = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblProducts = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
-            this.lblClearFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.panel1.SuspendLayout();
@@ -97,6 +97,7 @@
             this.dgvProducts.Location = new System.Drawing.Point(22, 118);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowTemplate.Height = 35;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.Size = new System.Drawing.Size(958, 196);
             this.dgvProducts.TabIndex = 3;
@@ -216,6 +217,18 @@
             this.panel1.Size = new System.Drawing.Size(1000, 433);
             this.panel1.TabIndex = 0;
             // 
+            // lblClearFilter
+            // 
+            this.lblClearFilter.AutoSize = true;
+            this.lblClearFilter.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClearFilter.ForeColor = System.Drawing.Color.Gray;
+            this.lblClearFilter.Location = new System.Drawing.Point(910, 404);
+            this.lblClearFilter.Name = "lblClearFilter";
+            this.lblClearFilter.Size = new System.Drawing.Size(70, 16);
+            this.lblClearFilter.TabIndex = 50;
+            this.lblClearFilter.Text = "Clear Filter";
+            this.lblClearFilter.Click += new System.EventHandler(this.lblClearFilter_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -317,18 +330,6 @@
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.UseVisualStyleBackColor = false;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // lblClearFilter
-            // 
-            this.lblClearFilter.AutoSize = true;
-            this.lblClearFilter.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClearFilter.ForeColor = System.Drawing.Color.Gray;
-            this.lblClearFilter.Location = new System.Drawing.Point(910, 404);
-            this.lblClearFilter.Name = "lblClearFilter";
-            this.lblClearFilter.Size = new System.Drawing.Size(70, 16);
-            this.lblClearFilter.TabIndex = 50;
-            this.lblClearFilter.Text = "Clear Filter";
-            this.lblClearFilter.Click += new System.EventHandler(this.lblClearFilter_Click);
             // 
             // frmManageProducts
             // 

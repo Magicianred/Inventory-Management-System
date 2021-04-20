@@ -209,6 +209,9 @@
     <EmbeddedResource Include="UserInterfaces\frmAddCategory.resx">
       <DependentUpon>frmAddCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\frmAddCustomer.resx">
+      <DependentUpon>frmAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>

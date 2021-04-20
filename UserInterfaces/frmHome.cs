@@ -180,5 +180,11 @@ namespace InventoryManagementApp.UserInterfaces
         {
             openChildForm(new frmAddProduct());
         }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmAddCustomer());
+
+        }
     }
 }

@@ -180,6 +180,8 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void lblClearFilter_Click(object sender, EventArgs e)
         {
+            txtSearch.Text = "";
+
             LoadProducts();
         }
     }

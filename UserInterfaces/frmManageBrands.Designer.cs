@@ -37,13 +37,13 @@
             this.dgvBrands = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblManageBrands = new System.Windows.Forms.Label();
             this.btnAddBrand = new System.Windows.Forms.Button();
             this.lblBrands = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlBrands.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBrands)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.pnlBrands.Controls.Add(this.lblManageBrands);
             this.pnlBrands.Location = new System.Drawing.Point(12, 132);
             this.pnlBrands.Name = "pnlBrands";
-            this.pnlBrands.Size = new System.Drawing.Size(1012, 304);
+            this.pnlBrands.Size = new System.Drawing.Size(1012, 381);
             this.pnlBrands.TabIndex = 45;
             // 
             // lblBrandsNumber
@@ -66,7 +66,7 @@
             this.lblBrandsNumber.AutoSize = true;
             this.lblBrandsNumber.BackColor = System.Drawing.SystemColors.Window;
             this.lblBrandsNumber.ForeColor = System.Drawing.Color.Gray;
-            this.lblBrandsNumber.Location = new System.Drawing.Point(14, 262);
+            this.lblBrandsNumber.Location = new System.Drawing.Point(14, 331);
             this.lblBrandsNumber.Name = "lblBrandsNumber";
             this.lblBrandsNumber.Size = new System.Drawing.Size(0, 13);
             this.lblBrandsNumber.TabIndex = 38;
@@ -123,8 +123,9 @@
             this.dgvBrands.Location = new System.Drawing.Point(12, 105);
             this.dgvBrands.Name = "dgvBrands";
             this.dgvBrands.ReadOnly = true;
+            this.dgvBrands.RowTemplate.Height = 35;
             this.dgvBrands.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBrands.Size = new System.Drawing.Size(982, 141);
+            this.dgvBrands.Size = new System.Drawing.Size(977, 216);
             this.dgvBrands.TabIndex = 33;
             this.dgvBrands.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBrands_CellContentClick);
             // 
@@ -143,6 +144,24 @@
             this.BrandName.HeaderText = "Name";
             this.BrandName.Name = "BrandName";
             this.BrandName.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
             // 
             // lblManageBrands
             // 
@@ -196,24 +215,6 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
             // 
             // frmManageBrands
             // 

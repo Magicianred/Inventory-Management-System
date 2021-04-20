@@ -48,7 +48,6 @@ namespace InventoryManagementApp.UserInterfaces
             txtUsername.Text = user.Username;
             txtEmail.Text = user.Email;
             txtTelephone.Text = $"{user.Telephone}";
-            txtEmail.Text = user.Email;
             cmbGenders.SelectedValue = user.Gender.Id;
         }
 

@@ -29,208 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblCustomerPhone = new System.Windows.Forms.Label();
-            this.lblCustomerName = new System.Windows.Forms.Label();
-            this.txtCustomerPhone = new System.Windows.Forms.TextBox();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.dgvCustomers = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblOrders = new System.Windows.Forms.Label();
-            this.lblAmount = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblOrders = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.pnlCustomers = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvCustomers = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblCustomersNumber = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblEvidentCustomer = new System.Windows.Forms.Label();
+            this.lblCustomers = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.pnlCustomers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblCustomerPhone
-            // 
-            this.lblCustomerPhone.AutoSize = true;
-            this.lblCustomerPhone.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblCustomerPhone.Location = new System.Drawing.Point(26, 128);
-            this.lblCustomerPhone.Name = "lblCustomerPhone";
-            this.lblCustomerPhone.Size = new System.Drawing.Size(41, 13);
-            this.lblCustomerPhone.TabIndex = 18;
-            this.lblCustomerPhone.Text = "Phone:";
-            // 
-            // lblCustomerName
-            // 
-            this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblCustomerName.Location = new System.Drawing.Point(26, 79);
-            this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(57, 13);
-            this.lblCustomerName.TabIndex = 17;
-            this.lblCustomerName.Text = "Full Name:";
-            // 
-            // txtCustomerPhone
-            // 
-            this.txtCustomerPhone.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCustomerPhone.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtCustomerPhone.Location = new System.Drawing.Point(26, 144);
-            this.txtCustomerPhone.Name = "txtCustomerPhone";
-            this.txtCustomerPhone.Size = new System.Drawing.Size(238, 20);
-            this.txtCustomerPhone.TabIndex = 14;
-            // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCustomerName.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtCustomerName.Location = new System.Drawing.Point(26, 95);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(238, 20);
-            this.txtCustomerName.TabIndex = 13;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnHome.Location = new System.Drawing.Point(26, 349);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(235, 44);
-            this.btnHome.TabIndex = 22;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnDelete.Location = new System.Drawing.Point(150, 226);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 23);
-            this.btnDelete.TabIndex = 21;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEdit.Location = new System.Drawing.Point(26, 226);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(118, 23);
-            this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAdd.Location = new System.Drawing.Point(26, 186);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(235, 34);
-            this.btnAdd.TabIndex = 19;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // dgvCustomers
-            // 
-            this.dgvCustomers.AllowUserToAddRows = false;
-            this.dgvCustomers.AllowUserToDeleteRows = false;
-            this.dgvCustomers.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.FullName,
-            this.Phone});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomers.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCustomers.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvCustomers.Location = new System.Drawing.Point(310, 79);
-            this.dgvCustomers.Name = "dgvCustomers";
-            this.dgvCustomers.ReadOnly = true;
-            this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomers.Size = new System.Drawing.Size(523, 314);
-            this.dgvCustomers.TabIndex = 23;
-            this.dgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // FullName
-            // 
-            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            // 
-            // Phone
-            // 
-            this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Phone.DataPropertyName = "Phone";
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(866, 61);
-            this.panel1.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(48, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Manage Customers";
             // 
             // err
             // 
@@ -241,85 +69,10 @@
             this.panel2.BackColor = System.Drawing.Color.RosyBrown;
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.lblDate);
-            this.panel2.Location = new System.Drawing.Point(601, 463);
+            this.panel2.Location = new System.Drawing.Point(716, 519);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(232, 87);
+            this.panel2.Size = new System.Drawing.Size(308, 87);
             this.panel2.TabIndex = 24;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Tan;
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.lblAmount);
-            this.panel3.Location = new System.Drawing.Point(310, 463);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(232, 87);
-            this.panel3.TabIndex = 25;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Thistle;
-            this.panel4.Controls.Add(this.lblOrders);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(26, 463);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(232, 87);
-            this.panel4.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Orders Count";
-            // 
-            // lblOrders
-            // 
-            this.lblOrders.AutoSize = true;
-            this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrders.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblOrders.Location = new System.Drawing.Point(67, 36);
-            this.lblOrders.Name = "lblOrders";
-            this.lblOrders.Size = new System.Drawing.Size(84, 25);
-            this.lblOrders.TabIndex = 1;
-            this.lblOrders.Text = "Orders ";
-            // 
-            // lblAmount
-            // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblAmount.Location = new System.Drawing.Point(74, 31);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(86, 25);
-            this.lblAmount.TabIndex = 2;
-            this.lblAmount.Text = "Amount";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblDate.Location = new System.Drawing.Point(74, 31);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(57, 25);
-            this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "Date";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 18);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Orders Amount";
             // 
             // label7
             // 
@@ -332,32 +85,242 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Last Order Date";
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblDate.Location = new System.Drawing.Point(74, 31);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(57, 25);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "Date";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Tan;
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.lblAmount);
+            this.panel3.Location = new System.Drawing.Point(361, 519);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(299, 87);
+            this.panel3.TabIndex = 25;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Window;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(122, 18);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Orders Amount";
+            // 
+            // lblAmount
+            // 
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblAmount.Location = new System.Drawing.Point(74, 31);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(86, 25);
+            this.lblAmount.TabIndex = 2;
+            this.lblAmount.Text = "Amount";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Thistle;
+            this.panel4.Controls.Add(this.lblOrders);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(12, 519);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(286, 87);
+            this.panel4.TabIndex = 26;
+            // 
+            // lblOrders
+            // 
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrders.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblOrders.Location = new System.Drawing.Point(67, 36);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(84, 25);
+            this.lblOrders.TabIndex = 1;
+            this.lblOrders.Text = "Orders ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Orders Count";
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomer.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnAddCustomer.Location = new System.Drawing.Point(12, 50);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(158, 34);
+            this.btnAddCustomer.TabIndex = 42;
+            this.btnAddCustomer.Text = "Add Customer";
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // pnlCustomers
+            // 
+            this.pnlCustomers.BackColor = System.Drawing.Color.White;
+            this.pnlCustomers.Controls.Add(this.label1);
+            this.pnlCustomers.Controls.Add(this.dgvCustomers);
+            this.pnlCustomers.Controls.Add(this.lblCustomersNumber);
+            this.pnlCustomers.Controls.Add(this.txtSearch);
+            this.pnlCustomers.Controls.Add(this.lblEvidentCustomer);
+            this.pnlCustomers.Location = new System.Drawing.Point(12, 101);
+            this.pnlCustomers.Name = "pnlCustomers";
+            this.pnlCustomers.Size = new System.Drawing.Size(1012, 381);
+            this.pnlCustomers.TabIndex = 41;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(14, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Search:";
+            // 
+            // dgvCustomers
+            // 
+            this.dgvCustomers.AllowUserToAddRows = false;
+            this.dgvCustomers.AllowUserToDeleteRows = false;
+            this.dgvCustomers.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Phone,
+            this.Email,
+            this.Edit,
+            this.Delete});
+            this.dgvCustomers.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvCustomers.Location = new System.Drawing.Point(17, 103);
+            this.dgvCustomers.Name = "dgvCustomers";
+            this.dgvCustomers.ReadOnly = true;
+            this.dgvCustomers.RowTemplate.Height = 35;
+            this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCustomers.Size = new System.Drawing.Size(977, 216);
+            this.dgvCustomers.TabIndex = 10;
+            this.dgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "FullName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Full Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "Phone";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            this.Phone.Width = 244;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
+            // 
+            // lblCustomersNumber
+            // 
+            this.lblCustomersNumber.AutoSize = true;
+            this.lblCustomersNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.lblCustomersNumber.ForeColor = System.Drawing.Color.Gray;
+            this.lblCustomersNumber.Location = new System.Drawing.Point(14, 339);
+            this.lblCustomersNumber.Name = "lblCustomersNumber";
+            this.lblCustomersNumber.Size = new System.Drawing.Size(0, 13);
+            this.lblCustomersNumber.TabIndex = 37;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Location = new System.Drawing.Point(70, 74);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(924, 13);
+            this.txtSearch.TabIndex = 20;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // lblEvidentCustomer
+            // 
+            this.lblEvidentCustomer.AutoSize = true;
+            this.lblEvidentCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvidentCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblEvidentCustomer.Location = new System.Drawing.Point(398, 14);
+            this.lblEvidentCustomer.Name = "lblEvidentCustomer";
+            this.lblEvidentCustomer.Size = new System.Drawing.Size(165, 22);
+            this.lblEvidentCustomer.TabIndex = 19;
+            this.lblEvidentCustomer.Text = "Manage Customers";
+            // 
+            // lblCustomers
+            // 
+            this.lblCustomers.AutoSize = true;
+            this.lblCustomers.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomers.ForeColor = System.Drawing.Color.Gray;
+            this.lblCustomers.Location = new System.Drawing.Point(31, 17);
+            this.lblCustomers.Name = "lblCustomers";
+            this.lblCustomers.Size = new System.Drawing.Size(85, 21);
+            this.lblCustomers.TabIndex = 40;
+            this.lblCustomers.Text = "Customers";
+            // 
             // frmManageCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 562);
+            this.ClientSize = new System.Drawing.Size(1039, 637);
+            this.Controls.Add(this.btnAddCustomer);
+            this.Controls.Add(this.pnlCustomers);
+            this.Controls.Add(this.lblCustomers);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dgvCustomers);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblCustomerPhone);
-            this.Controls.Add(this.lblCustomerName);
-            this.Controls.Add(this.txtCustomerPhone);
-            this.Controls.Add(this.txtCustomerName);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inventry Management";
+            this.Text = "Inventory Management";
             this.Load += new System.EventHandler(this.frmManageCustomers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -365,26 +328,15 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.pnlCustomers.ResumeLayout(false);
+            this.pnlCustomers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblCustomerPhone;
-        private System.Windows.Forms.Label lblCustomerName;
-        private System.Windows.Forms.TextBox txtCustomerPhone;
-        private System.Windows.Forms.TextBox txtCustomerName;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvCustomers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblOrders;
@@ -395,5 +347,18 @@
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Button btnAddCustomer;
+        private System.Windows.Forms.Panel pnlCustomers;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvCustomers;
+        private System.Windows.Forms.Label lblCustomersNumber;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblEvidentCustomer;
+        private System.Windows.Forms.Label lblCustomers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
