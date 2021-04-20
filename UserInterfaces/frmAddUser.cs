@@ -32,13 +32,14 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmAddUser_Load(object sender, EventArgs e)
         {
+            LoadGenders();
+
             if (user != null)
             {
                 lblEvidentUser.Text = "Edit User Info";
                 LoadUserData();
             }
             
-            LoadGenders();
         }
 
         private void LoadUserData()
@@ -48,6 +49,7 @@ namespace InventoryManagementApp.UserInterfaces
             txtEmail.Text = user.Email;
             txtTelephone.Text = $"{user.Telephone}";
             txtEmail.Text = user.Email;
+            cmbGenders.SelectedValue = user.Gender.Id;
         }
 
         private void LoadGenders()
