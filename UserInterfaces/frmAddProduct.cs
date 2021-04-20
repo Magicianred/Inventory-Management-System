@@ -26,6 +26,7 @@ namespace InventoryManagementApp.UserInterfaces
         public frmAddProduct(Product product) : this()
         {
             this.product = product;
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -92,15 +93,15 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmAddProduct_Load(object sender, EventArgs e)
         {
+            LoadCategories();
+            LoadBrands();
+            LoadStores();
+
             if (product != null)
             {
                 lblEvidentProduct.Text = "Edit Product Info";
                 LoadProductData();
             }
-
-            LoadCategories();
-            LoadBrands();
-            LoadStores();
         }
 
         private void LoadStores()

@@ -19,28 +19,13 @@ namespace InventoryManagementApp.UserInterfaces
         {
             InitializeComponent();
             dgvProducts.AutoGenerateColumns = false;
+            LoadCategories();
+            LoadBrands();
         }
 
         private void frmManageProducts_Load(object sender, EventArgs e)
         {
             LoadProducts();
-            LoadCategories();
-            LoadBrands();
-            LoadStores();
-        }
-
-        private void LoadStores()
-        {
-            try
-            {
-                cmbStores.DataSource = InventoryManagementDb.DB.Stores.ToList();
-                cmbStores.ValueMember = "Id";
-                cmbStores.DisplayMember = "Name";
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
         }
 
         private void LoadBrands()
@@ -90,7 +75,7 @@ namespace InventoryManagementApp.UserInterfaces
             try
             {
                 var product = dgvProducts.SelectedRows[0].DataBoundItem as Product;
-                if (e.ColumnIndex == 5)
+                if (e.ColumnIndex == 8)
                 {
                     Panel pnlChildForm = this.Parent as Panel;
 
@@ -107,7 +92,7 @@ namespace InventoryManagementApp.UserInterfaces
                         this.Hide();
                     }
                 }
-                if (e.ColumnIndex == 6
+                if (e.ColumnIndex == 9
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {
@@ -134,22 +119,24 @@ namespace InventoryManagementApp.UserInterfaces
         {
             try
             {
-                if (InventoryManagementDb.DB.Products.ToList().Count() > 0)
+                var filter = txtSearch.Text.ToLower();
+                var category = cmbCategories.SelectedItem as Category;
+                var brand = cmbBrands.SelectedItem as Brand;
+                
+                if (category != null && brand != null)
                 {
-                    var filter = txtSearch.Text.ToLower();
-                    var category = cmbCategories.SelectedItem as Category;
-                    var brand = cmbBrands.SelectedItem as Brand;
-                    var store = cmbStores.SelectedItem as Store;
-
                     LoadProducts(
                         InventoryManagementDb.DB.Products.Where(p =>
                             (p.ProductName.ToLower().Contains(filter)
                             || p.Description.ToLower().Contains(filter)
                             || string.IsNullOrEmpty(filter))
-                            //&& (p.Category.Id == category.Id
-                            //|| p.Brand.Id == brand.Id
-                            //|| p.Store.Id == store.Id)
+                            && (p.Category.Id == category.Id
+                            && p.Brand.Id == brand.Id)
                             ).ToList());
+                }
+                else
+                {
+                    LoadProducts();
                 }
             }
             catch (Exception ex)
@@ -189,6 +176,11 @@ namespace InventoryManagementApp.UserInterfaces
         private void cmbBrands_SelectedIndexChanged(object sender, EventArgs e)
         {
             Filter();
+        }
+
+        private void lblClearFilter_Click(object sender, EventArgs e)
+        {
+            LoadProducts();
         }
     }
 }
