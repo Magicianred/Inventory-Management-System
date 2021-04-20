@@ -30,13 +30,13 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmAddStore_Load(object sender, EventArgs e)
         {
+            LoadStatuses();
+
             if (store != null)
             {
                 lblEvidentStore.Text = "Edit Store Info";
                 LoadStoreData();
             }
-
-            LoadStatuses();
         }
 
         private void LoadStatuses()

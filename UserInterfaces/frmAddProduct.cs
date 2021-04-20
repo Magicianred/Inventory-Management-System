@@ -26,7 +26,6 @@ namespace InventoryManagementApp.UserInterfaces
         public frmAddProduct(Product product) : this()
         {
             this.product = product;
-            
         }
 
         private void btnSave_Click(object sender, EventArgs e)

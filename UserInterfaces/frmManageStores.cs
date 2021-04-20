@@ -130,6 +130,7 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 var filter = txtSearch.Text.ToLower();
                 var status = cmbStatus.SelectedItem as Status;
+
                 LoadStores(
                     InventoryManagementDb.DB.Stores.Where(
                         u => (u.Name.ToLower().Contains(filter)
