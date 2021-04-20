@@ -50,8 +50,10 @@ namespace InventoryManagementApp.UserInterfaces
         {
             try
             {
-                if (ValidateOrderData())
+                if (ValidateOrderData() && (dgvOrderDetails.DataSource) != null)
                 {
+                    btnMakeOrder.Enabled = true;
+
                     if (order == null)
                     {
                         order = new Order();
@@ -77,6 +79,10 @@ namespace InventoryManagementApp.UserInterfaces
                         lblOperationInfo.Text = Messages.SuccessfullyModified;
                     else
                         lblOperationInfo.Text = Messages.SuccessfullyAdded;
+                }
+                else
+                {
+                    btnMakeOrder.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -133,8 +139,8 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(o => o.Order.Id == order.Id);
 
-                dgvStores.DataSource = null;
-                dgvStores.DataSource = orderDetails;
+                dgvOrderDetails.DataSource = null;
+                dgvOrderDetails.DataSource = orderDetails;
             }
             catch (Exception ex)
             {

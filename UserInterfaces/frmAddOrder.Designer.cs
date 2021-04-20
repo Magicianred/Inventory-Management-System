@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnManageOrders = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblOperationInfo = new System.Windows.Forms.Label();
             this.lblEvidentOrder = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnMakeOrder = new System.Windows.Forms.Button();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.cmbCustomers = new System.Windows.Forms.ComboBox();
             this.lblOrders = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
-            this.dgvStores = new System.Windows.Forms.DataGridView();
+            this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblOrderTotal = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblOrderTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // btnManageOrders
@@ -72,12 +74,12 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.lblOrderTotal);
-            this.panel1.Controls.Add(this.dgvStores);
+            this.panel1.Controls.Add(this.dgvOrderDetails);
             this.panel1.Controls.Add(this.btnAddProduct);
             this.panel1.Controls.Add(this.lblOperationInfo);
             this.panel1.Controls.Add(this.lblEvidentOrder);
             this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnMakeOrder);
             this.panel1.Controls.Add(this.lblCustomer);
             this.panel1.Controls.Add(this.cmbCustomers);
             this.panel1.Location = new System.Drawing.Point(12, 101);
@@ -121,20 +123,20 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnSave
+            // btnMakeOrder
             // 
-            this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSave.Location = new System.Drawing.Point(18, 437);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(158, 34);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnMakeOrder.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnMakeOrder.FlatAppearance.BorderSize = 0;
+            this.btnMakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMakeOrder.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeOrder.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnMakeOrder.Location = new System.Drawing.Point(18, 437);
+            this.btnMakeOrder.Name = "btnMakeOrder";
+            this.btnMakeOrder.Size = new System.Drawing.Size(158, 34);
+            this.btnMakeOrder.TabIndex = 7;
+            this.btnMakeOrder.Text = "Make Order";
+            this.btnMakeOrder.UseVisualStyleBackColor = false;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblCustomer
             // 
@@ -183,21 +185,21 @@
             this.btnAddProduct.UseVisualStyleBackColor = false;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
-            // dgvStores
+            // dgvOrderDetails
             // 
-            this.dgvStores.AllowUserToAddRows = false;
-            this.dgvStores.AllowUserToDeleteRows = false;
-            this.dgvStores.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvStores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvOrderDetails.AllowUserToAddRows = false;
+            this.dgvOrderDetails.AllowUserToDeleteRows = false;
+            this.dgvOrderDetails.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Product,
             this.ProductQuantity,
@@ -205,22 +207,22 @@
             this.TotalAmount,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStores.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvStores.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvStores.Location = new System.Drawing.Point(21, 227);
-            this.dgvStores.Name = "dgvStores";
-            this.dgvStores.ReadOnly = true;
-            this.dgvStores.RowTemplate.Height = 35;
-            this.dgvStores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStores.Size = new System.Drawing.Size(977, 171);
-            this.dgvStores.TabIndex = 54;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrderDetails.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvOrderDetails.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvOrderDetails.Location = new System.Drawing.Point(21, 227);
+            this.dgvOrderDetails.Name = "dgvOrderDetails";
+            this.dgvOrderDetails.ReadOnly = true;
+            this.dgvOrderDetails.RowTemplate.Height = 35;
+            this.dgvOrderDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrderDetails.Size = new System.Drawing.Size(977, 171);
+            this.dgvOrderDetails.TabIndex = 54;
             // 
             // ID
             // 
@@ -260,6 +262,32 @@
             this.TotalAmount.Name = "TotalAmount";
             this.TotalAmount.ReadOnly = true;
             // 
+            // lblOrderTotal
+            // 
+            this.lblOrderTotal.AutoSize = true;
+            this.lblOrderTotal.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderTotal.ForeColor = System.Drawing.Color.Gray;
+            this.lblOrderTotal.Location = new System.Drawing.Point(950, 410);
+            this.lblOrderTotal.Name = "lblOrderTotal";
+            this.lblOrderTotal.Size = new System.Drawing.Size(0, 16);
+            this.lblOrderTotal.TabIndex = 55;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
             // Edit
             // 
             this.Edit.HeaderText = "";
@@ -278,16 +306,6 @@
             this.Delete.ReadOnly = true;
             this.Delete.Width = 50;
             // 
-            // lblOrderTotal
-            // 
-            this.lblOrderTotal.AutoSize = true;
-            this.lblOrderTotal.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderTotal.ForeColor = System.Drawing.Color.Gray;
-            this.lblOrderTotal.Location = new System.Drawing.Point(950, 410);
-            this.lblOrderTotal.Name = "lblOrderTotal";
-            this.lblOrderTotal.Size = new System.Drawing.Size(0, 16);
-            this.lblOrderTotal.TabIndex = 55;
-            // 
             // frmAddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,7 +321,7 @@
             this.Load += new System.EventHandler(this.frmAddOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,12 +334,12 @@
         private System.Windows.Forms.Label lblOperationInfo;
         private System.Windows.Forms.Label lblEvidentOrder;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.ComboBox cmbCustomers;
         private System.Windows.Forms.Label lblOrders;
         private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.DataGridView dgvStores;
+        private System.Windows.Forms.DataGridView dgvOrderDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductQuantity;
@@ -330,5 +348,7 @@
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Label lblOrderTotal;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
