@@ -16,12 +16,18 @@ namespace InventoryManagementApp.UserInterfaces
     public partial class frmAddOrderDetails : Form
     {
         private Order order;
+        private OrderDetails orderDetails;
 
         public frmAddOrderDetails(Order order)
         {
             InitializeComponent();
             this.order = order;
             nProductQuantity.Minimum = 1;
+        }
+
+        public frmAddOrderDetails(OrderDetails orderDetails)
+        {
+            this.orderDetails = orderDetails;
         }
 
         private void frmAddOrderDetails_Load(object sender, EventArgs e)

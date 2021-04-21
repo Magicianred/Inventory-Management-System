@@ -18,5 +18,10 @@ namespace InventoryManagementApp.DataClasses
         public virtual Category Category { get; set; }
         public virtual Brand Brand { get; set; }
         public virtual Store Store { get; set; }
+
+        public override string ToString()
+        {
+            return ProductName;
+        }
     }
 }

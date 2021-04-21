@@ -21,6 +21,7 @@ namespace InventoryManagementApp.UserInterfaces
         public frmAddOrder()
         {
             InitializeComponent();
+            dgvOrderDetails.AutoGenerateColumns = false;
         }
 
         public frmAddOrder(Order order)
@@ -61,7 +62,7 @@ namespace InventoryManagementApp.UserInterfaces
                     }
 
                     order.Customer = cmbCustomers.SelectedItem as Customer;
-                    order.OrderDate = DateTime.Now;
+                    order.OrderDate = DateTime.Now.Date;
                     
 
                     if (editOrder)
@@ -98,7 +99,15 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            var orderDetails = dgvOrderDetails.DataSource as List<OrderDetails>;
 
+            foreach (var od in orderDetails)
+            {
+                InventoryManagementDb.DB.OrderDetails.Remove(od);
+                InventoryManagementDb.DB.SaveChanges();
+            }
+
+            LoadOrderDetails();
         }
 
         private void frmAddOrder_Load(object sender, EventArgs e)
@@ -137,7 +146,7 @@ namespace InventoryManagementApp.UserInterfaces
 
             try
             {
-                var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(o => o.Order.Id == order.Id);
+                var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(o => o.Order.Id == order.Id).ToList();
 
                 dgvOrderDetails.DataSource = null;
                 dgvOrderDetails.DataSource = orderDetails;
@@ -148,7 +157,7 @@ namespace InventoryManagementApp.UserInterfaces
             }
         }
 
-        private void btnAddProduct_Click(object sender, EventArgs e)
+        private void btnAddProduct_Click(object sender, EventArgs e)//TO-DO: if product already exists only add on quantity
         {
             try
             {
@@ -157,13 +166,53 @@ namespace InventoryManagementApp.UserInterfaces
                     order = new Order()
                     {
                         Customer = (cmbCustomers.SelectedItem as Customer),
-                        OrderDate = DateTime.Now,
+                        OrderDate = DateTime.Now.Date,
                         OrderTotal = 0
                     };
                     editOrder = false;
                 }
                 frmAddOrderDetails frmAddOrderDetails = new frmAddOrderDetails(order);
                 frmAddOrderDetails.ShowDialog();
+
+                LoadOrderDetails();
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+        }
+
+        private void dgvOrderDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var orderDetails = dgvOrderDetails.SelectedRows[0].DataBoundItem as OrderDetails;
+                if (e.ColumnIndex == 5)
+                {
+                    Panel pnlChildForm = this.Parent as Panel;
+
+                    if (pnlChildForm != null)
+                    {
+                        frmAddOrderDetails frmAddOrderDetails = new frmAddOrderDetails(orderDetails);
+                        frmAddOrderDetails.FormBorderStyle = FormBorderStyle.None;
+                        frmAddOrderDetails.TopLevel = false;
+                        frmAddOrderDetails.BringToFront();
+
+                        pnlChildForm.Controls.Clear();
+                        pnlChildForm.Controls.Add(frmAddOrderDetails);
+                        frmAddOrderDetails.Show();
+                        this.Hide();
+                    }
+                }
+                if (e.ColumnIndex == 6
+                    && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    == DialogResult.Yes)
+                {
+                    InventoryManagementDb.DB.OrderDetails.Remove(orderDetails);
+                    InventoryManagementDb.DB.SaveChanges();
+                }
+
+                LoadOrderDetails();
             }
             catch (Exception ex)
             {

@@ -42,6 +42,21 @@ namespace InventoryManagementApp.UserInterfaces
         private void frmManageOrders_Load(object sender, EventArgs e)
         {
             LoadOrders();
+            LoadCustomers();
+        }
+
+        private void LoadCustomers()
+        {
+            try
+            {
+                cmbCustomers.DataSource = InventoryManagementDb.DB.Customers.ToList();
+                cmbCustomers.ValueMember = "Id";
+                cmbCustomers.DisplayMember = "FullName";
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
         }
 
         private void LoadOrders(List<Order> orders = null)
@@ -69,23 +84,22 @@ namespace InventoryManagementApp.UserInterfaces
             try
             {
                 var filter = txtSearch.Text.ToLower();
-                //var category = cmbCategories.SelectedItem as Category;
-                //var brand = cmbBrands.SelectedItem as Brand;
+                var date = dtpOrderDate.Value;
+                var customer = cmbCustomers.SelectedItem as Customer;
 
-                //if (category != null && brand != null)
-                //{
+                if (customer != null && date != null)
+                {
                     LoadOrders(
                         InventoryManagementDb.DB.Orders.Where(o =>
-                            (o.Customer.FullName.ToLower().Contains(filter)
-                            || string.IsNullOrEmpty(filter))
-                            //&& (p.Category.Id == category.Id
-                            //&& p.Brand.Id == brand.Id)
+                            string.IsNullOrEmpty(filter)
+                            && date.Date <= o.OrderDate
+                            && o.Customer.Id == customer.Id
                             ).ToList());
-                //}
-                //else
-                //{
-                //    LoadProducts();
-                //}
+                }
+                else
+                {
+                    LoadCustomers();
+                }
             }
             catch (Exception ex)
             {
@@ -146,6 +160,21 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 Messages.HandleException(ex);
             }
+        }
+
+        private void dtpOrderDate_ValueChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void cmbCustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void lblClearFilter_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
         }
     }
 }
