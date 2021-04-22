@@ -85,6 +85,11 @@
     <Compile Include="DataClasses\Status.cs" />
     <Compile Include="DataClasses\Store.cs" />
     <Compile Include="DataRepository\DatabaseConnection.cs" />
+    <Compile Include="DataRepository\dsOrderDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrderDetails.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataRepository\InventoryManagementDb.cs" />
     <Compile Include="Helpers\Messages.cs" />
     <Compile Include="Helpers\Validator.cs" />
@@ -205,9 +210,21 @@
     <Compile Include="UserInterfaces\frmPrintOrder.Designer.cs">
       <DependentUpon>frmPrintOrder.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DataRepository\rptOrderDetails.rdlc" />
     <EmbeddedResource Include="UserInterfaces\frmPrintOrder.resx">
       <DependentUpon>frmPrintOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataRepository\dsOrderDetails.xsc">
+      <DependentUpon>dsOrderDetails.xsd</DependentUpon>
+    </None>
+    <None Include="DataRepository\dsOrderDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrderDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataRepository\dsOrderDetails.xss">
+      <DependentUpon>dsOrderDetails.xsd</DependentUpon>
+    </None>
     <None Include="Resources\print.png" />
     <None Include="Resources\editIcon.jpg" />
     <None Include="Resources\delete.jpg" />
