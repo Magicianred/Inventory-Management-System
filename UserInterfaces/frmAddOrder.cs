@@ -24,7 +24,7 @@ namespace InventoryManagementApp.UserInterfaces
             dgvOrderDetails.AutoGenerateColumns = false;
         }
 
-        public frmAddOrder(Order order)
+        public frmAddOrder(Order order) : this()
         {
             this.order = order;
         }
@@ -51,44 +51,51 @@ namespace InventoryManagementApp.UserInterfaces
         {
             try
             {
-                if (ValidateOrderData() && (dgvOrderDetails.DataSource) != null)
+                if (order != null)
                 {
-                    btnMakeOrder.Enabled = true;
+                    var orderItems = InventoryManagementDb.DB.OrderDetails.Where(o => o.Order.Id == order.Id).ToList();
 
-                    if (order == null)
+                    if (ValidateOrderData() && orderItems.Count > 0)
                     {
-                        order = new Order();
-                        editOrder = false;
-                    }
+                        order.Customer = cmbCustomers.SelectedItem as Customer;
+                        order.OrderDate = DateTime.Now;
+                        order.OrderTotal = orderItems.Sum(od => od.TotalAmount);
 
-                    order.Customer = cmbCustomers.SelectedItem as Customer;
-                    order.OrderDate = DateTime.Now.Date;
-                    
-
-                    if (editOrder)
-                    {
                         InventoryManagementDb.DB.Entry(order).State = System.Data.Entity.EntityState.Modified;
+                        InventoryManagementDb.DB.SaveChanges();
+
+                        if (editOrder)
+                            lblOperationInfo.Text = Messages.SuccessfullyModified;
+                        else
+                            lblOperationInfo.Text = Messages.SuccessfullyAdded;
                     }
                     else
                     {
-                        InventoryManagementDb.DB.Orders.Add(order);
+                        InvalidOrder();
                     }
-
-                    InventoryManagementDb.DB.SaveChanges();
-
-                    if (editOrder)
-                        lblOperationInfo.Text = Messages.SuccessfullyModified;
-                    else
-                        lblOperationInfo.Text = Messages.SuccessfullyAdded;
                 }
                 else
                 {
-                    btnMakeOrder.Enabled = false;
+                    InvalidOrder();
                 }
             }
             catch (Exception ex)
             {
                 Messages.HandleException(ex);
+            }
+        }
+
+        private void InvalidOrder()
+        {
+            btnMakeOrder.Enabled = false;
+            lblEmptyOrder.Text = Messages.EmptyOrder;
+
+            if (order != null)
+            {
+                InventoryManagementDb.DB.Orders.Remove(order);
+                InventoryManagementDb.DB.SaveChanges();
+                order = null;
+                btnMakeOrder.Text = "Make Order";
             }
         }
 
@@ -98,6 +105,11 @@ namespace InventoryManagementApp.UserInterfaces
         }
 
         private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearData();
+        }
+
+        private void ClearData()
         {
             var orderDetails = dgvOrderDetails.DataSource as List<OrderDetails>;
 
@@ -137,13 +149,13 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void LoadOrderData()
         {
+            btnMakeOrder.Text = "Update Order";
             cmbCustomers.SelectedValue = order.Customer.Id;
             LoadOrderDetails();
         }
 
         private void LoadOrderDetails()
         {
-
             try
             {
                 var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(o => o.Order.Id == order.Id).ToList();
@@ -166,15 +178,21 @@ namespace InventoryManagementApp.UserInterfaces
                     order = new Order()
                     {
                         Customer = (cmbCustomers.SelectedItem as Customer),
-                        OrderDate = DateTime.Now.Date,
+                        OrderDate = DateTime.Now,
                         OrderTotal = 0
                     };
                     editOrder = false;
+
+                    InventoryManagementDb.DB.Orders.Add(order);
+                    InventoryManagementDb.DB.SaveChanges();
                 }
+
                 frmAddOrderDetails frmAddOrderDetails = new frmAddOrderDetails(order);
                 frmAddOrderDetails.ShowDialog();
 
                 LoadOrderDetails();
+                btnMakeOrder.Enabled = true;
+                lblEmptyOrder.Text = "";
             }
             catch (Exception ex)
             {

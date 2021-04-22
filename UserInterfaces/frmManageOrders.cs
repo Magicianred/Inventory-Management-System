@@ -81,30 +81,30 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void Filter()
         {
-            try
-            {
-                var filter = txtSearch.Text.ToLower();
-                var date = dtpOrderDate.Value;
-                var customer = cmbCustomers.SelectedItem as Customer;
+            //try
+            //{
+            //    var filter = txtSearch.Text.ToLower();
+            //    var date = dtpOrderDate.Value;
+            //    var customer = cmbCustomers.SelectedItem as Customer;
 
-                if (customer != null && date != null)
-                {
-                    LoadOrders(
-                        InventoryManagementDb.DB.Orders.Where(o =>
-                            string.IsNullOrEmpty(filter)
-                            && date.Date <= o.OrderDate
-                            && o.Customer.Id == customer.Id
-                            ).ToList());
-                }
-                else
-                {
-                    LoadCustomers();
-                }
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
+            //    if (customer != null && date != null)
+            //    {
+            //        LoadOrders(
+            //            InventoryManagementDb.DB.Orders.Where(o =>
+            //                string.IsNullOrEmpty(filter)
+            //                && date.Date <= o.OrderDate
+            //                && o.Customer.Id == customer.Id
+            //                ).ToList());
+            //    }
+            //    else
+            //    {
+            //        LoadCustomers();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Messages.HandleException(ex);
+            //}
         }
 
         private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -150,6 +150,13 @@ namespace InventoryManagementApp.UserInterfaces
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {
+                    var orderItems = InventoryManagementDb.DB.OrderDetails.Where(o => o.Order.Id == order.Id).ToList();
+
+                    foreach (var orderItem in orderItems)
+                    {
+                        InventoryManagementDb.DB.OrderDetails.Remove(orderItem);
+                    }
+
                     InventoryManagementDb.DB.Orders.Remove(order);
                     InventoryManagementDb.DB.SaveChanges();
                 }

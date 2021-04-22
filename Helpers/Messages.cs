@@ -17,7 +17,7 @@ namespace InventoryManagementApp.Helpers
         public const string InvalidUserInput = "The username or password you entered is incorrect.";
         public const string Question = "Question";
         public const string DataNotMatching = "Data is not matching.";
-
+        public const string EmptyOrder = "Your order can not be completed. You didn't choose any products.";
         public static void HandleException(Exception ex)
         {
             System.Windows.Forms.MessageBox.Show(

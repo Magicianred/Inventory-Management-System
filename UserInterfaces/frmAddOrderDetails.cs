@@ -17,6 +17,7 @@ namespace InventoryManagementApp.UserInterfaces
     {
         private Order order;
         private OrderDetails orderDetails;
+        private bool itemExists = false;
 
         public frmAddOrderDetails(Order order)
         {
@@ -73,15 +74,32 @@ namespace InventoryManagementApp.UserInterfaces
                 {
                     var product = (cmbProducts.SelectedItem as Product);
 
-                    InventoryManagementDb.DB.OrderDetails.Add(
-                        new OrderDetails()
+                    var orderItems = InventoryManagementDb.DB.OrderDetails.Where(od => od.Order.Id == order.Id).ToList();
+
+                    foreach (var orderItem in orderItems)
+                    {
+                        if(orderItem.Product.ProductName == product.ProductName)
                         {
-                            Product = product,
-                            ProductQuantity = int.Parse(nProductQuantity.Value.ToString()),
-                            ProductPrice = product.ProductPrice,
-                            Order = order,
-                            TotalAmount = float.Parse(lblTotalAmountPrice.Text)
-                        });
+                            orderItem.ProductQuantity += int.Parse(nProductQuantity.Value.ToString());
+                            orderItem.TotalAmount += float.Parse(lblTotalAmountPrice.Text);
+
+                            InventoryManagementDb.DB.Entry(orderItem).State = System.Data.Entity.EntityState.Modified;
+                            itemExists = true;
+                        }
+                    }
+
+                    if (!itemExists)
+                    {
+                        InventoryManagementDb.DB.OrderDetails.Add(
+                            new OrderDetails()
+                            {
+                                Product = product,
+                                ProductQuantity = int.Parse(nProductQuantity.Value.ToString()),
+                                ProductPrice = product.ProductPrice,
+                                Order = order,
+                                TotalAmount = float.Parse(lblTotalAmountPrice.Text)
+                            });
+                    }
                     InventoryManagementDb.DB.SaveChanges();
                     Close();
                 }

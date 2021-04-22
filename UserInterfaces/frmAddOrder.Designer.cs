@@ -51,6 +51,7 @@
             this.lblOrders = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblEmptyOrder = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblEmptyOrder);
             this.panel1.Controls.Add(this.lblOrderTotal);
             this.panel1.Controls.Add(this.dgvOrderDetails);
             this.panel1.Controls.Add(this.btnAddProduct);
@@ -307,6 +309,16 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
             // 
+            // lblEmptyOrder
+            // 
+            this.lblEmptyOrder.AutoSize = true;
+            this.lblEmptyOrder.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmptyOrder.ForeColor = System.Drawing.Color.Red;
+            this.lblEmptyOrder.Location = new System.Drawing.Point(21, 410);
+            this.lblEmptyOrder.Name = "lblEmptyOrder";
+            this.lblEmptyOrder.Size = new System.Drawing.Size(0, 14);
+            this.lblEmptyOrder.TabIndex = 56;
+            // 
             // frmAddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,5 +363,6 @@
         private System.Windows.Forms.Label lblOrderTotal;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Label lblEmptyOrder;
     }
 }
