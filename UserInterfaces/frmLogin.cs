@@ -34,18 +34,7 @@ namespace InventoryManagementApp
                     && Validator.ValidateControl(txtPassword, err, Messages.RequiredField);
         }
 
-        private void lblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                frmSignUp frmSignUp = new frmSignUp();
-                frmSignUp.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
-            }
-        }
+        
 
         private void lblExit_Click(object sender, EventArgs e)
         {

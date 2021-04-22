@@ -196,12 +196,6 @@
     <Compile Include="UserInterfaces\frmPrintOrder.Designer.cs">
       <DependentUpon>frmPrintOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterfaces\frmSignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserInterfaces\frmSignUp.Designer.cs">
-      <DependentUpon>frmSignUp.cs</DependentUpon>
-    </Compile>
     <None Include="Resources\print.png" />
     <None Include="Resources\editIcon.jpg" />
     <None Include="Resources\delete.jpg" />
@@ -249,9 +243,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmManageStores.resx">
       <DependentUpon>frmManageStores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserInterfaces\frmSignUp.resx">
-      <DependentUpon>frmSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\homeBck1.jpg" />
     <None Include="Resources\homeBck.png" />

@@ -81,30 +81,31 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void Filter()
         {
-            //try
-            //{
-            //    var filter = txtSearch.Text.ToLower();
-            //    var date = dtpOrderDate.Value;
-            //    var customer = cmbCustomers.SelectedItem as Customer;
+            try
+            {
+                var filter = txtSearch.Text.ToLower();
+                var date = dtpOrderDate.Value;
+                var customer = cmbCustomers.SelectedItem as Customer;
 
-            //    if (customer != null && date != null)
-            //    {
-            //        LoadOrders(
-            //            InventoryManagementDb.DB.Orders.Where(o =>
-            //                string.IsNullOrEmpty(filter)
-            //                && date.Date <= o.OrderDate
-            //                && o.Customer.Id == customer.Id
-            //                ).ToList());
-            //    }
-            //    else
-            //    {
-            //        LoadCustomers();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Messages.HandleException(ex);
-            //}
+                if (customer != null && date != null)
+                {
+                    LoadOrders(
+                        InventoryManagementDb.DB.Orders.Where(o =>
+                            (string.IsNullOrEmpty(filter)
+                            || o.Customer.FullName.ToLower().Contains(filter))
+                            && date.Date <= o.OrderDate
+                            //&& o.Customer.Id == customer.Id
+                            ).ToList());
+                }
+                else
+                {
+                    LoadCustomers();
+                }
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
         }
 
         private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)

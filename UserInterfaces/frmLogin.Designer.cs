@@ -38,8 +38,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblSignUp = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblHelp = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblInvalidUserInput = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -121,8 +120,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.lblSignUp);
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblHelp);
             this.panel2.Location = new System.Drawing.Point(-9, -8);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 491);
@@ -161,32 +159,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome to the";
             // 
-            // lblSignUp
+            // lblHelp
             // 
-            this.lblSignUp.ActiveLinkColor = System.Drawing.SystemColors.HotTrack;
-            this.lblSignUp.AutoSize = true;
-            this.lblSignUp.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignUp.ForeColor = System.Drawing.Color.White;
-            this.lblSignUp.LinkColor = System.Drawing.Color.White;
-            this.lblSignUp.Location = new System.Drawing.Point(21, 462);
-            this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(58, 17);
-            this.lblSignUp.TabIndex = 4;
-            this.lblSignUp.TabStop = true;
-            this.lblSignUp.Text = "Sign Up";
-            this.lblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSignUp_LinkClicked);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(21, 449);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Don\'t have an account?";
+            this.lblHelp.ActiveLinkColor = System.Drawing.SystemColors.HotTrack;
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.ForeColor = System.Drawing.Color.White;
+            this.lblHelp.LinkColor = System.Drawing.Color.White;
+            this.lblHelp.Location = new System.Drawing.Point(21, 462);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(62, 13);
+            this.lblHelp.TabIndex = 4;
+            this.lblHelp.TabStop = true;
+            this.lblHelp.Text = "Need help?";
             // 
             // panel1
             // 
@@ -388,8 +374,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblInvalidUserInput;
-        private System.Windows.Forms.LinkLabel lblSignUp;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel lblHelp;
     }
 }
 
