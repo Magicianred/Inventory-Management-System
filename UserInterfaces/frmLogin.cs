@@ -70,6 +70,7 @@ namespace InventoryManagementApp
         private void ClearUserInput()
         {
             txtUsername.Text = txtPassword.Text = "";
+            lblInvalidUserInput.Text = "";
         }
 
         private void pnlUsername_Enter(object sender, EventArgs e)
