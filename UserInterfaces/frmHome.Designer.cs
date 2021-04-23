@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblAdminName = new System.Windows.Forms.Label();
+            this.pbAdmin = new System.Windows.Forms.PictureBox();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -53,21 +55,21 @@
             this.btnManageUsers = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.pbAdminProfile = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdmin)).BeginInit();
             this.pnlMenu.SuspendLayout();
             this.pnlOrders.SuspendLayout();
             this.pnlCustomers.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.pnlUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdminProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.pbAdminProfile);
+            this.panel1.Controls.Add(this.lblAdminName);
+            this.panel1.Controls.Add(this.pbAdmin);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.lblExit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -75,6 +77,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 81);
             this.panel1.TabIndex = 0;
+            // 
+            // lblAdminName
+            // 
+            this.lblAdminName.AutoSize = true;
+            this.lblAdminName.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdminName.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
+            this.lblAdminName.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblAdminName.Location = new System.Drawing.Point(1164, 14);
+            this.lblAdminName.Name = "lblAdminName";
+            this.lblAdminName.Size = new System.Drawing.Size(40, 16);
+            this.lblAdminName.TabIndex = 14;
+            this.lblAdminName.Text = "Name";
+            // 
+            // pbAdmin
+            // 
+            this.pbAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.pbAdmin.Image = global::InventoryManagementApp.Properties.Resources.PngItem_2560255;
+            this.pbAdmin.Location = new System.Drawing.Point(1139, 8);
+            this.pbAdmin.Name = "pbAdmin";
+            this.pbAdmin.Size = new System.Drawing.Size(22, 26);
+            this.pbAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAdmin.TabIndex = 12;
+            this.pbAdmin.TabStop = false;
+            this.pbAdmin.Click += new System.EventHandler(this.pbAdmin_Click);
             // 
             // btnDashboard
             // 
@@ -450,18 +476,6 @@
             this.pnlChildForm.Size = new System.Drawing.Size(1039, 637);
             this.pnlChildForm.TabIndex = 30;
             // 
-            // pbAdminProfile
-            // 
-            this.pbAdminProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.pbAdminProfile.Image = global::InventoryManagementApp.Properties.Resources.PngItem_2560255;
-            this.pbAdminProfile.Location = new System.Drawing.Point(1244, 44);
-            this.pbAdminProfile.Name = "pbAdminProfile";
-            this.pbAdminProfile.Size = new System.Drawing.Size(29, 33);
-            this.pbAdminProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAdminProfile.TabIndex = 12;
-            this.pbAdminProfile.TabStop = false;
-            this.pbAdminProfile.Click += new System.EventHandler(this.pbAdminProfile_Click);
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,12 +493,12 @@
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdmin)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.pnlOrders.ResumeLayout(false);
             this.pnlCustomers.ResumeLayout(false);
             this.pnlProducts.ResumeLayout(false);
             this.pnlUsers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdminProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -516,6 +530,7 @@
         private System.Windows.Forms.Button btnStores;
         private System.Windows.Forms.Button btnBrands;
         private System.Windows.Forms.Button btnCategories;
-        private System.Windows.Forms.PictureBox pbAdminProfile;
+        private System.Windows.Forms.Label lblAdminName;
+        private System.Windows.Forms.PictureBox pbAdmin;
     }
 }

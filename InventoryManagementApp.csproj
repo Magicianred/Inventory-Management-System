@@ -238,6 +238,7 @@
     <None Include="Resources\userBL.jpg" />
     <None Include="Resources\585e4beacb11b227491c3399.png" />
     <None Include="Resources\PngItem_2560255.png" />
+    <None Include="Resources\printIcon.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

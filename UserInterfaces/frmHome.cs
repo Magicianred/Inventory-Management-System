@@ -17,6 +17,8 @@ namespace InventoryManagementApp.UserInterfaces
             InitializeComponent();
             CustomizeDesign();
             this.admin = admin;
+
+            lblAdminName.Text = admin.FullName;
         }
 
         private void CustomizeDesign()
@@ -53,7 +55,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void lblStoresInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmStores
+            openChildForm(new frmManageStores());
         }
 
         private void ShowSubMenu(Panel subMenu)
@@ -192,7 +194,7 @@ namespace InventoryManagementApp.UserInterfaces
             openChildForm(new frmAddOrder());
         }
 
-        private void pbAdminProfile_Click(object sender, EventArgs e)
+        private void pbAdmin_Click(object sender, EventArgs e)
         {
             openChildForm(new frmAdminProfile(admin));
         }
