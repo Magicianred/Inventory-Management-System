@@ -76,6 +76,11 @@ namespace InventoryManagementApp.UserInterfaces
             try
             {
                 var customer = dgvCustomers.SelectedRows[0].DataBoundItem as Customer;
+                var customerOrders = InventoryManagementDb.DB.Orders.Where(o => o.Customer.Id == customer.Id).ToList();
+
+                lblOrders.Text = $"{customerOrders.Count()}";
+                lblAmount.Text = $"{customerOrders.Sum(o => o.OrderTotal)}";
+                lblDate.Text = $"{customerOrders.Max(o => o.OrderDate.Date)}";
 
                 if (e.ColumnIndex == 3)
                 {
@@ -93,6 +98,7 @@ namespace InventoryManagementApp.UserInterfaces
                         this.Hide();
                     }
 
+                    LoadCustomers();
                 }
                 if (e.ColumnIndex == 4
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -102,9 +108,9 @@ namespace InventoryManagementApp.UserInterfaces
                     InventoryManagementDb.DB.SaveChanges();
 
                     txtSearch.Text = "";
+                    LoadCustomers();
                 }
 
-                LoadCustomers();
             }
             catch (Exception ex)
             {

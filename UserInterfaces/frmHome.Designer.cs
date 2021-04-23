@@ -84,7 +84,7 @@
             this.lblAdminName.BackColor = System.Drawing.Color.Transparent;
             this.lblAdminName.Font = new System.Drawing.Font("Microsoft Tai Le", 9F);
             this.lblAdminName.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblAdminName.Location = new System.Drawing.Point(1164, 14);
+            this.lblAdminName.Location = new System.Drawing.Point(1166, 14);
             this.lblAdminName.Name = "lblAdminName";
             this.lblAdminName.Size = new System.Drawing.Size(40, 16);
             this.lblAdminName.TabIndex = 14;

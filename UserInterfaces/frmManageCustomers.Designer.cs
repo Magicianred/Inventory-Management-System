@@ -30,15 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lblOrders = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.pnlCustomers = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,113 +46,50 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblEvidentCustomer = new System.Windows.Forms.Label();
             this.lblCustomers = new System.Windows.Forms.Label();
+            this.gbOrders = new System.Windows.Forms.GroupBox();
+            this.gbAmount = new System.Windows.Forms.GroupBox();
+            this.gbLastDate = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.pnlCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
+            this.gbOrders.SuspendLayout();
+            this.gbAmount.SuspendLayout();
+            this.gbLastDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // err
             // 
             this.err.ContainerControl = this;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.lblDate);
-            this.panel2.Location = new System.Drawing.Point(716, 519);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(308, 87);
-            this.panel2.TabIndex = 24;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 18);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Last Order Date";
-            // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblDate.Location = new System.Drawing.Point(74, 31);
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblDate.Location = new System.Drawing.Point(6, 35);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(57, 25);
+            this.lblDate.Size = new System.Drawing.Size(0, 37);
             this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "Date";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Tan;
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.lblAmount);
-            this.panel3.Location = new System.Drawing.Point(361, 519);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(299, 87);
-            this.panel3.TabIndex = 25;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 18);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Orders Amount";
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblAmount.Location = new System.Drawing.Point(74, 31);
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblAmount.Location = new System.Drawing.Point(6, 35);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(86, 25);
+            this.lblAmount.Size = new System.Drawing.Size(0, 37);
             this.lblAmount.TabIndex = 2;
-            this.lblAmount.Text = "Amount";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Thistle;
-            this.panel4.Controls.Add(this.lblOrders);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(12, 519);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(286, 87);
-            this.panel4.TabIndex = 26;
             // 
             // lblOrders
             // 
             this.lblOrders.AutoSize = true;
-            this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrders.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblOrders.Location = new System.Drawing.Point(67, 36);
+            this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.lblOrders.Location = new System.Drawing.Point(6, 35);
             this.lblOrders.Name = "lblOrders";
-            this.lblOrders.Size = new System.Drawing.Size(84, 25);
+            this.lblOrders.Size = new System.Drawing.Size(0, 37);
             this.lblOrders.TabIndex = 1;
-            this.lblOrders.Text = "Orders ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Orders Count";
             // 
             // btnAddCustomer
             // 
@@ -305,32 +236,71 @@
             this.lblCustomers.TabIndex = 40;
             this.lblCustomers.Text = "Customers";
             // 
+            // gbOrders
+            // 
+            this.gbOrders.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.gbOrders.Controls.Add(this.lblOrders);
+            this.gbOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.gbOrders.Location = new System.Drawing.Point(12, 509);
+            this.gbOrders.Name = "gbOrders";
+            this.gbOrders.Size = new System.Drawing.Size(304, 100);
+            this.gbOrders.TabIndex = 43;
+            this.gbOrders.TabStop = false;
+            this.gbOrders.Text = "Orders ";
+            // 
+            // gbAmount
+            // 
+            this.gbAmount.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.gbAmount.Controls.Add(this.lblAmount);
+            this.gbAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.gbAmount.Location = new System.Drawing.Point(331, 509);
+            this.gbAmount.Name = "gbAmount";
+            this.gbAmount.Size = new System.Drawing.Size(321, 100);
+            this.gbAmount.TabIndex = 44;
+            this.gbAmount.TabStop = false;
+            this.gbAmount.Text = "Amount";
+            // 
+            // gbLastDate
+            // 
+            this.gbLastDate.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.gbLastDate.Controls.Add(this.lblDate);
+            this.gbLastDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbLastDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.gbLastDate.Location = new System.Drawing.Point(667, 509);
+            this.gbLastDate.Name = "gbLastDate";
+            this.gbLastDate.Size = new System.Drawing.Size(357, 100);
+            this.gbLastDate.TabIndex = 45;
+            this.gbLastDate.TabStop = false;
+            this.gbLastDate.Text = "Last Date";
+            // 
             // frmManageCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 637);
+            this.Controls.Add(this.gbLastDate);
+            this.Controls.Add(this.gbAmount);
+            this.Controls.Add(this.gbOrders);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.pnlCustomers);
             this.Controls.Add(this.lblCustomers);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management";
             this.Load += new System.EventHandler(this.frmManageCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.pnlCustomers.ResumeLayout(false);
             this.pnlCustomers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
+            this.gbOrders.ResumeLayout(false);
+            this.gbOrders.PerformLayout();
+            this.gbAmount.ResumeLayout(false);
+            this.gbAmount.PerformLayout();
+            this.gbLastDate.ResumeLayout(false);
+            this.gbLastDate.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,14 +308,8 @@
 
         #endregion
         private System.Windows.Forms.ErrorProvider err;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblOrders;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Panel pnlCustomers;
@@ -360,5 +324,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.GroupBox gbOrders;
+        private System.Windows.Forms.GroupBox gbLastDate;
+        private System.Windows.Forms.GroupBox gbAmount;
     }
 }

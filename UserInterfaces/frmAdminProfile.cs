@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryManagementApp.DataClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,26 @@ namespace InventoryManagementApp.UserInterfaces
 {
     public partial class frmAdminProfile : Form
     {
-        public frmAdminProfile(DataClasses.Administrator admin)
+        private Administrator admin;
+        public frmAdminProfile(Administrator admin)
         {
             InitializeComponent();
+            this.admin = admin;
+
+            LoadAdminData();
+        }
+
+        private void LoadAdminData()
+        {
+            
+        }
+
+        private void pbProfilePicture_Click(object sender, EventArgs e)
+        {
+            if (ofdProfilePicture.ShowDialog() == DialogResult.OK)
+            {
+                pbProfilePicture.Image = Image.FromFile(ofdProfilePicture.FileName);
+            }
         }
     }
 }
