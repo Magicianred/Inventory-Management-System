@@ -154,6 +154,12 @@
     <Compile Include="UserInterfaces\frmAddUser.Designer.cs">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterfaces\frmAdminProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmAdminProfile.Designer.cs">
+      <DependentUpon>frmAdminProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,15 @@
     <Compile Include="UserInterfaces\frmPrintOrder.Designer.cs">
       <DependentUpon>frmPrintOrder.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\userWhite.png" />
+    <None Include="Resources\userW.png" />
+    <None Include="Resources\userB.jpg" />
+    <None Include="Resources\userG.png" />
+    <None Include="Resources\userGB.jpg" />
+    <None Include="Resources\userI.jpg" />
+    <None Include="Resources\userBL.jpg" />
+    <None Include="Resources\585e4beacb11b227491c3399.png" />
+    <None Include="Resources\PngItem_2560255.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

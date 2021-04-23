@@ -191,5 +191,10 @@ namespace InventoryManagementApp.UserInterfaces
         {
             openChildForm(new frmAddOrder());
         }
+
+        private void pbAdminProfile_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmAdminProfile(admin));
+        }
     }
 }
