@@ -92,14 +92,15 @@ namespace InventoryManagementApp.UserInterfaces
                     LoadOrders(
                         InventoryManagementDb.DB.Orders.Where(o =>
                             (string.IsNullOrEmpty(filter)
-                            || o.Customer.FullName.ToLower().Contains(filter))
+                            || o.Customer.FullName.ToLower().Contains(filter)
+                            || o.Id.ToString().Contains(filter))
                             && date.Date <= o.OrderDate
-                            //&& o.Customer.Id == customer.Id
+                            && o.Customer.Id == customer.Id
                             ).ToList());
                 }
                 else
                 {
-                    LoadCustomers();
+                    LoadOrders();
                 }
             }
             catch (Exception ex)
@@ -175,14 +176,15 @@ namespace InventoryManagementApp.UserInterfaces
             Filter();
         }
 
+        private void lblClearFilter_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            LoadOrders();
+        }
+
         private void cmbCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
             Filter();
-        }
-
-        private void lblClearFilter_Click(object sender, EventArgs e)
-        {
-            LoadCustomers();
         }
     }
 }

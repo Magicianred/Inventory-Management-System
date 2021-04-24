@@ -11,21 +11,20 @@ namespace InventoryManagementApp.UserInterfaces
     public partial class frmAdminProfile : Form
     {
         private Administrator admin;
+
         public frmAdminProfile(Administrator admin)
         {
             InitializeComponent();
             this.admin = admin;
-
-            LoadAdminData();
         }
 
         private void LoadGenders()
         {
             try
             {
-                cmbGenders.DataSource = InventoryManagementDb.DB.Genders.ToList();
-                cmbGenders.ValueMember = "Id";
-                cmbGenders.DisplayMember = "Name";
+                cmbGender.DataSource = InventoryManagementDb.DB.Genders.ToList();
+                cmbGender.ValueMember = "Id";
+                cmbGender.DisplayMember = "Name";
             }
             catch (Exception ex)
             {
@@ -44,7 +43,7 @@ namespace InventoryManagementApp.UserInterfaces
                 
                 if (admin.Gender !=null)
                 {
-                    cmbGenders.SelectedValue = admin.Gender.Id;
+                    cmbGender.SelectedValue = admin.Gender.Id;
                 }
 
                 if (admin.ProfilePicture != null)
@@ -77,6 +76,7 @@ namespace InventoryManagementApp.UserInterfaces
         private void frmAdminProfile_Load(object sender, EventArgs e)
         {
             LoadGenders();
+            LoadAdminData();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -98,7 +98,9 @@ namespace InventoryManagementApp.UserInterfaces
                 {
                     admin.ProfilePicture = Images.FromImageToByte(pbProfilePicture.Image);
                 }
-
+                
+                admin.Gender = cmbGender.SelectedItem as Gender;
+          
                 InventoryManagementDb.DB.Entry(admin).State = System.Data.Entity.EntityState.Modified;
                 InventoryManagementDb.DB.SaveChanges();
 

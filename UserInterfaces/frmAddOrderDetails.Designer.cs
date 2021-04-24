@@ -64,7 +64,7 @@
             // 
             // cmbProducts
             // 
-            this.cmbProducts.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbProducts.BackColor = System.Drawing.SystemColors.Window;
             this.cmbProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbProducts.FormattingEnabled = true;
             this.cmbProducts.Location = new System.Drawing.Point(29, 93);
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(571, 232);
             this.Controls.Add(this.lblTotalAmountPrice);
             this.Controls.Add(this.label2);

@@ -1,5 +1,6 @@
 ﻿using InventoryManagementApp.Data;
 using InventoryManagementApp.DataClasses;
+using InventoryManagementApp.Helpers;
 using InventoryManagementApp.Users;
 using System;
 using System.Linq;
@@ -15,10 +16,20 @@ namespace InventoryManagementApp.UserInterfaces
         public frmHome(Administrator admin)
         {
             InitializeComponent();
-            CustomizeDesign();
             this.admin = admin;
+        }
 
+        private void LoadAdminData()
+        {
             lblAdminName.Text = admin.FullName;
+            if (admin.ProfilePicture != null)
+            {
+                pbAdmin.Image = Images.FromByteToImage(admin.ProfilePicture);
+            }
+            else
+            {
+                pbAdmin.Image = null;
+            }
         }
 
         private void CustomizeDesign()
@@ -28,6 +39,9 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmHome_Load(object sender, System.EventArgs e)
         {
+            CustomizeDesign();
+            LoadAdminData();
+
             openChildForm(new frmDashboard());
         }
 
@@ -115,6 +129,8 @@ namespace InventoryManagementApp.UserInterfaces
             
             childForm.BringToFront();
             childForm.Show();
+
+            LoadAdminData();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -186,7 +202,6 @@ namespace InventoryManagementApp.UserInterfaces
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             openChildForm(new frmAddCustomer());
-
         }
 
         private void btnAddOrder_Click(object sender, EventArgs e)

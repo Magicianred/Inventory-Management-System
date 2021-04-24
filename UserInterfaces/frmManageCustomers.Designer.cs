@@ -35,6 +35,8 @@
             this.lblOrders = new System.Windows.Forms.Label();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.pnlCustomers = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbGenders = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +51,7 @@
             this.gbOrders = new System.Windows.Forms.GroupBox();
             this.gbAmount = new System.Windows.Forms.GroupBox();
             this.gbLastDate = new System.Windows.Forms.GroupBox();
-            this.cmbGenders = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblClearFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.pnlCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
@@ -111,6 +112,7 @@
             // pnlCustomers
             // 
             this.pnlCustomers.BackColor = System.Drawing.Color.White;
+            this.pnlCustomers.Controls.Add(this.lblClearFilter);
             this.pnlCustomers.Controls.Add(this.label2);
             this.pnlCustomers.Controls.Add(this.cmbGenders);
             this.pnlCustomers.Controls.Add(this.label1);
@@ -118,10 +120,32 @@
             this.pnlCustomers.Controls.Add(this.lblCustomersNumber);
             this.pnlCustomers.Controls.Add(this.txtSearch);
             this.pnlCustomers.Controls.Add(this.lblEvidentCustomer);
-            this.pnlCustomers.Location = new System.Drawing.Point(12, 101);
+            this.pnlCustomers.Location = new System.Drawing.Point(12, 100);
             this.pnlCustomers.Name = "pnlCustomers";
-            this.pnlCustomers.Size = new System.Drawing.Size(1012, 381);
+            this.pnlCustomers.Size = new System.Drawing.Size(1012, 402);
             this.pnlCustomers.TabIndex = 41;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(686, 327);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 16);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Gender:";
+            // 
+            // cmbGenders
+            // 
+            this.cmbGenders.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbGenders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbGenders.FormattingEnabled = true;
+            this.cmbGenders.Location = new System.Drawing.Point(746, 325);
+            this.cmbGenders.Name = "cmbGenders";
+            this.cmbGenders.Size = new System.Drawing.Size(248, 21);
+            this.cmbGenders.TabIndex = 38;
+            this.cmbGenders.SelectedIndexChanged += new System.EventHandler(this.cmbGenders_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -246,7 +270,7 @@
             this.gbOrders.Controls.Add(this.lblOrders);
             this.gbOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.gbOrders.Location = new System.Drawing.Point(12, 509);
+            this.gbOrders.Location = new System.Drawing.Point(12, 519);
             this.gbOrders.Name = "gbOrders";
             this.gbOrders.Size = new System.Drawing.Size(304, 100);
             this.gbOrders.TabIndex = 43;
@@ -259,7 +283,7 @@
             this.gbAmount.Controls.Add(this.lblAmount);
             this.gbAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.gbAmount.Location = new System.Drawing.Point(331, 509);
+            this.gbAmount.Location = new System.Drawing.Point(331, 519);
             this.gbAmount.Name = "gbAmount";
             this.gbAmount.Size = new System.Drawing.Size(321, 100);
             this.gbAmount.TabIndex = 44;
@@ -272,34 +296,24 @@
             this.gbLastDate.Controls.Add(this.lblDate);
             this.gbLastDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbLastDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.gbLastDate.Location = new System.Drawing.Point(667, 509);
+            this.gbLastDate.Location = new System.Drawing.Point(667, 519);
             this.gbLastDate.Name = "gbLastDate";
             this.gbLastDate.Size = new System.Drawing.Size(357, 100);
             this.gbLastDate.TabIndex = 45;
             this.gbLastDate.TabStop = false;
             this.gbLastDate.Text = "Last Date";
             // 
-            // cmbGenders
+            // lblClearFilter
             // 
-            this.cmbGenders.BackColor = System.Drawing.SystemColors.Control;
-            this.cmbGenders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbGenders.FormattingEnabled = true;
-            this.cmbGenders.Location = new System.Drawing.Point(746, 336);
-            this.cmbGenders.Name = "cmbGenders";
-            this.cmbGenders.Size = new System.Drawing.Size(248, 21);
-            this.cmbGenders.TabIndex = 38;
-            this.cmbGenders.SelectedIndexChanged += new System.EventHandler(this.cmbGenders_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(686, 338);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 16);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Gender:";
+            this.lblClearFilter.AutoSize = true;
+            this.lblClearFilter.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClearFilter.ForeColor = System.Drawing.Color.Gray;
+            this.lblClearFilter.Location = new System.Drawing.Point(924, 377);
+            this.lblClearFilter.Name = "lblClearFilter";
+            this.lblClearFilter.Size = new System.Drawing.Size(70, 16);
+            this.lblClearFilter.TabIndex = 51;
+            this.lblClearFilter.Text = "Clear Filter";
+            this.lblClearFilter.Click += new System.EventHandler(this.lblClearFilter_Click);
             // 
             // frmManageCustomers
             // 
@@ -355,5 +369,6 @@
         private System.Windows.Forms.GroupBox gbAmount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbGenders;
+        private System.Windows.Forms.Label lblClearFilter;
     }
 }

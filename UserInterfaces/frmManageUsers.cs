@@ -147,5 +147,11 @@ namespace InventoryManagementApp.Users
                 Messages.HandleException(ex);
             }
         }
+
+        private void lblClearFilter_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            LoadUsers();
+        }
     }
 }

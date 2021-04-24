@@ -30,11 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblUsers = new System.Windows.Forms.Label();
             this.pnlChildForm = new System.Windows.Forms.Panel();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.pnlUsers = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbGenders = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsersNumber = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -42,14 +50,7 @@
             this.lblOperationInfo = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbGenders = new System.Windows.Forms.ComboBox();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblClearFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.pnlChildForm.SuspendLayout();
@@ -78,6 +79,55 @@
             this.dgvUsers.Size = new System.Drawing.Size(977, 216);
             this.dgvUsers.TabIndex = 10;
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            // 
+            // FullName
+            // 
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Full Name";
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            // 
+            // Telephone
+            // 
+            this.Telephone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Telephone.DataPropertyName = "Telephone";
+            this.Telephone.HeaderText = "Phone";
+            this.Telephone.Name = "Telephone";
+            this.Telephone.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
             // 
             // err
             // 
@@ -126,6 +176,7 @@
             // pnlUsers
             // 
             this.pnlUsers.BackColor = System.Drawing.Color.White;
+            this.pnlUsers.Controls.Add(this.lblClearFilter);
             this.pnlUsers.Controls.Add(this.label3);
             this.pnlUsers.Controls.Add(this.cmbGenders);
             this.pnlUsers.Controls.Add(this.label2);
@@ -135,8 +186,30 @@
             this.pnlUsers.Controls.Add(this.lblEvidentUser);
             this.pnlUsers.Location = new System.Drawing.Point(15, 118);
             this.pnlUsers.Name = "pnlUsers";
-            this.pnlUsers.Size = new System.Drawing.Size(1012, 388);
+            this.pnlUsers.Size = new System.Drawing.Size(1012, 417);
             this.pnlUsers.TabIndex = 38;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(707, 339);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 16);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Gender:";
+            // 
+            // cmbGenders
+            // 
+            this.cmbGenders.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbGenders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbGenders.FormattingEnabled = true;
+            this.cmbGenders.Location = new System.Drawing.Point(759, 336);
+            this.cmbGenders.Name = "cmbGenders";
+            this.cmbGenders.Size = new System.Drawing.Size(235, 24);
+            this.cmbGenders.TabIndex = 59;
+            this.cmbGenders.SelectedIndexChanged += new System.EventHandler(this.cmbGenders_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -208,76 +281,17 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // label3
+            // lblClearFilter
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(707, 339);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 16);
-            this.label3.TabIndex = 60;
-            this.label3.Text = "Gender:";
-            // 
-            // cmbGenders
-            // 
-            this.cmbGenders.BackColor = System.Drawing.SystemColors.Control;
-            this.cmbGenders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbGenders.FormattingEnabled = true;
-            this.cmbGenders.Location = new System.Drawing.Point(759, 336);
-            this.cmbGenders.Name = "cmbGenders";
-            this.cmbGenders.Size = new System.Drawing.Size(235, 24);
-            this.cmbGenders.TabIndex = 59;
-            this.cmbGenders.SelectedIndexChanged += new System.EventHandler(this.cmbGenders_SelectedIndexChanged);
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            // 
-            // FullName
-            // 
-            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            // 
-            // Telephone
-            // 
-            this.Telephone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Telephone.DataPropertyName = "Telephone";
-            this.Telephone.HeaderText = "Phone";
-            this.Telephone.Name = "Telephone";
-            this.Telephone.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
+            this.lblClearFilter.AutoSize = true;
+            this.lblClearFilter.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClearFilter.ForeColor = System.Drawing.Color.Gray;
+            this.lblClearFilter.Location = new System.Drawing.Point(924, 387);
+            this.lblClearFilter.Name = "lblClearFilter";
+            this.lblClearFilter.Size = new System.Drawing.Size(70, 16);
+            this.lblClearFilter.TabIndex = 61;
+            this.lblClearFilter.Text = "Clear Filter";
+            this.lblClearFilter.Click += new System.EventHandler(this.lblClearFilter_Click);
             // 
             // frmManageUsers
             // 
@@ -323,5 +337,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Label lblClearFilter;
     }
 }

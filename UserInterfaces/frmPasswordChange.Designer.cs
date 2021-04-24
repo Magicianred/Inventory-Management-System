@@ -39,12 +39,13 @@
             this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblInvalidUserInput = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCurrentPassword
             // 
-            this.txtCurrentPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCurrentPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtCurrentPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCurrentPassword.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtCurrentPassword.Location = new System.Drawing.Point(21, 39);
@@ -66,7 +67,7 @@
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNewPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNewPassword.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtNewPassword.Location = new System.Drawing.Point(21, 94);
@@ -89,7 +90,7 @@
             // 
             // txtConfirmNewPassword
             // 
-            this.txtConfirmNewPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.txtConfirmNewPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtConfirmNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmNewPassword.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtConfirmNewPassword.Location = new System.Drawing.Point(21, 145);
@@ -152,12 +153,28 @@
             this.lblInvalidUserInput.Size = new System.Drawing.Size(0, 14);
             this.lblInvalidUserInput.TabIndex = 66;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCancel.Location = new System.Drawing.Point(208, 183);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(84, 34);
+            this.btnCancel.TabIndex = 67;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmPasswordChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(459, 229);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblInvalidUserInput);
             this.Controls.Add(this.cbShowPassword);
             this.Controls.Add(this.btnChangePassword);
@@ -189,5 +206,6 @@
         private System.Windows.Forms.CheckBox cbShowPassword;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Label lblInvalidUserInput;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

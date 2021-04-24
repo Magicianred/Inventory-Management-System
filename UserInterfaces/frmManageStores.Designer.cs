@@ -37,13 +37,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvStores = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblManageStores = new System.Windows.Forms.Label();
             this.btnAddStore = new System.Windows.Forms.Button();
             this.lblStores = new System.Windows.Forms.Label();
+            this.lblClearFilter = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlStores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStores)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +53,7 @@
             // pnlStores
             // 
             this.pnlStores.BackColor = System.Drawing.Color.White;
+            this.pnlStores.Controls.Add(this.lblClearFilter);
             this.pnlStores.Controls.Add(this.label3);
             this.pnlStores.Controls.Add(this.cmbStatus);
             this.pnlStores.Controls.Add(this.lblStoresNumber);
@@ -60,7 +63,7 @@
             this.pnlStores.Controls.Add(this.lblManageStores);
             this.pnlStores.Location = new System.Drawing.Point(15, 139);
             this.pnlStores.Name = "pnlStores";
-            this.pnlStores.Size = new System.Drawing.Size(1012, 387);
+            this.pnlStores.Size = new System.Drawing.Size(1012, 421);
             this.pnlStores.TabIndex = 48;
             // 
             // label3
@@ -133,6 +136,7 @@
             this.dgvStores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.BrandName,
+            this.Status,
             this.Edit,
             this.Delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -152,40 +156,6 @@
             this.dgvStores.Size = new System.Drawing.Size(977, 216);
             this.dgvStores.TabIndex = 33;
             this.dgvStores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStores_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // BrandName
-            // 
-            this.BrandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BrandName.DataPropertyName = "Name";
-            this.BrandName.HeaderText = "Name";
-            this.BrandName.Name = "BrandName";
-            this.BrandName.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
             // 
             // lblManageStores
             // 
@@ -224,6 +194,59 @@
             this.lblStores.TabIndex = 46;
             this.lblStores.Text = "Stores";
             // 
+            // lblClearFilter
+            // 
+            this.lblClearFilter.AutoSize = true;
+            this.lblClearFilter.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClearFilter.ForeColor = System.Drawing.Color.Gray;
+            this.lblClearFilter.Location = new System.Drawing.Point(924, 393);
+            this.lblClearFilter.Name = "lblClearFilter";
+            this.lblClearFilter.Size = new System.Drawing.Size(70, 16);
+            this.lblClearFilter.TabIndex = 59;
+            this.lblClearFilter.Text = "Clear Filter";
+            this.lblClearFilter.Click += new System.EventHandler(this.lblClearFilter_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // BrandName
+            // 
+            this.BrandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BrandName.DataPropertyName = "Name";
+            this.BrandName.HeaderText = "Name";
+            this.BrandName.Name = "BrandName";
+            this.BrandName.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
+            // 
             // frmManageStores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,8 +280,10 @@
         private System.Windows.Forms.Label lblStores;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label lblClearFilter;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
     }

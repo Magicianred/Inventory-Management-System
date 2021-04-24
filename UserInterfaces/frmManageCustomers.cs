@@ -151,5 +151,11 @@ namespace InventoryManagementApp.UserInterfaces
                 LoadCustomers();
             }
         }
+
+        private void lblClearFilter_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            LoadCustomers();
+        }
     }
 }

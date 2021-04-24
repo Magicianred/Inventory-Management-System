@@ -30,8 +30,8 @@ namespace InventoryManagementApp
 
         private bool ValidateAdminInput()
         {
-                return Validator.ValidateControl(txtUsername, err, Messages.RequiredField)
-                    && Validator.ValidateControl(txtPassword, err, Messages.RequiredField);
+            return Validator.ValidateControl(txtUsername, err, Messages.RequiredField)
+                && Validator.ValidateControl(txtPassword, err, Messages.RequiredField);
         }
 
         
@@ -53,7 +53,11 @@ namespace InventoryManagementApp
                         {
                             frmHome frmHome = new frmHome(admin);
                             frmHome.ShowDialog();
+
                             ClearUserInput();
+                            LeaveUsername();
+                            LeavePassword();
+
                             return;
                         }
                     }
@@ -107,6 +111,11 @@ namespace InventoryManagementApp
 
         private void pnlUsername_Leave(object sender, EventArgs e)
         {
+            LeaveUsername();
+        }
+
+        private void LeaveUsername()
+        {
             if (txtUsername.Text == "")
             {
                 txtUsername.Text = "Username / e-mail";
@@ -118,6 +127,11 @@ namespace InventoryManagementApp
         }
 
         private void pnlPassword_Leave(object sender, EventArgs e)
+        {
+            LeavePassword();
+        }
+
+        private void LeavePassword()
         {
             if (string.IsNullOrEmpty(txtPassword.Text))
             {

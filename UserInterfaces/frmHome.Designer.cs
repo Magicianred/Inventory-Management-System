@@ -93,7 +93,8 @@
             // pbAdmin
             // 
             this.pbAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.pbAdmin.Image = global::InventoryManagementApp.Properties.Resources.PngItem_2560255;
+            this.pbAdmin.BackgroundImage = global::InventoryManagementApp.Properties.Resources.PngItem_2560255;
+            this.pbAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbAdmin.Location = new System.Drawing.Point(1139, 8);
             this.pbAdmin.Name = "pbAdmin";
             this.pbAdmin.Size = new System.Drawing.Size(22, 26);

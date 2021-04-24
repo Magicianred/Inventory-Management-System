@@ -38,8 +38,10 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 lblEvidentUser.Text = "Edit User Info";
                 LoadUserData();
+                txtPassword.ReadOnly = true;
+                txtPasswordConfirmation.ReadOnly = true;
+                cbShowPassword.Enabled = false;
             }
-            
         }
 
         private void LoadUserData()
@@ -47,6 +49,8 @@ namespace InventoryManagementApp.UserInterfaces
             txtFullName.Text = user.FullName;
             txtUsername.Text = user.Username;
             txtEmail.Text = user.Email;
+            txtPassword.Text  = user.Password;
+            txtPasswordConfirmation.Text = user.Password;
             txtTelephone.Text = $"{user.Telephone}";
             cmbGenders.SelectedValue = user.Gender.Id;
         }
@@ -75,19 +79,18 @@ namespace InventoryManagementApp.UserInterfaces
                     {
                         user = new User();
                         editUser = false;
+                        user.Password = txtPassword.Text;
                     }
 
                     user.FullName = txtFullName.Text;
                     user.Username = txtUsername.Text;
                     user.Email = txtEmail.Text;
-                    user.Password = txtPassword.Text;
                     user.Telephone = int.Parse(txtTelephone.Text);
                     user.Gender = (cmbGenders.SelectedItem as Gender);
 
                     if (editUser)
                     {
                         InventoryManagementDb.DB.Entry(user).State = System.Data.Entity.EntityState.Modified;
-                        
                     }
                     else
                     {

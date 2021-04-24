@@ -17,7 +17,7 @@ namespace InventoryManagementApp.DataClasses
         public string Email { get; set; }
         public string Password { get; set; }
         public int Phone { get; set; }
-        public Gender Gender { get; set; }
         public byte[] ProfilePicture { get; set; }
+        public Gender Gender { get; set; }
     }
 }
