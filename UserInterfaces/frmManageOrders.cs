@@ -23,19 +23,27 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
+            frmAddOrder frmAddOrder = new frmAddOrder();
+            OpenChildForm(frmAddOrder);
+        }
+
+        private void OpenChildForm(Form form)
+        {
             Panel pnlChildForm = this.Parent as Panel;
 
             if (pnlChildForm != null)
             {
-                frmAddOrder frmAddOrder = new frmAddOrder();
-                frmAddOrder.FormBorderStyle = FormBorderStyle.None;
-                frmAddOrder.TopLevel = false;
-                frmAddOrder.BringToFront();
+                if (form != null)
+                {
+                    form.FormBorderStyle = FormBorderStyle.None;
+                    form.TopLevel = false;
+                    form.BringToFront();
 
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmAddOrder);
-                frmAddOrder.Show();
-                this.Hide();
+                    pnlChildForm.Controls.Clear();
+                    pnlChildForm.Controls.Add(form);
+                    form.Show();
+                    this.Hide();
+                }           
             }
         }
 
@@ -114,40 +122,19 @@ namespace InventoryManagementApp.UserInterfaces
             try
             {
                 var order = dgvOrders.SelectedRows[0].DataBoundItem as Order;
+                
                 if (e.ColumnIndex == 4)
                 {
-                    Panel pnlChildForm = this.Parent as Panel;
-
-                    if (pnlChildForm != null)
-                    {
-                        frmAddOrder frmAddOrder = new frmAddOrder(order);
-                        frmAddOrder.FormBorderStyle = FormBorderStyle.None;
-                        frmAddOrder.TopLevel = false;
-                        frmAddOrder.BringToFront();
-
-                        pnlChildForm.Controls.Clear();
-                        pnlChildForm.Controls.Add(frmAddOrder);
-                        frmAddOrder.Show();
-                        this.Hide();
-                    }
+                    frmAddOrder frmAddOrder = new frmAddOrder(order);
+                    OpenChildForm(frmAddOrder);
                 }
+
                 if(e.ColumnIndex == 5)
                 {
-                    Panel pnlChildForm = this.Parent as Panel;
-
-                    if (pnlChildForm != null)
-                    {
-                        frmPrintOrder frmPrintOrder = new frmPrintOrder(order);
-                        frmPrintOrder.FormBorderStyle = FormBorderStyle.None;
-                        frmPrintOrder.TopLevel = false;
-                        frmPrintOrder.BringToFront();
-
-                        pnlChildForm.Controls.Clear();
-                        pnlChildForm.Controls.Add(frmPrintOrder);
-                        frmPrintOrder.Show();
-                        this.Hide();
-                    }
+                    frmPrintOrder frmPrintOrder = new frmPrintOrder(order);
+                    OpenChildForm(frmPrintOrder);
                 }
+
                 if (e.ColumnIndex == 6
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
