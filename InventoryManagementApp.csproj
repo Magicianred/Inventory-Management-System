@@ -103,6 +103,7 @@
       <DependentUpon>dsOrderDetails.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataRepository\InventoryManagementDb.cs" />
+    <Compile Include="Helpers\Images.cs" />
     <Compile Include="Helpers\Messages.cs" />
     <Compile Include="Helpers\Validator.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -223,6 +224,12 @@
       <DependentUpon>frmManageUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\User.cs" />
+    <Compile Include="UserInterfaces\frmPasswordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\frmPasswordChange.Designer.cs">
+      <DependentUpon>frmPasswordChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaces\frmPrintOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +260,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="DataRepository\rptOrderDetails.rdlc" />
+    <EmbeddedResource Include="UserInterfaces\frmAdminProfile.resx">
+      <DependentUpon>frmAdminProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\frmPasswordChange.resx">
+      <DependentUpon>frmPasswordChange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterfaces\frmPrintOrder.resx">
       <DependentUpon>frmPrintOrder.cs</DependentUpon>
     </EmbeddedResource>

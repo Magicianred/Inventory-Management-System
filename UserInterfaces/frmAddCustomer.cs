@@ -30,10 +30,26 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmAddCustomer_Load(object sender, EventArgs e)
         {
+            LoadGenders();
+
             if (customer != null)
             {
                 lblEvidentCustomer.Text = "Edit User Info";
                 LoadCustomerData();
+            }
+        }
+
+        private void LoadGenders()
+        {
+            try
+            {
+                cmbGenders.DataSource = InventoryManagementDb.DB.Genders.ToList();
+                cmbGenders.ValueMember = "Id";
+                cmbGenders.DisplayMember = "Name";
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
             }
         }
 
@@ -42,6 +58,7 @@ namespace InventoryManagementApp.UserInterfaces
             txtFullName.Text = customer.FullName;
             txtEmail.Text = customer.Email;
             txtPhone.Text = $"{customer.Phone}";
+            cmbGenders.SelectedValue = customer.Gender.Id;
         }
 
         private void btnManageCustomers_Click(object sender, EventArgs e)
@@ -66,7 +83,8 @@ namespace InventoryManagementApp.UserInterfaces
         {
             try
             {
-                if (ValidateCustomerData())
+                var gender = cmbGenders.SelectedItem as Gender;
+                if (ValidateCustomerData() && gender != null) 
                 {
                     if (customer == null)
                     {
@@ -77,6 +95,7 @@ namespace InventoryManagementApp.UserInterfaces
                     customer.FullName = txtFullName.Text;
                     customer.Email = txtEmail.Text;
                     customer.Phone = int.Parse(txtPhone.Text);
+                    customer.Gender = gender;
 
                     if (editCustomer)
                     {

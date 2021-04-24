@@ -49,6 +49,8 @@
             this.gbOrders = new System.Windows.Forms.GroupBox();
             this.gbAmount = new System.Windows.Forms.GroupBox();
             this.gbLastDate = new System.Windows.Forms.GroupBox();
+            this.cmbGenders = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.pnlCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
@@ -109,6 +111,8 @@
             // pnlCustomers
             // 
             this.pnlCustomers.BackColor = System.Drawing.Color.White;
+            this.pnlCustomers.Controls.Add(this.label2);
+            this.pnlCustomers.Controls.Add(this.cmbGenders);
             this.pnlCustomers.Controls.Add(this.label1);
             this.pnlCustomers.Controls.Add(this.dgvCustomers);
             this.pnlCustomers.Controls.Add(this.lblCustomersNumber);
@@ -275,6 +279,28 @@
             this.gbLastDate.TabStop = false;
             this.gbLastDate.Text = "Last Date";
             // 
+            // cmbGenders
+            // 
+            this.cmbGenders.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbGenders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbGenders.FormattingEnabled = true;
+            this.cmbGenders.Location = new System.Drawing.Point(746, 336);
+            this.cmbGenders.Name = "cmbGenders";
+            this.cmbGenders.Size = new System.Drawing.Size(248, 21);
+            this.cmbGenders.TabIndex = 38;
+            this.cmbGenders.SelectedIndexChanged += new System.EventHandler(this.cmbGenders_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(686, 338);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 16);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Gender:";
+            // 
             // frmManageCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,5 +353,7 @@
         private System.Windows.Forms.GroupBox gbOrders;
         private System.Windows.Forms.GroupBox gbLastDate;
         private System.Windows.Forms.GroupBox gbAmount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbGenders;
     }
 }

@@ -14,6 +14,7 @@ namespace InventoryManagementApp.DataClasses
         public string FullName { get; set; }
         public int Phone { get; set; }
         public string Email { get; set; }
+        public Gender Gender { get; set; }
 
         public override string ToString()
         {

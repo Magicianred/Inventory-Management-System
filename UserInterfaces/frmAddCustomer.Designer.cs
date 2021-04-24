@@ -36,13 +36,15 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.lblEvidentCustomer = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.lblFullname = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.lblFullname = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbGenders = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +78,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cmbGenders);
             this.panel1.Controls.Add(this.lblOperationInfo);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.lblEvidentCustomer);
@@ -89,7 +93,7 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(12, 99);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 340);
+            this.panel1.Size = new System.Drawing.Size(1015, 384);
             this.panel1.TabIndex = 38;
             // 
             // lblOperationInfo
@@ -97,7 +101,7 @@
             this.lblOperationInfo.AutoSize = true;
             this.lblOperationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperationInfo.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblOperationInfo.Location = new System.Drawing.Point(17, 309);
+            this.lblOperationInfo.Location = new System.Drawing.Point(17, 349);
             this.lblOperationInfo.Name = "lblOperationInfo";
             this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
             this.lblOperationInfo.TabIndex = 17;
@@ -109,7 +113,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClear.Location = new System.Drawing.Point(181, 264);
+            this.btnClear.Location = new System.Drawing.Point(181, 304);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(84, 34);
             this.btnClear.TabIndex = 9;
@@ -135,7 +139,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSave.Location = new System.Drawing.Point(17, 264);
+            this.btnSave.Location = new System.Drawing.Point(17, 304);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(158, 34);
             this.btnSave.TabIndex = 8;
@@ -143,47 +147,15 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lblPhone
+            // txtFullName
             // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblPhone.Location = new System.Drawing.Point(17, 180);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(45, 16);
-            this.lblPhone.TabIndex = 15;
-            this.lblPhone.Text = "Phone:";
-            // 
-            // lblFullname
-            // 
-            this.lblFullname.AutoSize = true;
-            this.lblFullname.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullname.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFullname.Location = new System.Drawing.Point(17, 87);
-            this.lblFullname.Name = "lblFullname";
-            this.lblFullname.Size = new System.Drawing.Size(65, 16);
-            this.lblFullname.TabIndex = 10;
-            this.lblFullname.Text = "Full Name:";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPhone.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtPhone.Location = new System.Drawing.Point(17, 196);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(248, 16);
-            this.txtPhone.TabIndex = 6;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.Control;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtEmail.Location = new System.Drawing.Point(17, 150);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(975, 16);
-            this.txtEmail.TabIndex = 2;
+            this.txtFullName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFullName.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtFullName.Location = new System.Drawing.Point(17, 103);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(975, 16);
+            this.txtFullName.TabIndex = 0;
             // 
             // lblEmail
             // 
@@ -196,19 +168,72 @@
             this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "Email:";
             // 
-            // txtFullName
+            // txtEmail
             // 
-            this.txtFullName.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFullName.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtFullName.Location = new System.Drawing.Point(17, 103);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(975, 16);
-            this.txtFullName.TabIndex = 0;
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtEmail.Location = new System.Drawing.Point(17, 150);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(975, 16);
+            this.txtEmail.TabIndex = 2;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtPhone.Location = new System.Drawing.Point(17, 196);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(248, 16);
+            this.txtPhone.TabIndex = 6;
+            // 
+            // lblFullname
+            // 
+            this.lblFullname.AutoSize = true;
+            this.lblFullname.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullname.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblFullname.Location = new System.Drawing.Point(17, 87);
+            this.lblFullname.Name = "lblFullname";
+            this.lblFullname.Size = new System.Drawing.Size(65, 16);
+            this.lblFullname.TabIndex = 10;
+            this.lblFullname.Text = "Full Name:";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblPhone.Location = new System.Drawing.Point(17, 180);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(45, 16);
+            this.lblPhone.TabIndex = 15;
+            this.lblPhone.Text = "Phone:";
             // 
             // err
             // 
             this.err.ContainerControl = this;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label4.Location = new System.Drawing.Point(17, 228);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Gender:";
+            // 
+            // cmbGenders
+            // 
+            this.cmbGenders.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbGenders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbGenders.FormattingEnabled = true;
+            this.cmbGenders.Location = new System.Drawing.Point(17, 244);
+            this.cmbGenders.Name = "cmbGenders";
+            this.cmbGenders.Size = new System.Drawing.Size(248, 24);
+            this.cmbGenders.TabIndex = 19;
             // 
             // frmAddCustomer
             // 
@@ -246,5 +271,7 @@
         private System.Windows.Forms.Label lblFullname;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.ErrorProvider err;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbGenders;
     }
 }
