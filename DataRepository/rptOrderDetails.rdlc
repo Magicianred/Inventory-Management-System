@@ -230,7 +230,7 @@
             </Paragraphs>
             <rd:DefaultName>OrderTotal</rd:DefaultName>
             <Top>3.22792in</Top>
-            <Left>7.99875in</Left>
+            <Left>8.24875in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>5</ZIndex>
@@ -581,7 +581,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox28</rd:DefaultName>
             <Top>3.22792in</Top>
-            <Left>7.56125in</Left>
+            <Left>7.86333in</Left>
             <Height>0.25in</Height>
             <Width>0.4375in</Width>
             <ZIndex>7</ZIndex>
