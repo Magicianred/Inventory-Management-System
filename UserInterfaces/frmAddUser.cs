@@ -146,7 +146,12 @@ namespace InventoryManagementApp.UserInterfaces
             if (!Validator.ValidatePassword(txtPassword, txtPasswordConfirmation, err, Messages.DataNotMatching)) 
             {
                 passwordConfirmed = false;
+                lblInvalidUserInput.Text = Messages.PasswordNotMatching;
                 return;
+            }
+            else
+            {
+                lblInvalidUserInput.Text = "";
             }
         }
 

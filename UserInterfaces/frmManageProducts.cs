@@ -3,12 +3,8 @@ using InventoryManagementApp.DataClasses;
 using InventoryManagementApp.Helpers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementApp.UserInterfaces
@@ -19,12 +15,12 @@ namespace InventoryManagementApp.UserInterfaces
         {
             InitializeComponent();
             dgvProducts.AutoGenerateColumns = false;
-            LoadCategories();
-            LoadBrands();
         }
 
         private void frmManageProducts_Load(object sender, EventArgs e)
         {
+            LoadCategories();
+            LoadBrands();
             LoadProducts();
         }
 
@@ -70,34 +66,26 @@ namespace InventoryManagementApp.UserInterfaces
                 Messages.HandleException(ex);
             }
         }
+
         private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 var product = dgvProducts.SelectedRows[0].DataBoundItem as Product;
+
                 if (e.ColumnIndex == 8)
                 {
-                    Panel pnlChildForm = this.Parent as Panel;
-
-                    if (pnlChildForm != null)
-                    {
-                        frmAddProduct frmAddProduct = new frmAddProduct(product);
-                        frmAddProduct.FormBorderStyle = FormBorderStyle.None;
-                        frmAddProduct.TopLevel = false;
-                        frmAddProduct.BringToFront();
-
-                        pnlChildForm.Controls.Clear();
-                        pnlChildForm.Controls.Add(frmAddProduct);
-                        frmAddProduct.Show();
-                        this.Hide();
-                    }
+                    OpenChildForm(new frmAddProduct(product));
                 }
+
                 if (e.ColumnIndex == 9
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {
                     InventoryManagementDb.DB.Products.Remove(product);
                     InventoryManagementDb.DB.SaveChanges();
+
+                    txtSearch.Text = "";
                 }
 
                 LoadProducts();
@@ -113,8 +101,6 @@ namespace InventoryManagementApp.UserInterfaces
             Filter();
         }
 
-        
-
         private void Filter()
         {
             try
@@ -122,7 +108,7 @@ namespace InventoryManagementApp.UserInterfaces
                 var filter = txtSearch.Text.ToLower();
                 var category = cmbCategories.SelectedItem as Category;
                 var brand = cmbBrands.SelectedItem as Brand;
-                
+
                 if (category != null && brand != null)
                 {
                     LoadProducts(
@@ -145,29 +131,6 @@ namespace InventoryManagementApp.UserInterfaces
             }
         }
 
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            Panel pnlChildForm = this.Parent as Panel;
-
-            if (pnlChildForm != null)
-            {
-                frmAddProduct frmAddProduct = new frmAddProduct();
-                frmAddProduct.FormBorderStyle = FormBorderStyle.None;
-                frmAddProduct.TopLevel = false;
-                frmAddProduct.BringToFront();
-
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmAddProduct);
-                frmAddProduct.Show();
-                this.Hide();
-            }
-        }
-
-        private void cmbStores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Filter();
-        }
-
         private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             Filter();
@@ -178,10 +141,31 @@ namespace InventoryManagementApp.UserInterfaces
             Filter();
         }
 
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmAddProduct());
+        }
+
         private void lblClearFilter_Click(object sender, EventArgs e)
         {
             txtSearch.Text = "";
             LoadProducts();
+        }
+
+        private void OpenChildForm(Form form)
+        {
+            Panel pnlChildForm = this.Parent as Panel;
+            if (pnlChildForm != null)
+            {
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.TopLevel = false;
+                form.BringToFront();
+
+                pnlChildForm.Controls.Clear();
+                pnlChildForm.Controls.Add(form);
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }

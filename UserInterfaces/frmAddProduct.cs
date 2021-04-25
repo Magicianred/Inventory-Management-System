@@ -2,13 +2,7 @@
 using InventoryManagementApp.DataClasses;
 using InventoryManagementApp.Helpers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementApp.UserInterfaces
@@ -77,7 +71,7 @@ namespace InventoryManagementApp.UserInterfaces
             txtProductName.Text = txtProductQuantity.Text = txtProductPrice.Text = txtDescription.Text = "";
         }
 
-        private bool ValidateProductData()//add Validation for cmb-s - in case there are no active stores or any brands
+        private bool ValidateProductData()
         {
             return Validator.ValidateControl(txtProductName, err, Messages.RequiredField)
                 && Validator.ValidateNumber(txtProductQuantity, err, Messages.RequiredNumber)

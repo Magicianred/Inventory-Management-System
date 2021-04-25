@@ -52,6 +52,7 @@
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.btnManageUsers = new System.Windows.Forms.Button();
+            this.lblInvalidUserInput = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
@@ -181,6 +182,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblInvalidUserInput);
             this.panel1.Controls.Add(this.cbShowPassword);
             this.panel1.Controls.Add(this.lblOperationInfo);
             this.panel1.Controls.Add(this.btnClear);
@@ -330,6 +332,16 @@
             this.btnManageUsers.UseVisualStyleBackColor = false;
             this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
+            // lblInvalidUserInput
+            // 
+            this.lblInvalidUserInput.AutoSize = true;
+            this.lblInvalidUserInput.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvalidUserInput.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidUserInput.Location = new System.Drawing.Point(17, 311);
+            this.lblInvalidUserInput.Name = "lblInvalidUserInput";
+            this.lblInvalidUserInput.Size = new System.Drawing.Size(0, 14);
+            this.lblInvalidUserInput.TabIndex = 19;
+            // 
             // frmAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,5 +389,6 @@
         private System.Windows.Forms.CheckBox cbShowPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnManageUsers;
+        private System.Windows.Forms.Label lblInvalidUserInput;
     }
 }
