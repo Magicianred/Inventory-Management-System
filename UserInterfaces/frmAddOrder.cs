@@ -169,7 +169,7 @@ namespace InventoryManagementApp.UserInterfaces
             }
         }
 
-        private void btnAddProduct_Click(object sender, EventArgs e)//TO-DO: if product already exists only add on quantity
+        private void btnAddProduct_Click(object sender, EventArgs e)
         {
             try
             {
@@ -188,7 +188,7 @@ namespace InventoryManagementApp.UserInterfaces
                 }
 
                 frmAddOrderDetails frmAddOrderDetails = new frmAddOrderDetails(order);
-                frmAddOrderDetails.ShowDialog();
+                Backgrounds.LoadFormBackground(frmAddOrderDetails);
 
                 LoadOrderDetails();
                 btnMakeOrder.Enabled = true;

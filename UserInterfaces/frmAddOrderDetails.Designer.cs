@@ -167,6 +167,7 @@
             this.Name = "frmAddOrderDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddOrderDetails";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmAddOrderDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nProductQuantity)).EndInit();
             this.ResumeLayout(false);

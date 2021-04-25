@@ -15,26 +15,11 @@ namespace InventoryManagementApp
             cbShowPassword.Enabled = false;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbShowPassword.Checked)
-                txtPassword.UseSystemPasswordChar = false;
-            else
-                txtPassword.UseSystemPasswordChar = true;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private bool ValidateAdminInput()
         {
             return Validator.ValidateControl(txtUsername, err, Messages.RequiredField)
                 && Validator.ValidateControl(txtPassword, err, Messages.RequiredField);
         }
-
-        
 
         private void lblExit_Click(object sender, EventArgs e)
         {
@@ -144,6 +129,14 @@ namespace InventoryManagementApp
 
             txtPassword.BackColor = SystemColors.Control;
             pnlPassword.BackColor = SystemColors.Control;
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbShowPassword.Checked)
+                txtPassword.UseSystemPasswordChar = false;
+            else
+                txtPassword.UseSystemPasswordChar = true;
         }
     }
 }

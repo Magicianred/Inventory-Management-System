@@ -83,7 +83,7 @@
             this.cbShowPassword.TabIndex = 5;
             this.cbShowPassword.Text = "Show password";
             this.cbShowPassword.UseVisualStyleBackColor = false;
-            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // txtPassword
             // 
@@ -213,10 +213,10 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.SteelBlue;
             this.linkLabel1.Location = new System.Drawing.Point(183, 463);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(86, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(139, 15);
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "ims@ims.com";
+            this.linkLabel1.Text = "ilhana.dzeko@edu.fit.ba";
             // 
             // label8
             // 
@@ -336,7 +336,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management ";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -81,8 +81,15 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            frmPasswordChange frmPasswordChange = new frmPasswordChange(admin);
-            frmPasswordChange.ShowDialog();
+            try
+            {
+                frmPasswordChange frmPasswordChange = new frmPasswordChange(admin);
+                Backgrounds.LoadFormBackground(frmPasswordChange);
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
