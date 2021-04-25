@@ -66,8 +66,18 @@ namespace InventoryManagementApp.UserInterfaces
         {
             try
             {
+                var ordersDB = InventoryManagementDb.DB.Orders.ToList();
+                foreach (var order in ordersDB)
+                {
+                    if(order.OrderTotal == 0)
+                    {
+                        InventoryManagementDb.DB.Orders.Remove(order);
+                    }
+                    InventoryManagementDb.DB.SaveChanges();
+                }
+
                 dgvOrders.DataSource = null;
-                dgvOrders.DataSource = orders ?? InventoryManagementDb.DB.Orders.ToList();
+                dgvOrders.DataSource = orders ?? ordersDB;
 
                 lblOrdersNumber.Text = $"{(dgvOrders.DataSource as List<Order>).Count()} orders";
             }
