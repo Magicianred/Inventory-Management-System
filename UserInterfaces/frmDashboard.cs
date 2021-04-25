@@ -15,9 +15,15 @@ namespace InventoryManagementApp.UserInterfaces
     public partial class frmDashboard : Form
     {
         private Form activeForm = null;
+
         public frmDashboard()
         {
             InitializeComponent();
+        }
+
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void lblProductInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -32,7 +38,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void lblStoresInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            openChildForm(new frmManageStores());
         }
 
         private void lblUsersInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -66,12 +72,6 @@ namespace InventoryManagementApp.UserInterfaces
                 this.Close();
             }
         }
-
-        private void frmDashboard_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
 
         private void LoadData()
         {

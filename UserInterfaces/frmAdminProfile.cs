@@ -41,7 +41,7 @@ namespace InventoryManagementApp.UserInterfaces
                 txtEmail.Text = admin.Email;
                 txtTelephone.Text = $"{admin.Phone}";
                 
-                if (admin.Gender !=null)
+                if (admin.Gender != null)
                 {
                     cmbGender.SelectedValue = admin.Gender.Id;
                 }
@@ -76,7 +76,11 @@ namespace InventoryManagementApp.UserInterfaces
         private void frmAdminProfile_Load(object sender, EventArgs e)
         {
             LoadGenders();
-            LoadAdminData();
+
+            if (admin != null)
+            {
+                LoadAdminData();
+            }
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -94,25 +98,33 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (ValidateData())
+            try
             {
-                admin.FullName = txtFullName.Text;
-                admin.Username = txtUsername.Text;
-                admin.Email = txtEmail.Text;
-                admin.Phone = int.Parse(txtTelephone.Text);
-
-                if(pbProfilePicture.Image != null)
+                if (ValidateData())
                 {
-                    admin.ProfilePicture = Images.FromImageToByte(pbProfilePicture.Image);
-                }
-                
-                admin.Gender = cmbGender.SelectedItem as Gender;
-          
-                InventoryManagementDb.DB.Entry(admin).State = System.Data.Entity.EntityState.Modified;
-                InventoryManagementDb.DB.SaveChanges();
+                    admin.FullName = txtFullName.Text;
+                    admin.Username = txtUsername.Text;
+                    admin.Email = txtEmail.Text;
+                    admin.Phone = int.Parse(txtTelephone.Text);
 
-                lblOperationInfo.Text = Messages.SuccessfullyModified;
+                    if (pbProfilePicture.Image != null)
+                    {
+                        admin.ProfilePicture = Images.FromImageToByte(pbProfilePicture.Image);
+                    }
+
+                    admin.Gender = cmbGender.SelectedItem as Gender;
+
+                    InventoryManagementDb.DB.Entry(admin).State = System.Data.Entity.EntityState.Modified;
+                    InventoryManagementDb.DB.SaveChanges();
+
+                    lblOperationInfo.Text = Messages.SuccessfullyModified;
+                }
             }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+            
         }
 
         private bool ValidateData()

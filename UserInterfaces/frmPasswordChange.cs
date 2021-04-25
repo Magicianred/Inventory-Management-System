@@ -36,7 +36,7 @@ namespace InventoryManagementApp.UserInterfaces
                 && ValidateNewPassword() && txtNewPassword.Text == txtConfirmNewPassword.Text)
             {
                 lblInvalidUserInput.Text = "";
-                admin.Password = txtConfirmNewPassword.Text;
+                admin.Password = txtNewPassword.Text;
 
                 InventoryManagementDb.DB.Entry(admin).State = System.Data.Entity.EntityState.Modified;
                 InventoryManagementDb.DB.SaveChanges();
