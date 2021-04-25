@@ -3,12 +3,8 @@ using InventoryManagementApp.DataClasses;
 using InventoryManagementApp.Helpers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementApp.UserInterfaces
@@ -23,8 +19,8 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmManageCustomers_Load(object sender, EventArgs e)
         {
-            LoadCustomers();
             LoadGenders();
+            LoadCustomers();
         }
 
         private void LoadGenders()
@@ -58,19 +54,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            Panel pnlChildForm = this.Parent as Panel;
-            if (pnlChildForm != null)
-            {
-                frmAddCustomer frmAddCustomer = new frmAddCustomer();
-                frmAddCustomer.FormBorderStyle = FormBorderStyle.None;
-                frmAddCustomer.TopLevel = false;
-                frmAddCustomer.BringToFront();
-
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmAddCustomer);
-                frmAddCustomer.Show();
-                this.Hide();
-            }
+            OpenChildForm(new frmAddCustomer());
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -83,31 +67,14 @@ namespace InventoryManagementApp.UserInterfaces
             try
             {
                 var customer = dgvCustomers.SelectedRows[0].DataBoundItem as Customer;
-                var customerOrders = InventoryManagementDb.DB.Orders.Where(o => o.Customer.Id == customer.Id).ToList();
-                if (customerOrders.Count != 0)
-                {
-                    lblOrders.Text = $"{customerOrders.Count()}";
-                    lblAmount.Text = $"{customerOrders.Sum(o => o.OrderTotal)}";
-                    lblDate.Text = $"{customerOrders.Max(o => o.OrderDate.Date)}";
-                }
+
+                LoadOrdersData(customer);
+
                 if (e.ColumnIndex == 3)
                 {
-                    Panel pnlChildForm = this.Parent as Panel;
-                    if (pnlChildForm != null)
-                    {
-                        frmAddCustomer frmAddCustomer = new frmAddCustomer(customer);
-                        frmAddCustomer.FormBorderStyle = FormBorderStyle.None;
-                        frmAddCustomer.TopLevel = false;
-                        frmAddCustomer.BringToFront();
-
-                        pnlChildForm.Controls.Clear();
-                        pnlChildForm.Controls.Add(frmAddCustomer);
-                        frmAddCustomer.Show();
-                        this.Hide();
-                    }
-
-                    LoadCustomers();
+                   OpenChildForm(new frmAddCustomer(customer));
                 }
+
                 if (e.ColumnIndex == 4
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -116,13 +83,32 @@ namespace InventoryManagementApp.UserInterfaces
                     InventoryManagementDb.DB.SaveChanges();
 
                     txtSearch.Text = "";
+                    
                     LoadCustomers();
                 }
-
             }
             catch (Exception ex)
             {
                 Messages.HandleException(ex);
+            }
+        }
+
+        private void LoadOrdersData(Customer customer)
+        {
+            if (customer!=null)
+            {
+                var customerOrders = InventoryManagementDb.DB.Orders.Where(o => o.Customer.Id == customer.Id).ToList();
+
+                if (customerOrders.Count != 0)
+                {
+                    lblOrders.Text = $"{customerOrders.Count()}";
+                    lblAmount.Text = $"{customerOrders.Sum(o => o.OrderTotal)}";
+                    lblDate.Text = $"{customerOrders.Max(o => o.OrderDate.Date)}";
+                }
+                else
+                {
+                    lblOrders.Text = lblAmount.Text = lblDate.Text = $"{0}";
+                }
             }
         }
 
@@ -135,20 +121,17 @@ namespace InventoryManagementApp.UserInterfaces
         {
             var filter = txtSearch.Text.ToLower();
             var gender = cmbGenders.SelectedItem as Gender;
+            
             if (gender != null)
             {
                 LoadCustomers(
                     InventoryManagementDb.DB.Customers.Where(
                         c => (c.FullName.ToLower().Contains(filter)
                         || c.Email.ToLower().Contains(filter)
-                        || c.Phone.ToString().ToLower().Contains(filter)
+                        || c.Phone.ToString().Contains(filter)
                         || string.IsNullOrEmpty(filter))
                         && gender.Id == c.Gender.Id
                         ).ToList());
-            }
-            else
-            {
-                LoadCustomers();
             }
         }
 
@@ -156,6 +139,22 @@ namespace InventoryManagementApp.UserInterfaces
         {
             txtSearch.Text = "";
             LoadCustomers();
+        }
+
+        private void OpenChildForm(Form form)
+        {
+            Panel pnlChildForm = this.Parent as Panel;
+            if (pnlChildForm != null)
+            {
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.TopLevel = false;
+                form.BringToFront();
+
+                pnlChildForm.Controls.Clear();
+                pnlChildForm.Controls.Add(form);
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }

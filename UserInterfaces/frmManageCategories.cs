@@ -3,12 +3,8 @@ using InventoryManagementApp.DataClasses;
 using InventoryManagementApp.Helpers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementApp.UserInterfaces
@@ -49,23 +45,9 @@ namespace InventoryManagementApp.UserInterfaces
 
                 if (e.ColumnIndex == 2)
                 {
-                    Panel pnlChildForm = this.Parent as Panel;
-                    if (pnlChildForm != null)
-                    {
-                        frmAddCategory frmAddCategory = new frmAddCategory(category)
-                        {
-                            FormBorderStyle = FormBorderStyle.None,
-                            TopLevel = false
-                        };
-                        frmAddCategory.BringToFront();
-
-                        pnlChildForm.Controls.Clear();
-                        pnlChildForm.Controls.Add(frmAddCategory);
-                        frmAddCategory.Show();
-                        this.Hide();
-                    }
-
+                    Backgrounds.LoadFormBackground(new frmAddCategory(category));
                 }
+
                 if (e.ColumnIndex == 3
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -86,19 +68,8 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            Panel pnlChildForm = this.Parent as Panel;
-            if (pnlChildForm != null)
-            {
-                frmAddCategory frmAddCategory = new frmAddCategory();
-                frmAddCategory.FormBorderStyle = FormBorderStyle.None;
-                frmAddCategory.TopLevel = false;
-                frmAddCategory.BringToFront();
-
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmAddCategory);
-                frmAddCategory.Show();
-                this.Hide();
-            }
+            Backgrounds.LoadFormBackground(new frmAddCategory());
+            LoadCategories();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

@@ -2,13 +2,7 @@
 using InventoryManagementApp.DataClasses;
 using InventoryManagementApp.Helpers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementApp.UserInterfaces
@@ -57,24 +51,6 @@ namespace InventoryManagementApp.UserInterfaces
         {
             txtStoreName.Text = store.Name;
             cmbStatus.SelectedValue = store.Status.Id;
-        }
-
-        private void btnManageStores_Click(object sender, EventArgs e)
-        {
-            Panel pnlChildForm = this.Parent as Panel;
-
-            if (pnlChildForm != null)
-            {
-                frmManageStores frmManageStores = new frmManageStores();
-                frmManageStores.FormBorderStyle = FormBorderStyle.None;
-                frmManageStores.TopLevel = false;
-                frmManageStores.BringToFront();
-
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmManageStores);
-                frmManageStores.Show();
-                this.Hide();
-            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -129,6 +105,11 @@ namespace InventoryManagementApp.UserInterfaces
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearData();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -3,12 +3,8 @@ using InventoryManagementApp.DataClasses;
 using InventoryManagementApp.Helpers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementApp.UserInterfaces
@@ -23,8 +19,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            frmAddOrder frmAddOrder = new frmAddOrder();
-            OpenChildForm(frmAddOrder);
+            OpenChildForm(new frmAddOrder());
         }
 
         private void OpenChildForm(Form form)
@@ -49,8 +44,8 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmManageOrders_Load(object sender, EventArgs e)
         {
-            LoadOrders();
             LoadCustomers();
+            LoadOrders();
         }
 
         private void LoadCustomers()
@@ -106,10 +101,6 @@ namespace InventoryManagementApp.UserInterfaces
                             && o.Customer.Id == customer.Id
                             ).ToList());
                 }
-                else
-                {
-                    LoadOrders();
-                }
             }
             catch (Exception ex)
             {
@@ -125,14 +116,12 @@ namespace InventoryManagementApp.UserInterfaces
                 
                 if (e.ColumnIndex == 4)
                 {
-                    frmAddOrder frmAddOrder = new frmAddOrder(order);
-                    OpenChildForm(frmAddOrder);
+                    OpenChildForm(new frmAddOrder(order));
                 }
 
                 if(e.ColumnIndex == 5)
                 {
-                    frmPrintOrder frmPrintOrder = new frmPrintOrder(order);
-                    OpenChildForm(frmPrintOrder);
+                   OpenChildForm(new frmPrintOrder(order)); 
                 }
 
                 if (e.ColumnIndex == 6

@@ -3,12 +3,8 @@ using InventoryManagementApp.DataClasses;
 using InventoryManagementApp.Helpers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementApp.UserInterfaces
@@ -23,8 +19,8 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void frmManageStores_Load(object sender, EventArgs e)
         {
-            LoadStores();
             LoadStatuses();
+            LoadStores();
         }
 
         private void LoadStatuses()
@@ -58,19 +54,8 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
-            Panel pnlChildForm = this.Parent as Panel;
-            if (pnlChildForm != null)
-            {
-                frmAddStore frmAddStore = new frmAddStore();
-                frmAddStore.FormBorderStyle = FormBorderStyle.None;
-                frmAddStore.TopLevel = false;
-                frmAddStore.BringToFront();
-
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmAddStore);
-                frmAddStore.Show();
-                this.Hide();
-            }
+            Backgrounds.LoadFormBackground(new frmAddStore());
+            LoadStores();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -86,21 +71,9 @@ namespace InventoryManagementApp.UserInterfaces
 
                 if (e.ColumnIndex == 2)
                 {
-                    Panel pnlChildForm = this.Parent as Panel;
-                    if (pnlChildForm != null)
-                    {
-                        frmAddStore frmAddStore = new frmAddStore(store);
-                        frmAddStore.FormBorderStyle = FormBorderStyle.None;
-                        frmAddStore.TopLevel = false;
-                        frmAddStore.BringToFront();
-
-                        pnlChildForm.Controls.Clear();
-                        pnlChildForm.Controls.Add(frmAddStore);
-                        frmAddStore.Show();
-                        this.Hide();
-                    }
-
+                    Backgrounds.LoadFormBackground(new frmAddStore(store));
                 }
+
                 if (e.ColumnIndex == 3
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)

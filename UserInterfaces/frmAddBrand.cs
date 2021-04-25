@@ -28,24 +28,6 @@ namespace InventoryManagementApp.UserInterfaces
             this.brand = brand;
         }
 
-        private void btnManageBrands_Click(object sender, EventArgs e)
-        {
-            Panel pnlChildForm = this.Parent as Panel;
-
-            if (pnlChildForm != null)
-            {
-                frmManageBrands frmManageBrands = new frmManageBrands();
-                frmManageBrands.FormBorderStyle = FormBorderStyle.None;
-                frmManageBrands.TopLevel = false;
-                frmManageBrands.BringToFront();
-
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmManageBrands);
-                frmManageBrands.Show();
-                this.Hide();
-            }
-        }
-
         private void frmAddBrand_Load(object sender, EventArgs e)
         {
             if (brand != null)
@@ -111,6 +93,11 @@ namespace InventoryManagementApp.UserInterfaces
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearData();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

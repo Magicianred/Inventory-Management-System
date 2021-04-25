@@ -28,24 +28,6 @@ namespace InventoryManagementApp.UserInterfaces
             this.category = category;
         }
 
-        private void btnManageCategories_Click(object sender, EventArgs e)
-        {
-            Panel pnlChildForm = this.Parent as Panel;
-
-            if (pnlChildForm != null)
-            {
-                frmManageCategories frmManageCategories = new frmManageCategories();
-                frmManageCategories.FormBorderStyle = FormBorderStyle.None;
-                frmManageCategories.TopLevel = false;
-                frmManageCategories.BringToFront();
-
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmManageCategories);
-                frmManageCategories.Show();
-                this.Hide();
-            }
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -111,6 +93,11 @@ namespace InventoryManagementApp.UserInterfaces
         private void LoadCategoryData()
         {
             txtCategoryName.Text = category.CategoryName;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
