@@ -45,7 +45,7 @@ namespace InventoryManagementApp.UserInterfaces
             }
             else
             {
-                lblInvalidUserInput.Text = Messages.DataNotMatching;
+                lblInvalidUserInput.Text = Messages.PasswordNotMatching;
             }
         }
 
@@ -62,12 +62,24 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void txtNewPassword_TextChanged(object sender, EventArgs e)
         {
-            ValidateNewPassword();
+            PasswordMatch();
+        }
+
+        private void PasswordMatch()
+        {
+            if (!ValidateNewPassword())
+            {
+                lblInvalidUserInput.Text = Messages.PasswordNotMatching;
+            }
+            else
+            {
+                lblInvalidUserInput.Text = "";
+            }
         }
 
         private void txtConfirmNewPassword_TextChanged(object sender, EventArgs e)
         {
-            ValidateNewPassword();
+            PasswordMatch();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
