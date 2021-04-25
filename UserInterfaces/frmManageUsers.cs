@@ -24,8 +24,8 @@ namespace InventoryManagementApp.Users
 
         private void frmManageUsers_Load(object sender, EventArgs e)
         {
-            LoadUsers();
             LoadGenders();
+            LoadUsers();
         }
 
         private void LoadGenders()
@@ -63,23 +63,11 @@ namespace InventoryManagementApp.Users
             {
                 var user = dgvUsers.SelectedRows[0].DataBoundItem as User;
 
-                if(e.ColumnIndex==4)
+                if(e.ColumnIndex == 4)
                 {
-                    pnlChildForm = this.Parent as Panel;
-                    if (pnlChildForm != null)
-                    {
-                        frmAddUser frmAddUser = new frmAddUser(user);
-                        frmAddUser.FormBorderStyle = FormBorderStyle.None;
-                        frmAddUser.TopLevel = false;
-                        frmAddUser.BringToFront();
-
-                        pnlChildForm.Controls.Clear();
-                        pnlChildForm.Controls.Add(frmAddUser);
-                        frmAddUser.Show();
-                        this.Hide();
-                    }
-
+                    OpenChildForm(new frmAddUser(user));
                 }
+
                 if (e.ColumnIndex == 5 
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
                     == DialogResult.Yes)
@@ -98,26 +86,30 @@ namespace InventoryManagementApp.Users
             }
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnAddUser_Click(object sender, EventArgs e)
+        private void OpenChildForm(Form form)
         {
             pnlChildForm = this.Parent as Panel;
             if (pnlChildForm != null)
             {
-                frmAddUser frmAddUser = new frmAddUser();
-                frmAddUser.FormBorderStyle = FormBorderStyle.None;
-                frmAddUser.TopLevel = false;
-                frmAddUser.BringToFront();
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.TopLevel = false;
+                form.BringToFront();
 
                 pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmAddUser);
-                frmAddUser.Show();
+                pnlChildForm.Controls.Add(form);
+                form.Show();
                 this.Hide();
             }
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmAddUser());
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
         }
 
         private void cmbGenders_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,16 +123,19 @@ namespace InventoryManagementApp.Users
             {
                 var filter = txtSearch.Text.ToLower();
                 var gender = cmbGenders.SelectedItem as Gender;
-
-                LoadUsers(
-                    InventoryManagementDb.DB.Users.Where(
-                        u => (u.Username.ToLower().Contains(filter)
-                        || u.FullName.ToLower().Contains(filter)
-                        || u.Email.ToLower().Contains(filter)
-                        || u.Telephone.ToString().ToLower().Contains(filter)
-                        || string.IsNullOrEmpty(filter))
-                        && u.Gender.Id == gender.Id
-                        ).ToList());
+                
+                if (gender != null)
+                {
+                    LoadUsers(
+                        InventoryManagementDb.DB.Users.Where(
+                            u => (u.Username.ToLower().Contains(filter)
+                            || u.FullName.ToLower().Contains(filter)
+                            || u.Email.ToLower().Contains(filter)
+                            || u.Telephone.ToString().Contains(filter)
+                            || string.IsNullOrEmpty(filter))
+                            && u.Gender.Id == gender.Id
+                            ).ToList());
+                }
             }
             catch (Exception ex)
             {

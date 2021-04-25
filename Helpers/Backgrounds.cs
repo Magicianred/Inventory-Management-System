@@ -10,7 +10,7 @@ namespace InventoryManagementApp.Helpers
 {
     public class Backgrounds
     {
-        public static void LoadFormBackground(Form form = null)
+        public static void LoadFormBackground(Form form)
         {
             if (form != null)
             {

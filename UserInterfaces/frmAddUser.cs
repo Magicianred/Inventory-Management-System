@@ -37,7 +37,9 @@ namespace InventoryManagementApp.UserInterfaces
             if (user != null)
             {
                 lblEvidentUser.Text = "Edit User Info";
+                
                 LoadUserData();
+
                 txtPassword.ReadOnly = true;
                 txtPasswordConfirmation.ReadOnly = true;
                 cbShowPassword.Enabled = false;
@@ -46,13 +48,20 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void LoadUserData()
         {
-            txtFullName.Text = user.FullName;
-            txtUsername.Text = user.Username;
-            txtEmail.Text = user.Email;
-            txtPassword.Text  = user.Password;
-            txtPasswordConfirmation.Text = user.Password;
-            txtTelephone.Text = $"{user.Telephone}";
-            cmbGenders.SelectedValue = user.Gender.Id;
+            try
+            {
+                txtFullName.Text = user.FullName;
+                txtUsername.Text = user.Username;
+                txtEmail.Text = user.Email;
+                txtPassword.Text  = user.Password;
+                txtPasswordConfirmation.Text = user.Password;
+                txtTelephone.Text = $"{user.Telephone}";
+                cmbGenders.SelectedValue = user.Gender.Id;
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
         }
 
         private void LoadGenders()
@@ -132,7 +141,6 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void txtPasswordConfirmation_TextChanged(object sender, EventArgs e)
         {
-            var passwordConfirmation = txtPasswordConfirmation.Text;
             passwordConfirmed = true;
 
             if (!Validator.ValidatePassword(txtPassword, txtPasswordConfirmation, err, Messages.DataNotMatching)) 
@@ -157,18 +165,21 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new frmManageUsers());
+        }
+
+        private void OpenChildForm(Form form)
+        {
             Panel pnlChildForm = this.Parent as Panel;
-            
             if (pnlChildForm != null)
             {
-                frmManageUsers frmManageUsers = new frmManageUsers();
-                frmManageUsers.FormBorderStyle = FormBorderStyle.None;
-                frmManageUsers.TopLevel = false;
-                frmManageUsers.BringToFront();
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.TopLevel = false;
+                form.BringToFront();
 
                 pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmManageUsers);
-                frmManageUsers.Show();
+                pnlChildForm.Controls.Add(form);
+                form.Show();
                 this.Hide();
             }
         }
