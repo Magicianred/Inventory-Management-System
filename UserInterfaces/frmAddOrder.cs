@@ -27,20 +27,7 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void btnManageOrders_Click(object sender, EventArgs e)
         {
-            Panel pnlChildForm = this.Parent as Panel;
-
-            if (pnlChildForm != null)
-            {
-                frmManageOrders frmManageOrders = new frmManageOrders();
-                frmManageOrders.FormBorderStyle = FormBorderStyle.None;
-                frmManageOrders.TopLevel = false;
-                frmManageOrders.BringToFront();
-
-                pnlChildForm.Controls.Clear();
-                pnlChildForm.Controls.Add(frmManageOrders);
-                frmManageOrders.Show();
-                this.Hide();
-            }
+            OpenChildForm(new frmManageOrders());
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -83,15 +70,22 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void InvalidOrder()
         {
-            btnMakeOrder.Enabled = false;
-            lblEmptyOrder.Text = Messages.EmptyOrder;
-
-            if (order != null)
+            try
             {
-                InventoryManagementDb.DB.Orders.Remove(order);
-                InventoryManagementDb.DB.SaveChanges();
-                order = null;
-                btnMakeOrder.Text = "Make Order";
+                btnMakeOrder.Enabled = false;
+                lblEmptyOrder.Text = Messages.EmptyOrder;
+
+                if (order != null)
+                {
+                    InventoryManagementDb.DB.Orders.Remove(order);
+                    InventoryManagementDb.DB.SaveChanges();
+                    order = null;
+                    btnMakeOrder.Text = "Make Order";
+                }
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
             }
         }
 
@@ -107,15 +101,22 @@ namespace InventoryManagementApp.UserInterfaces
 
         private void ClearData()
         {
-            var orderDetails = dgvOrderDetails.DataSource as List<OrderDetails>;
-
-            foreach (var od in orderDetails)
+            try
             {
-                InventoryManagementDb.DB.OrderDetails.Remove(od);
-                InventoryManagementDb.DB.SaveChanges();
-            }
+                var orderDetails = dgvOrderDetails.DataSource as List<OrderDetails>;
 
-            LoadOrderDetails();
+                foreach (var od in orderDetails)
+                {
+                    InventoryManagementDb.DB.OrderDetails.Remove(od);
+                    InventoryManagementDb.DB.SaveChanges();
+                }
+
+                LoadOrderDetails();
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
         }
 
         private void frmAddOrder_Load(object sender, EventArgs e)
@@ -186,9 +187,23 @@ namespace InventoryManagementApp.UserInterfaces
                 frmAddOrderDetails frmAddOrderDetails = new frmAddOrderDetails(order);
                 Backgrounds.LoadFormBackground(frmAddOrderDetails);
 
-                LoadOrderDetails();
-                btnMakeOrder.Enabled = true;
-                lblEmptyOrder.Text = "";
+                var orderItems = InventoryManagementDb.DB.OrderDetails.Where(o => o.Order.Id == order.Id).ToList();
+
+                if (orderItems.Count > 0)
+                {
+                    LoadOrderDetails();
+                    btnMakeOrder.Enabled = true;
+                    lblEmptyOrder.Text = "";
+                }
+                else
+                {
+                    InventoryManagementDb.DB.Orders.Remove(order);
+                    InventoryManagementDb.DB.SaveChanges();
+
+                    order = null;
+                    editOrder = false;
+                }
+
             }
             catch (Exception ex)
             {
@@ -201,23 +216,12 @@ namespace InventoryManagementApp.UserInterfaces
             try
             {
                 var orderDetails = dgvOrderDetails.SelectedRows[0].DataBoundItem as OrderDetails;
+
                 if (e.ColumnIndex == 5)
                 {
-                    Panel pnlChildForm = this.Parent as Panel;
-
-                    if (pnlChildForm != null)
-                    {
-                        frmAddOrderDetails frmAddOrderDetails = new frmAddOrderDetails(orderDetails);
-                        frmAddOrderDetails.FormBorderStyle = FormBorderStyle.None;
-                        frmAddOrderDetails.TopLevel = false;
-                        frmAddOrderDetails.BringToFront();
-
-                        pnlChildForm.Controls.Clear();
-                        pnlChildForm.Controls.Add(frmAddOrderDetails);
-                        frmAddOrderDetails.Show();
-                        this.Hide();
-                    }
+                    OpenChildForm(new frmAddOrderDetails(orderDetails));
                 }
+
                 if (e.ColumnIndex == 6
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -231,6 +235,26 @@ namespace InventoryManagementApp.UserInterfaces
             catch (Exception ex)
             {
                 Messages.HandleException(ex);
+            }
+        }
+
+        private void OpenChildForm(Form form)
+        {
+            Panel pnlChildForm = this.Parent as Panel;
+
+            if (pnlChildForm != null)
+            {
+                if (form != null)
+                {
+                    form.FormBorderStyle = FormBorderStyle.None;
+                    form.TopLevel = false;
+                    form.BringToFront();
+
+                    pnlChildForm.Controls.Clear();
+                    pnlChildForm.Controls.Add(form);
+                    form.Show();
+                    this.Hide();
+                }
             }
         }
     }
