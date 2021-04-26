@@ -42,8 +42,6 @@
             this.lblProducts = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblOperationInfo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbStores = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbBrands = new System.Windows.Forms.ComboBox();
             this.lblEvidentProduct = new System.Windows.Forms.Label();
@@ -176,8 +174,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.lblOperationInfo);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cmbStores);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbBrands);
             this.panel1.Controls.Add(this.lblEvidentProduct);
@@ -207,27 +203,6 @@
             this.lblOperationInfo.Name = "lblOperationInfo";
             this.lblOperationInfo.Size = new System.Drawing.Size(0, 18);
             this.lblOperationInfo.TabIndex = 52;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(627, 315);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 16);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Store:";
-            // 
-            // cmbStores
-            // 
-            this.cmbStores.BackColor = System.Drawing.SystemColors.Control;
-            this.cmbStores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbStores.FormattingEnabled = true;
-            this.cmbStores.Location = new System.Drawing.Point(627, 331);
-            this.cmbStores.Name = "cmbStores";
-            this.cmbStores.Size = new System.Drawing.Size(370, 21);
-            this.cmbStores.TabIndex = 6;
             // 
             // label1
             // 
@@ -348,8 +323,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblEvidentProduct;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbStores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbBrands;
         private System.Windows.Forms.ErrorProvider err;

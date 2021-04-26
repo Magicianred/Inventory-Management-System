@@ -40,7 +40,6 @@ namespace InventoryManagementApp.UserInterfaces
                     product.Description = txtDescription.Text;
                     product.Category = cmbCategories.SelectedItem as Category;
                     product.Brand = cmbBrands.SelectedItem as Brand;
-                    product.Store = cmbStores.SelectedItem as Store;
 
                     if (editProduct)
                     {
@@ -88,26 +87,11 @@ namespace InventoryManagementApp.UserInterfaces
         {
             LoadCategories();
             LoadBrands();
-            LoadStores();
 
             if (product != null)
             {
                 lblEvidentProduct.Text = "Edit Product Info";
                 LoadProductData();
-            }
-        }
-
-        private void LoadStores()
-        {
-            try
-            {
-                cmbStores.DataSource = InventoryManagementDb.DB.Stores.ToList();
-                cmbStores.ValueMember = "Id";
-                cmbStores.DisplayMember = "Name";
-            }
-            catch (Exception ex)
-            {
-                Messages.HandleException(ex);
             }
         }
 
@@ -147,7 +131,6 @@ namespace InventoryManagementApp.UserInterfaces
             txtDescription.Text = product.Description;
             cmbCategories.SelectedValue = product.Category.Id;
             cmbBrands.SelectedValue = product.Brand.Id;
-            cmbStores.SelectedValue = product.Store.Id;
         }
 
         private void btnManageProducts_Click(object sender, EventArgs e)

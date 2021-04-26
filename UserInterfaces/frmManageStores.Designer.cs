@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlStores = new System.Windows.Forms.Panel();
+            this.lblClearFilter = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblStoresNumber = new System.Windows.Forms.Label();
@@ -40,10 +41,10 @@
             this.lblManageStores = new System.Windows.Forms.Label();
             this.btnAddStore = new System.Windows.Forms.Button();
             this.lblStores = new System.Windows.Forms.Label();
-            this.lblClearFilter = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StoreDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlStores.SuspendLayout();
@@ -65,6 +66,18 @@
             this.pnlStores.Name = "pnlStores";
             this.pnlStores.Size = new System.Drawing.Size(1012, 421);
             this.pnlStores.TabIndex = 48;
+            // 
+            // lblClearFilter
+            // 
+            this.lblClearFilter.AutoSize = true;
+            this.lblClearFilter.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClearFilter.ForeColor = System.Drawing.Color.Gray;
+            this.lblClearFilter.Location = new System.Drawing.Point(924, 393);
+            this.lblClearFilter.Name = "lblClearFilter";
+            this.lblClearFilter.Size = new System.Drawing.Size(70, 16);
+            this.lblClearFilter.TabIndex = 59;
+            this.lblClearFilter.Text = "Clear Filter";
+            this.lblClearFilter.Click += new System.EventHandler(this.lblClearFilter_Click);
             // 
             // label3
             // 
@@ -137,6 +150,7 @@
             this.ID,
             this.BrandName,
             this.Status,
+            this.StoreDetails,
             this.Edit,
             this.Delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -194,18 +208,6 @@
             this.lblStores.TabIndex = 46;
             this.lblStores.Text = "Stores";
             // 
-            // lblClearFilter
-            // 
-            this.lblClearFilter.AutoSize = true;
-            this.lblClearFilter.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClearFilter.ForeColor = System.Drawing.Color.Gray;
-            this.lblClearFilter.Location = new System.Drawing.Point(924, 393);
-            this.lblClearFilter.Name = "lblClearFilter";
-            this.lblClearFilter.Size = new System.Drawing.Size(70, 16);
-            this.lblClearFilter.TabIndex = 59;
-            this.lblClearFilter.Text = "Clear Filter";
-            this.lblClearFilter.Click += new System.EventHandler(this.lblClearFilter_Click);
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "Id";
@@ -228,6 +230,17 @@
             this.Status.HeaderText = "";
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
+            // 
+            // StoreDetails
+            // 
+            this.StoreDetails.DataPropertyName = "(none)";
+            this.StoreDetails.HeaderText = "";
+            this.StoreDetails.Name = "StoreDetails";
+            this.StoreDetails.ReadOnly = true;
+            this.StoreDetails.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.StoreDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.StoreDetails.Text = "Details";
+            this.StoreDetails.UseColumnTextForButtonValue = true;
             // 
             // Edit
             // 
@@ -284,6 +297,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewButtonColumn StoreDetails;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
     }

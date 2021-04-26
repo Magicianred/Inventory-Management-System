@@ -19,6 +19,8 @@ namespace InventoryManagementApp.Helpers
         public const string DataNotMatching = "Data is not matching.";
         public const string PasswordNotMatching = "Passwords are not matching.";
         public const string EmptyOrder = "Your order can not be completed. You didn't choose any products.";
+        public const string CheckInput = "Please check your input.";
+
         public static void HandleException(Exception ex)
         {
             System.Windows.Forms.MessageBox.Show(

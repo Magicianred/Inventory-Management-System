@@ -11,7 +11,6 @@ namespace InventoryManagementApp.UserInterfaces
     public partial class frmAddOrderDetails : Form
     {
         private Order order;
-        private OrderDetails orderDetails;
         private bool itemExists = false;
 
         public frmAddOrderDetails(Order order)
@@ -19,11 +18,6 @@ namespace InventoryManagementApp.UserInterfaces
             InitializeComponent();
             this.order = order;
             nProductQuantity.Minimum = 1;
-        }
-
-        public frmAddOrderDetails(OrderDetails orderDetails)
-        {
-            this.orderDetails = orderDetails;
         }
 
         private void frmAddOrderDetails_Load(object sender, EventArgs e)
@@ -68,7 +62,6 @@ namespace InventoryManagementApp.UserInterfaces
                 if (ValidateOrderDetailsData())
                 {
                     var product = (cmbProducts.SelectedItem as Product);
-
                     var orderItems = InventoryManagementDb.DB.OrderDetails.Where(od => od.Order.Id == order.Id).ToList();
 
                     foreach (var orderItem in orderItems)

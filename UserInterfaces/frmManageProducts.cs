@@ -73,12 +73,12 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 var product = dgvProducts.SelectedRows[0].DataBoundItem as Product;
 
-                if (e.ColumnIndex == 8)
+                if (e.ColumnIndex == 7)
                 {
                     OpenChildForm(new frmAddProduct(product));
                 }
 
-                if (e.ColumnIndex == 9
+                if (e.ColumnIndex == 6
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {

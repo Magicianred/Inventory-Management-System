@@ -217,12 +217,7 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 var orderDetails = dgvOrderDetails.SelectedRows[0].DataBoundItem as OrderDetails;
 
-                if (e.ColumnIndex == 5)
-                {
-                    OpenChildForm(new frmAddOrderDetails(orderDetails));
-                }
-
-                if (e.ColumnIndex == 6
+                if (e.ColumnIndex == 5
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {

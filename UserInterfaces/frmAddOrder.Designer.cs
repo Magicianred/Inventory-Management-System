@@ -32,15 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnManageOrders = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEmptyOrder = new System.Windows.Forms.Label();
             this.lblOrderTotal = new System.Windows.Forms.Label();
             this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.lblOperationInfo = new System.Windows.Forms.Label();
             this.lblEvidentOrder = new System.Windows.Forms.Label();
@@ -51,7 +45,12 @@
             this.lblOrders = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblEmptyOrder = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +88,16 @@
             this.panel1.Size = new System.Drawing.Size(1015, 515);
             this.panel1.TabIndex = 47;
             // 
+            // lblEmptyOrder
+            // 
+            this.lblEmptyOrder.AutoSize = true;
+            this.lblEmptyOrder.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmptyOrder.ForeColor = System.Drawing.Color.Red;
+            this.lblEmptyOrder.Location = new System.Drawing.Point(21, 410);
+            this.lblEmptyOrder.Name = "lblEmptyOrder";
+            this.lblEmptyOrder.Size = new System.Drawing.Size(0, 14);
+            this.lblEmptyOrder.TabIndex = 56;
+            // 
             // lblOrderTotal
             // 
             this.lblOrderTotal.AutoSize = true;
@@ -119,7 +128,6 @@
             this.ProductQuantity,
             this.ProductPrice,
             this.TotalAmount,
-            this.Edit,
             this.Delete});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -138,62 +146,6 @@
             this.dgvOrderDetails.Size = new System.Drawing.Size(977, 171);
             this.dgvOrderDetails.TabIndex = 54;
             this.dgvOrderDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Product
-            // 
-            this.Product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Product.DataPropertyName = "Product";
-            this.Product.HeaderText = "Product";
-            this.Product.Name = "Product";
-            this.Product.ReadOnly = true;
-            // 
-            // ProductQuantity
-            // 
-            this.ProductQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ProductQuantity.DataPropertyName = "ProductQuantity";
-            this.ProductQuantity.HeaderText = "Product Quantity";
-            this.ProductQuantity.Name = "ProductQuantity";
-            this.ProductQuantity.ReadOnly = true;
-            // 
-            // ProductPrice
-            // 
-            this.ProductPrice.DataPropertyName = "ProductPrice";
-            this.ProductPrice.HeaderText = "Product Price";
-            this.ProductPrice.Name = "ProductPrice";
-            this.ProductPrice.ReadOnly = true;
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.DataPropertyName = "TotalAmount";
-            this.TotalAmount.HeaderText = "Total Amount";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::InventoryManagementApp.Properties.Resources.editIcon;
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
             // 
             // btnAddProduct
             // 
@@ -309,15 +261,52 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // lblEmptyOrder
+            // ID
             // 
-            this.lblEmptyOrder.AutoSize = true;
-            this.lblEmptyOrder.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmptyOrder.ForeColor = System.Drawing.Color.Red;
-            this.lblEmptyOrder.Location = new System.Drawing.Point(21, 410);
-            this.lblEmptyOrder.Name = "lblEmptyOrder";
-            this.lblEmptyOrder.Size = new System.Drawing.Size(0, 14);
-            this.lblEmptyOrder.TabIndex = 56;
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // Product
+            // 
+            this.Product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Product.DataPropertyName = "Product";
+            this.Product.HeaderText = "Product";
+            this.Product.Name = "Product";
+            this.Product.ReadOnly = true;
+            // 
+            // ProductQuantity
+            // 
+            this.ProductQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductQuantity.DataPropertyName = "ProductQuantity";
+            this.ProductQuantity.HeaderText = "Product Quantity";
+            this.ProductQuantity.Name = "ProductQuantity";
+            this.ProductQuantity.ReadOnly = true;
+            // 
+            // ProductPrice
+            // 
+            this.ProductPrice.DataPropertyName = "ProductPrice";
+            this.ProductPrice.HeaderText = "Product Price";
+            this.ProductPrice.Name = "ProductPrice";
+            this.ProductPrice.ReadOnly = true;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.DataPropertyName = "TotalAmount";
+            this.TotalAmount.HeaderText = "Total Amount";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::InventoryManagementApp.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
             // 
             // frmAddOrder
             // 
@@ -353,16 +342,15 @@
         private System.Windows.Forms.Label lblOrders;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.DataGridView dgvOrderDetails;
+        private System.Windows.Forms.Label lblOrderTotal;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Label lblEmptyOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.Label lblOrderTotal;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.Label lblEmptyOrder;
     }
 }

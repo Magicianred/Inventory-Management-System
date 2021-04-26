@@ -69,12 +69,17 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 var store = dgvStores.SelectedRows[0].DataBoundItem as Store;
 
-                if (e.ColumnIndex == 2)
+                if(e.ColumnIndex == 3)
+                {
+                    OpenChildForm(new frmStoreDetails(store));
+                }
+
+                if (e.ColumnIndex == 4)
                 {
                     Backgrounds.LoadFormBackground(new frmAddStore(store));
                 }
 
-                if (e.ColumnIndex == 3
+                if (e.ColumnIndex == 5
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {
@@ -121,6 +126,22 @@ namespace InventoryManagementApp.UserInterfaces
         {
             txtSearch.Text = "";
             LoadStores();
+        }
+
+        private void OpenChildForm(Form form)
+        {
+            Panel pnlChildForm = this.Parent as Panel;
+            if (pnlChildForm != null)
+            {
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.TopLevel = false;
+                form.BringToFront();
+
+                pnlChildForm.Controls.Clear();
+                pnlChildForm.Controls.Add(form);
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }
