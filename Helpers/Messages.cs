@@ -20,6 +20,7 @@ namespace InventoryManagementApp.Helpers
         public const string PasswordNotMatching = "Passwords are not matching.";
         public const string EmptyOrder = "Your order can not be completed. You didn't choose any products.";
         public const string CheckInput = "Please check your input.";
+        public const string ProductQuantity = "Required quantity of product does not exist.";
 
         public static void HandleException(Exception ex)
         {

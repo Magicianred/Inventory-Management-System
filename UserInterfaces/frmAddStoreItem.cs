@@ -52,29 +52,36 @@ namespace InventoryManagementApp.UserInterfaces
                     var product = (cmbProducts.SelectedItem as Product);
                     var storeItems = InventoryManagementDb.DB.StoreDetails.Where(sd => sd.Store.Id == store.Id).ToList();
 
-                    foreach (var storeItem in storeItems)
+                    if (product.ProductQuantity - GetUnitsFromAllStores(product) >= nUnitsInStock.Value)
                     {
-                        if (storeItem.Product.ProductName == product.ProductName)
+                        foreach (var storeItem in storeItems)
                         {
-                            storeItem.UnitsInStock += int.Parse(nUnitsInStock.Value.ToString());
-
-                            InventoryManagementDb.DB.Entry(storeItem).State = System.Data.Entity.EntityState.Modified;
-                            itemExists = true;
-                        }
-                    }
-
-                    if (!itemExists)
-                    {
-                        InventoryManagementDb.DB.StoreDetails.Add(
-                            new StoreDetails()
+                            if (storeItem.Product.ProductName == product.ProductName)
                             {
-                                Product = product,
-                                UnitsInStock = int.Parse(nUnitsInStock.Value.ToString()),
-                                Store = store
-                            });
+                                storeItem.UnitsInStock += int.Parse(nUnitsInStock.Value.ToString());
+
+                                InventoryManagementDb.DB.Entry(storeItem).State = System.Data.Entity.EntityState.Modified;
+                                itemExists = true;
+                            }
+                        }
+
+                        if (!itemExists)
+                        {
+                            InventoryManagementDb.DB.StoreDetails.Add(
+                                new StoreDetails()
+                                {
+                                    Product = product,
+                                    UnitsInStock = int.Parse(nUnitsInStock.Value.ToString()),
+                                    Store = store
+                                });
+                        }
+                        InventoryManagementDb.DB.SaveChanges();
+                        Close();
                     }
-                    InventoryManagementDb.DB.SaveChanges();
-                    Close();
+                    else
+                    {
+                        lblCheckInput.Text = Messages.ProductQuantity;
+                    }
                 }
                 else
                 {
@@ -85,6 +92,31 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 Messages.HandleException(ex);
             }
+        }
+
+        private int GetUnitsFromAllStores(Product product)
+        {
+            try
+            {
+                if (product != null)
+                {
+                    var stores = InventoryManagementDb.DB.StoreDetails.Where(sd => sd.Product.Id == product.Id).ToList();
+                    int unitsInStores = 0;
+
+                    foreach (var store in stores)
+                    {
+                        unitsInStores += store.UnitsInStock;
+                    }
+
+                    return unitsInStores;
+                }
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+
+            return 0;
         }
 
         private bool ValidateItemData()
