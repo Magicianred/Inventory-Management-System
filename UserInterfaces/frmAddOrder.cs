@@ -71,27 +71,32 @@ namespace InventoryManagementApp.UserInterfaces
                     if (editOrder)
                     {
                         InventoryManagementDb.DB.Entry(order).State = System.Data.Entity.EntityState.Modified;
+                        lblOperationInfo.Text = Messages.SuccessfullyModified;
                     }
                     else
                     {
                         InventoryManagementDb.DB.Orders.Add(order);
+                        lblOperationInfo.Text = Messages.SuccessfullyAdded;
                     }
 
                     //add items to order
                     foreach (var orderItem in orderItems)
                     {
-                        InventoryManagementDb.DB.OrderDetails.Add(
-                            new OrderDetails()
-                            {
-                                Order = order,
-                                Product = orderItem.Product,
-                                ProductQuantity = orderItem.ProductQuantity,
-                                ProductPrice = orderItem.ProductPrice,
-                                TotalAmount = orderItem.TotalAmount
-                            });
+                        if (!ItemExists(orderItem))
+                        {
+                            InventoryManagementDb.DB.OrderDetails.Add(
+                                new OrderDetails()
+                                {
+                                    Order = order,
+                                    Product = orderItem.Product,
+                                    ProductQuantity = orderItem.ProductQuantity,
+                                    ProductPrice = orderItem.ProductPrice,
+                                    TotalAmount = orderItem.TotalAmount
+                                });
+                        }
                     }
 
-                    orderItems.Clear();
+                    //orderItems.Clear();
                     InventoryManagementDb.DB.SaveChanges();
                 }
                 else
@@ -103,6 +108,25 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 Messages.HandleException(ex);
             }
+        }
+
+        private bool ItemExists(OrderItem orderItem)
+        {
+            var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(od => od.Order.Id == order.Id).ToList();
+
+            foreach (var od in orderDetails)
+            {
+                if(od.Product == orderItem.Product)
+                {
+                    od.ProductQuantity = orderItem.ProductQuantity;
+                    od.TotalAmount = orderItem.TotalAmount;
+                    InventoryManagementDb.DB.Entry(od).State = System.Data.Entity.EntityState.Modified;
+
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void InvalidOrder()
@@ -132,17 +156,6 @@ namespace InventoryManagementApp.UserInterfaces
         {
             try
             {
-                if (order != null) {
-
-                    var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(od=>od.Order.Id == order.Id);
-
-                    foreach (var od in orderDetails)
-                    {
-                        InventoryManagementDb.DB.OrderDetails.Remove(od);
-                        InventoryManagementDb.DB.SaveChanges();
-                    }
-                }
-                
                 InventoryManagementTemporaryBase.orderItems.Clear();
                 LoadOrderDetails();
             }
@@ -223,14 +236,13 @@ namespace InventoryManagementApp.UserInterfaces
         {
             try
             {
-                var orderDetails = dgvOrderDetails.SelectedRows[0].DataBoundItem as OrderDetails;
+                var orderItem = dgvOrderDetails.SelectedRows[0].DataBoundItem as OrderItem;
 
-                if (e.ColumnIndex == 5
+                if (e.ColumnIndex == 4
                     && MessageBox.Show(Messages.Delete, Messages.Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {
-                    InventoryManagementDb.DB.OrderDetails.Remove(orderDetails);
-                    InventoryManagementDb.DB.SaveChanges();
+                    InventoryManagementTemporaryBase.orderItems.Remove(orderItem);
                 }
 
                 LoadOrderDetails();
