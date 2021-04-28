@@ -201,7 +201,7 @@ namespace InventoryManagementApp.UserInterfaces
 
             if (order != null)
             {
-                lblEvidentOrder.Text = "Edit Product Info";
+                lblEvidentOrder.Text = "Edit Order Info";
                 LoadOrderData();
             }
         }
