@@ -62,33 +62,65 @@ namespace InventoryManagementApp.UserInterfaces
                     var orderItems = InventoryManagementTemporaryBase.orderItems;
                     var product = (cmbProducts.SelectedItem as Product);
 
-                    foreach (var orderItem in orderItems)
+                    if (product.ProductQuantity - GetOrderedItemsNumber(product) >= nProductQuantity.Value)
                     {
-                        if (orderItem.Product == product)
+                        foreach (var orderItem in orderItems)
                         {
-                            orderItem.ProductQuantity += int.Parse(nProductQuantity.Value.ToString());
-                            orderItem.TotalAmount += float.Parse(lblTotalAmountPrice.Text);
-                            itemExists = true;
-                        }
-                    }
-                    if (!itemExists)
-                    {
-                        InventoryManagementTemporaryBase.orderItems.Add(
-                            new OrderItem()
+                            if (orderItem.Product == product)
                             {
-                                Product = product,
-                                ProductQuantity = int.Parse(nProductQuantity.Value.ToString()),
-                                ProductPrice = product.ProductPrice,
-                                TotalAmount = float.Parse(lblTotalAmountPrice.Text)
-                            });
+                                orderItem.ProductQuantity += int.Parse(nProductQuantity.Value.ToString());
+                                orderItem.TotalAmount += float.Parse(lblTotalAmountPrice.Text);
+                                itemExists = true;
+                            }
+                        }
+                        if (!itemExists)
+                        {
+                            InventoryManagementTemporaryBase.orderItems.Add(
+                                new OrderItem()
+                                {
+                                    Product = product,
+                                    ProductQuantity = int.Parse(nProductQuantity.Value.ToString()),
+                                    ProductPrice = product.ProductPrice,
+                                    TotalAmount = float.Parse(lblTotalAmountPrice.Text)
+                                });
+                        }
+                        Close();
                     }
-                    Close();
+                    else
+                    {
+                        lblCheckInput.Text = Messages.ProductQuantity;
+                    }
                 }
             }
             catch (Exception ex)
             {
                 Messages.HandleException(ex);
             }
+        }
+
+        private int GetOrderedItemsNumber(Product product)
+        {
+            try
+            {
+                if (product != null)
+                {
+                    var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(od => od.Product.Id == product.Id).ToList();
+                    int orderUnits = 0;
+
+                    foreach (var od in orderDetails)
+                    {
+                        orderUnits += od.ProductQuantity;
+                    }
+
+                    return orderUnits;
+                }
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+
+            return 0;
         }
 
         private bool ValidateOrderDetailsData()
