@@ -37,7 +37,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalAmountPrice = new System.Windows.Forms.Label();
-            this.lblCheckInput = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nProductQuantity)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,23 +148,12 @@
             this.lblTotalAmountPrice.Size = new System.Drawing.Size(0, 16);
             this.lblTotalAmountPrice.TabIndex = 57;
             // 
-            // lblCheckInput
-            // 
-            this.lblCheckInput.AutoSize = true;
-            this.lblCheckInput.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckInput.ForeColor = System.Drawing.Color.Red;
-            this.lblCheckInput.Location = new System.Drawing.Point(29, 207);
-            this.lblCheckInput.Name = "lblCheckInput";
-            this.lblCheckInput.Size = new System.Drawing.Size(0, 14);
-            this.lblCheckInput.TabIndex = 59;
-            // 
             // frmAddOrderDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(571, 232);
-            this.Controls.Add(this.lblCheckInput);
             this.Controls.Add(this.lblTotalAmountPrice);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
@@ -198,6 +186,5 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTotalAmountPrice;
-        private System.Windows.Forms.Label lblCheckInput;
     }
 }
