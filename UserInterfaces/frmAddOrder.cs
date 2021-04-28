@@ -79,6 +79,9 @@ namespace InventoryManagementApp.UserInterfaces
                         lblOperationInfo.Text = Messages.SuccessfullyAdded;
                     }
 
+                    //remove deleted items from Order
+                    RemoveDeletedItems();
+
                     //add items to order
                     foreach (var orderItem in orderItems)
                     {
@@ -96,7 +99,6 @@ namespace InventoryManagementApp.UserInterfaces
                         }
                     }
 
-                    //orderItems.Clear();
                     InventoryManagementDb.DB.SaveChanges();
                 }
                 else
@@ -108,6 +110,34 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 Messages.HandleException(ex);
             }
+        }
+
+        private void RemoveDeletedItems()
+        {
+            var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(od => od.Order.Id == order.Id).ToList();
+
+            foreach (var od in orderDetails)
+            {
+                if (DeletedItem(od))
+                {
+                    InventoryManagementDb.DB.OrderDetails.Remove(od);
+                }
+            }
+        }
+
+        private bool DeletedItem(OrderDetails od)
+        {
+            var orderItems = InventoryManagementTemporaryBase.orderItems;
+
+            foreach (var oi in orderItems)
+            {
+                if (oi.Product == od.Product)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private bool ItemExists(OrderItem orderItem)
