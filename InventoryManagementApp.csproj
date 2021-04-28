@@ -93,6 +93,7 @@
     <Compile Include="DataClasses\Gender.cs" />
     <Compile Include="DataClasses\Order.cs" />
     <Compile Include="DataClasses\OrderDetails.cs" />
+    <Compile Include="DataClasses\OrderItem.cs" />
     <Compile Include="DataClasses\Product.cs" />
     <Compile Include="DataClasses\Status.cs" />
     <Compile Include="DataClasses\Store.cs" />
@@ -104,6 +105,7 @@
       <DependentUpon>dsOrderDetails.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataRepository\InventoryManagementDb.cs" />
+    <Compile Include="DataRepository\InventoryManagementTemporaryBase.cs" />
     <Compile Include="Helpers\Backgrounds.cs" />
     <Compile Include="Helpers\Images.cs" />
     <Compile Include="Helpers\Messages.cs" />

@@ -1,5 +1,6 @@
 ﻿using InventoryManagementApp.Data;
 using InventoryManagementApp.DataClasses;
+using InventoryManagementApp.DataRepository;
 using InventoryManagementApp.Helpers;
 using System;
 using System.Data;
@@ -10,13 +11,10 @@ namespace InventoryManagementApp.UserInterfaces
 {
     public partial class frmAddOrderDetails : Form
     {
-        private Order order;
         private bool itemExists = false;
-
-        public frmAddOrderDetails(Order order)
+        public frmAddOrderDetails()
         {
             InitializeComponent();
-            this.order = order;
             nProductQuantity.Minimum = 1;
         }
 
@@ -61,34 +59,29 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 if (ValidateOrderDetailsData())
                 {
+                    var orderItems = InventoryManagementTemporaryBase.orderItems;
                     var product = (cmbProducts.SelectedItem as Product);
-                    var orderItems = InventoryManagementDb.DB.OrderDetails.Where(od => od.Order.Id == order.Id).ToList();
 
                     foreach (var orderItem in orderItems)
                     {
-                        if(orderItem.Product.ProductName == product.ProductName)
+                        if (orderItem.Product == product)
                         {
                             orderItem.ProductQuantity += int.Parse(nProductQuantity.Value.ToString());
                             orderItem.TotalAmount += float.Parse(lblTotalAmountPrice.Text);
-
-                            InventoryManagementDb.DB.Entry(orderItem).State = System.Data.Entity.EntityState.Modified;
                             itemExists = true;
                         }
                     }
-
                     if (!itemExists)
                     {
-                        InventoryManagementDb.DB.OrderDetails.Add(
-                            new OrderDetails()
+                        InventoryManagementTemporaryBase.orderItems.Add(
+                            new OrderItem()
                             {
                                 Product = product,
                                 ProductQuantity = int.Parse(nProductQuantity.Value.ToString()),
                                 ProductPrice = product.ProductPrice,
-                                Order = order,
                                 TotalAmount = float.Parse(lblTotalAmountPrice.Text)
                             });
                     }
-                    InventoryManagementDb.DB.SaveChanges();
                     Close();
                 }
             }
