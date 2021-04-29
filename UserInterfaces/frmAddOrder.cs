@@ -68,6 +68,36 @@ namespace InventoryManagementApp.UserInterfaces
                     order.Customer = (cmbCustomers.SelectedItem as Customer);
                     order.OrderTotal = orderItems.Sum(od=>od.TotalAmount);
 
+
+                    //remove deleted items from Order
+                    RemoveDeletedItems();
+
+                    //add items to order
+                    foreach (var orderItem in orderItems)
+                    {
+                        if (orderItem.Product.ProductQuantity - GetOrderedItems(orderItem) >= orderItem.ProductQuantity)
+                        {
+
+                            if (!ItemExists(orderItem))
+                            {
+                                InventoryManagementDb.DB.OrderDetails.Add(
+                                    new OrderDetails()
+                                    {
+                                        Order = order,
+                                        Product = orderItem.Product,
+                                        ProductQuantity = orderItem.ProductQuantity,
+                                        ProductPrice = orderItem.ProductPrice,
+                                        TotalAmount = orderItem.TotalAmount
+                                    });
+                            }
+                        }
+                        else
+                        {
+                            InvalidOrder();
+                            lblEmptyOrder.Text = Messages.ProductQuantity + Environment.NewLine + Messages.Remove + $"{orderItem.Product}";
+                            return;
+                        }
+                    }
                     if (editOrder)
                     {
                         InventoryManagementDb.DB.Entry(order).State = System.Data.Entity.EntityState.Modified;
@@ -77,26 +107,6 @@ namespace InventoryManagementApp.UserInterfaces
                     {
                         InventoryManagementDb.DB.Orders.Add(order);
                         lblOperationInfo.Text = Messages.SuccessfullyAdded;
-                    }
-
-                    //remove deleted items from Order
-                    RemoveDeletedItems();
-
-                    //add items to order
-                    foreach (var orderItem in orderItems)
-                    {
-                        if (!ItemExists(orderItem))
-                        {
-                            InventoryManagementDb.DB.OrderDetails.Add(
-                                new OrderDetails()
-                                {
-                                    Order = order,
-                                    Product = orderItem.Product,
-                                    ProductQuantity = orderItem.ProductQuantity,
-                                    ProductPrice = orderItem.ProductPrice,
-                                    TotalAmount = orderItem.TotalAmount
-                                });
-                        }
                     }
 
                     InventoryManagementDb.DB.SaveChanges();
@@ -110,6 +120,28 @@ namespace InventoryManagementApp.UserInterfaces
             {
                 Messages.HandleException(ex);
             }
+        }
+
+        private int GetOrderedItems(OrderItem orderItem)
+        {
+            try
+            {
+                var orderDetails = InventoryManagementDb.DB.OrderDetails.Where(od => od.Product.Id == orderItem.Product.Id && od.Order.Id != order.Id).ToList();
+                int orderUnits = 0;
+
+                foreach (var od in orderDetails)
+                {
+                    orderUnits += od.ProductQuantity;
+                }
+                
+                return orderUnits;
+            }
+            catch (Exception ex)
+            {
+                Messages.HandleException(ex);
+            }
+
+            return 0;
         }
 
         private void RemoveDeletedItems()
@@ -273,6 +305,8 @@ namespace InventoryManagementApp.UserInterfaces
                     == DialogResult.Yes)
                 {
                     InventoryManagementTemporaryBase.orderItems.Remove(orderItem);
+                    btnMakeOrder.Enabled = true;
+                    lblEmptyOrder.Text = "";
                 }
 
                 LoadOrderDetails();
